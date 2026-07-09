@@ -1,0 +1,924 @@
+2026-07-08 15:51:41,732 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-08 15:51:41,732 INFO [1/6] Input accepted.
+2026-07-08 15:51:41,732 INFO       done in 0.0s
+2026-07-08 15:51:41,732 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-08 15:51:41,735 INFO       -> 294 unique papers with abstracts
+2026-07-08 15:51:41,735 INFO       done in 0.0s
+2026-07-08 15:51:41,735 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-08 15:51:56,877 INFO       -> 15 topics found:
+2026-07-08 15:51:56,877 INFO          - model / clients / personalized (30 papers)
+2026-07-08 15:51:56,877 INFO          - healthcare / data / medical (27 papers)
+2026-07-08 15:51:56,877 INFO          - data / challenges / research (24 papers)
+2026-07-08 15:51:56,877 INFO          - attacks / privacy / gradients (21 papers)
+2026-07-08 15:51:56,877 INFO          - iot / detection / intrusion (20 papers)
+2026-07-08 15:51:56,877 INFO          - local / data / heterogeneity (18 papers)
+2026-07-08 15:51:56,877 INFO          - blockchain / data / privacy (18 papers)
+2026-07-08 15:51:56,877 INFO          - edge / fl / devices (17 papers)
+2026-07-08 15:51:56,877 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-08 15:51:56,877 INFO          - aggregation / secure / secure aggregation (11 papers)
+2026-07-08 15:51:56,877 INFO          - convergence / communication / participation (10 papers)
+2026-07-08 15:51:56,877 INFO          - privacy / differential / differential privacy (10 papers)
+2026-07-08 15:51:56,877 INFO          - fl / ppagg / llms (9 papers)
+2026-07-08 15:51:56,877 INFO          - wireless / fl / networks (8 papers)
+2026-07-08 15:51:56,877 INFO          - disease / cnn / leaf (7 papers)
+2026-07-08 15:51:56,877 INFO       done in 15.1s
+2026-07-08 15:51:56,877 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-08 15:51:56,880 INFO       -> 8 candidate gaps
+2026-07-08 15:51:56,880 INFO       done in 0.0s
+2026-07-08 15:51:56,880 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-08 15:51:59,421 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:01,667 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:05,956 WARNING OpenAlex count '"federated learning" "healthcare data"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:05,956 WARNING [agent] query unverifiable ("federated learning" "healthcare data") for model / clients / personalized x healthcare / data / medical
+2026-07-08 15:52:07,012 WARNING OpenAlex count '"personalized models" "medical datasets"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:09,363 WARNING OpenAlex count '"personalized models" "medical datasets"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:13,737 WARNING OpenAlex count '"personalized models" "medical datasets"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:13,738 WARNING [agent] query unverifiable ("personalized models" "medical datasets") for model / clients / personalized x healthcare / data / medical
+2026-07-08 15:52:13,739 INFO [agent] model / clients / personalized x healthcare / data / medical: 0 recent papers -> UNVERIFIED
+2026-07-08 15:52:15,747 WARNING OpenAlex count '"personalized model" "data challenges"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:17,960 WARNING OpenAlex count '"personalized model" "data challenges"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:22,274 WARNING OpenAlex count '"personalized model" "data challenges"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:22,275 WARNING [agent] query unverifiable ("personalized model" "data challenges") for model / clients / personalized x data / challenges / research
+2026-07-08 15:52:22,831 WARNING OpenAlex count '"federated learning" "machine learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:25,071 WARNING OpenAlex count '"federated learning" "machine learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:29,299 WARNING OpenAlex count '"federated learning" "machine learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:29,300 WARNING [agent] query unverifiable ("federated learning" "machine learning") for model / clients / personalized x data / challenges / research
+2026-07-08 15:52:29,300 INFO [agent] model / clients / personalized x data / challenges / research: 0 recent papers -> UNVERIFIED
+2026-07-08 15:52:31,436 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:33,779 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:38,132 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:38,133 WARNING [agent] query unverifiable ("federated learning" "poisoning attacks") for model / clients / personalized x attacks / privacy / gradients
+2026-07-08 15:52:39,144 WARNING OpenAlex count '"personalized models" "privacy attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:41,533 WARNING OpenAlex count '"personalized models" "privacy attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:45,829 WARNING OpenAlex count '"personalized models" "privacy attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:45,830 WARNING [agent] query unverifiable ("personalized models" "privacy attacks") for model / clients / personalized x attacks / privacy / gradients
+2026-07-08 15:52:45,830 INFO [agent] model / clients / personalized x attacks / privacy / gradients: 0 recent papers -> UNVERIFIED
+2026-07-08 15:52:48,485 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:50,787 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:52:55,203 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:52:55,205 WARNING [agent] query unverifiable ("federated learning" "intrusion detection") for model / clients / personalized x iot / detection / intrusion
+2026-07-08 15:52:55,807 WARNING OpenAlex count '"personalized models" "IoT security"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:52:58,031 WARNING OpenAlex count '"personalized models" "IoT security"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:02,241 WARNING OpenAlex count '"personalized models" "IoT security"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:02,243 WARNING [agent] query unverifiable ("personalized models" "IoT security") for model / clients / personalized x iot / detection / intrusion
+2026-07-08 15:53:02,243 INFO [agent] model / clients / personalized x iot / detection / intrusion: 0 recent papers -> UNVERIFIED
+2026-07-08 15:53:03,698 WARNING OpenAlex count '"federated learning" "data heterogeneity"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:05,912 WARNING OpenAlex count '"federated learning" "data heterogeneity"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:09,989 WARNING OpenAlex count '"federated learning" "data heterogeneity"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:09,990 WARNING [agent] query unverifiable ("federated learning" "data heterogeneity") for model / clients / personalized x local / data / heterogeneity
+2026-07-08 15:53:10,864 WARNING OpenAlex count '"personalized models" "label heterogeneity"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:13,157 WARNING OpenAlex count '"personalized models" "label heterogeneity"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:17,411 WARNING OpenAlex count '"personalized models" "label heterogeneity"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:17,411 WARNING [agent] query unverifiable ("personalized models" "label heterogeneity") for model / clients / personalized x local / data / heterogeneity
+2026-07-08 15:53:17,411 INFO [agent] model / clients / personalized x local / data / heterogeneity: 0 recent papers -> UNVERIFIED
+2026-07-08 15:53:19,276 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:21,662 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:26,092 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:26,093 WARNING [agent] query unverifiable ("federated learning" "blockchain privacy") for model / clients / personalized x blockchain / data / privacy
+2026-07-08 15:53:26,603 WARNING OpenAlex count '"personalized local models" "blockchain data sharing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:28,752 WARNING OpenAlex count '"personalized local models" "blockchain data sharing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:32,963 WARNING OpenAlex count '"personalized local models" "blockchain data sharing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:32,964 WARNING [agent] query unverifiable ("personalized local models" "blockchain data sharing") for model / clients / personalized x blockchain / data / privacy
+2026-07-08 15:53:32,964 INFO [agent] model / clients / personalized x blockchain / data / privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 15:53:34,801 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:36,957 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:41,167 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:41,168 WARNING [agent] query unverifiable ("federated learning" "crop disease detection") for model / clients / personalized x disease / cnn / leaf
+2026-07-08 15:53:42,266 WARNING OpenAlex count '"personalized local models" "leaf disease classification"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:44,678 WARNING OpenAlex count '"personalized local models" "leaf disease classification"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:48,880 WARNING OpenAlex count '"personalized local models" "leaf disease classification"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:48,881 WARNING [agent] query unverifiable ("personalized local models" "leaf disease classification") for model / clients / personalized x disease / cnn / leaf
+2026-07-08 15:53:48,881 INFO [agent] model / clients / personalized x disease / cnn / leaf: 0 recent papers -> UNVERIFIED
+2026-07-08 15:53:51,353 WARNING OpenAlex count '"medical datasets" "federated learning challenges"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:53:53,561 WARNING OpenAlex count '"medical datasets" "federated learning challenges"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:53:57,845 WARNING OpenAlex count '"medical datasets" "federated learning challenges"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:53:57,847 WARNING [agent] query unverifiable ("medical datasets" "federated learning challenges") for healthcare / data / medical x data / challenges / research
+2026-07-08 15:53:58,651 WARNING OpenAlex count '"healthcare models" "distributed machine learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 15:54:00,910 WARNING OpenAlex count '"healthcare models" "distributed machine learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 15:54:05,272 WARNING OpenAlex count '"healthcare models" "distributed machine learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 15:54:05,273 WARNING [agent] query unverifiable ("healthcare models" "distributed machine learning") for healthcare / data / medical x data / challenges / research
+2026-07-08 15:54:05,273 INFO [agent] healthcare / data / medical x data / challenges / research: 0 recent papers -> UNVERIFIED
+2026-07-08 15:54:05,274 INFO       -> 0 confirmed, 0 weak, 0 rejected, 8 unverified
+2026-07-08 15:54:05,274 INFO       done in 128.4s
+2026-07-08 15:54:05,274 INFO [6/6] Synthesizing report...
+2026-07-08 15:55:36,867 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-08 15:57:10,400 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
+2026-07-08 15:58:45,939 WARNING Anthropic synthesis failed after 3 attempts, skipping: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+2026-07-08 15:58:45,943 WARNING LLM synthesis unavailable after retries — falling back to plain report
+2026-07-08 15:58:45,944 INFO       done in 280.7s
+2026-07-08 15:58:46,221 INFO === done in 424.5s total ===
+2026-07-08 16:00:33,641 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-08 16:00:33,641 INFO [1/6] Input accepted.
+2026-07-08 16:00:33,641 INFO       done in 0.0s
+2026-07-08 16:00:33,641 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-08 16:00:33,643 INFO       -> 294 unique papers with abstracts
+2026-07-08 16:00:33,643 INFO       done in 0.0s
+2026-07-08 16:00:33,643 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-08 16:00:48,380 INFO       -> 16 topics found:
+2026-07-08 16:00:48,382 INFO          - data / fl / research (29 papers)
+2026-07-08 16:00:48,382 INFO          - privacy / aggregation / secure (23 papers)
+2026-07-08 16:00:48,382 INFO          - edge / iot / fl (23 papers)
+2026-07-08 16:00:48,382 INFO          - attacks / privacy / gradients (21 papers)
+2026-07-08 16:00:48,382 INFO          - devices / convergence / communication (18 papers)
+2026-07-08 16:00:48,382 INFO          - blockchain / data / privacy (18 papers)
+2026-07-08 16:00:48,382 INFO          - personalized / model / models (16 papers)
+2026-07-08 16:00:48,382 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-08 16:00:48,382 INFO          - local / data / noniid (12 papers)
+2026-07-08 16:00:48,382 INFO          - detection / iot / intrusion (12 papers)
+2026-07-08 16:00:48,382 INFO          - healthcare / data / fl (10 papers)
+2026-07-08 16:00:48,382 INFO          - fl / ppagg / privacy (9 papers)
+2026-07-08 16:00:48,382 INFO          - medical / tumor / image (9 papers)
+2026-07-08 16:00:48,382 INFO          - clusters / clustering / local (8 papers)
+2026-07-08 16:00:48,382 INFO          - wireless / fl / networks (7 papers)
+2026-07-08 16:00:48,382 INFO          - disease / cnn / leaf (7 papers)
+2026-07-08 16:00:48,382 INFO       done in 14.7s
+2026-07-08 16:00:48,382 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-08 16:00:48,385 INFO       -> 8 candidate gaps
+2026-07-08 16:00:48,385 INFO       done in 0.0s
+2026-07-08 16:00:48,385 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-08 16:00:50,978 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:00:53,294 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:00:57,810 WARNING OpenAlex count '"federated learning" "differential privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:00:57,811 WARNING [agent] query unverifiable ("federated learning" "differential privacy") for data / fl / research x privacy / aggregation / secure
+2026-07-08 16:00:58,711 WARNING OpenAlex count '"machine learning" "secure aggregation"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:01,098 WARNING OpenAlex count '"machine learning" "secure aggregation"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:05,553 WARNING OpenAlex count '"machine learning" "secure aggregation"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:05,554 WARNING [agent] query unverifiable ("machine learning" "secure aggregation") for data / fl / research x privacy / aggregation / secure
+2026-07-08 16:01:05,554 INFO [agent] data / fl / research x privacy / aggregation / secure: 0 recent papers -> UNVERIFIED
+2026-07-08 16:01:07,527 WARNING OpenAlex count '"machine learning" "edge devices"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:09,867 WARNING OpenAlex count '"machine learning" "edge devices"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:14,106 WARNING OpenAlex count '"machine learning" "edge devices"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:14,106 WARNING [agent] query unverifiable ("machine learning" "edge devices") for data / fl / research x edge / iot / fl
+2026-07-08 16:01:15,278 WARNING OpenAlex count '"federated learning" "IoT data"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:17,740 WARNING OpenAlex count '"federated learning" "IoT data"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:22,104 WARNING OpenAlex count '"federated learning" "IoT data"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:22,105 WARNING [agent] query unverifiable ("federated learning" "IoT data") for data / fl / research x edge / iot / fl
+2026-07-08 16:01:22,105 INFO [agent] data / fl / research x edge / iot / fl: 0 recent papers -> UNVERIFIED
+2026-07-08 16:01:24,351 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:26,677 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:31,105 WARNING OpenAlex count '"federated learning" "poisoning attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:31,107 WARNING [agent] query unverifiable ("federated learning" "poisoning attacks") for data / fl / research x attacks / privacy / gradients
+2026-07-08 16:01:32,345 WARNING OpenAlex count '"machine learning" "privacy gradients"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:34,802 WARNING OpenAlex count '"machine learning" "privacy gradients"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:39,194 WARNING OpenAlex count '"machine learning" "privacy gradients"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:39,194 WARNING [agent] query unverifiable ("machine learning" "privacy gradients") for data / fl / research x attacks / privacy / gradients
+2026-07-08 16:01:39,194 INFO [agent] data / fl / research x attacks / privacy / gradients: 0 recent papers -> UNVERIFIED
+2026-07-08 16:01:41,303 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:43,714 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:48,114 WARNING OpenAlex count '"federated learning" "crop disease detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:48,115 WARNING [agent] query unverifiable ("federated learning" "crop disease detection") for data / fl / research x disease / cnn / leaf
+2026-07-08 16:01:49,191 WARNING OpenAlex count '"machine learning challenges" "apple leaf diseases"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:01:51,684 WARNING OpenAlex count '"machine learning challenges" "apple leaf diseases"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:01:56,150 WARNING OpenAlex count '"machine learning challenges" "apple leaf diseases"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:01:56,152 WARNING [agent] query unverifiable ("machine learning challenges" "apple leaf diseases") for data / fl / research x disease / cnn / leaf
+2026-07-08 16:01:56,152 INFO [agent] data / fl / research x disease / cnn / leaf: 0 recent papers -> UNVERIFIED
+2026-07-08 16:01:58,234 WARNING OpenAlex count '"machine learning" "blockchain privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:00,557 WARNING OpenAlex count '"machine learning" "blockchain privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:04,842 WARNING OpenAlex count '"machine learning" "blockchain privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:04,843 WARNING [agent] query unverifiable ("machine learning" "blockchain privacy") for data / fl / research x blockchain / data / privacy
+2026-07-08 16:02:05,720 WARNING OpenAlex count '"federated learning" "data sharing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:07,976 WARNING OpenAlex count '"federated learning" "data sharing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:12,308 WARNING OpenAlex count '"federated learning" "data sharing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:12,310 WARNING [agent] query unverifiable ("federated learning" "data sharing") for data / fl / research x blockchain / data / privacy
+2026-07-08 16:02:12,310 INFO [agent] data / fl / research x blockchain / data / privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 16:02:13,763 WARNING OpenAlex count '"differential privacy" "federated learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:15,931 WARNING OpenAlex count '"differential privacy" "federated learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:20,145 WARNING OpenAlex count '"differential privacy" "federated learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:20,146 WARNING [agent] query unverifiable ("differential privacy" "federated learning") for privacy / aggregation / secure x edge / iot / fl
+2026-07-08 16:02:20,825 WARNING OpenAlex count '"secure aggregation" "edge computing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:23,110 WARNING OpenAlex count '"secure aggregation" "edge computing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:27,414 WARNING OpenAlex count '"secure aggregation" "edge computing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:27,415 WARNING [agent] query unverifiable ("secure aggregation" "edge computing") for privacy / aggregation / secure x edge / iot / fl
+2026-07-08 16:02:27,415 INFO [agent] privacy / aggregation / secure x edge / iot / fl: 0 recent papers -> UNVERIFIED
+2026-07-08 16:02:28,755 WARNING OpenAlex count '"differential privacy" "poisoning attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:30,976 WARNING OpenAlex count '"differential privacy" "poisoning attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:35,178 WARNING OpenAlex count '"differential privacy" "poisoning attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:35,179 WARNING [agent] query unverifiable ("differential privacy" "poisoning attacks") for privacy / aggregation / secure x attacks / privacy / gradients
+2026-07-08 16:02:36,146 WARNING OpenAlex count '"secure aggregation" "gradient attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:38,529 WARNING OpenAlex count '"secure aggregation" "gradient attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:42,741 WARNING OpenAlex count '"secure aggregation" "gradient attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:42,743 WARNING [agent] query unverifiable ("secure aggregation" "gradient attacks") for privacy / aggregation / secure x attacks / privacy / gradients
+2026-07-08 16:02:42,743 INFO [agent] privacy / aggregation / secure x attacks / privacy / gradients: 0 recent papers -> UNVERIFIED
+2026-07-08 16:02:45,032 INFO [agent] query='"differential privacy" "crop disease detection"' hits=5
+2026-07-08 16:02:45,209 WARNING OpenAlex count '"secure aggregation" "plant disease classification"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:02:47,286 WARNING OpenAlex count '"secure aggregation" "plant disease classification"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:02:51,366 WARNING OpenAlex count '"secure aggregation" "plant disease classification"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:02:51,367 WARNING [agent] query unverifiable ("secure aggregation" "plant disease classification") for privacy / aggregation / secure x disease / cnn / leaf
+2026-07-08 16:02:51,367 INFO [agent] privacy / aggregation / secure x disease / cnn / leaf: 5 recent papers -> CONFIRMED
+2026-07-08 16:02:51,367 INFO       -> 1 confirmed, 0 weak, 0 rejected, 7 unverified
+2026-07-08 16:02:51,367 INFO       done in 123.0s
+2026-07-08 16:02:51,367 INFO [6/6] Synthesizing report...
+2026-07-08 16:03:13,027 INFO       done in 21.7s
+2026-07-08 16:03:13,314 INFO === done in 159.7s total ===
+2026-07-08 16:24:52,873 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-08 16:24:52,875 INFO [1/6] Input accepted.
+2026-07-08 16:24:52,875 INFO       done in 0.0s
+2026-07-08 16:24:52,875 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-08 16:24:52,901 INFO       -> 294 unique papers with abstracts
+2026-07-08 16:24:52,902 INFO       done in 0.0s
+2026-07-08 16:24:52,902 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-08 16:24:58,747 INFO       -> 15 topics found:
+2026-07-08 16:24:58,748 INFO          - fl / devices / data (47 papers)
+2026-07-08 16:24:58,748 INFO          - data / challenges / research (31 papers)
+2026-07-08 16:24:58,748 INFO          - healthcare / data / medical (27 papers)
+2026-07-08 16:24:58,748 INFO          - local / data / clients (19 papers)
+2026-07-08 16:24:58,748 INFO          - blockchain / data / privacy (18 papers)
+2026-07-08 16:24:58,748 INFO          - attacks / backdoor / model (16 papers)
+2026-07-08 16:24:58,748 INFO          - privacy / differential / differential privacy (16 papers)
+2026-07-08 16:24:58,748 INFO          - personalized / model / clients (16 papers)
+2026-07-08 16:24:58,748 INFO          - detection / iot / intrusion (14 papers)
+2026-07-08 16:24:58,748 INFO          - fl / ppagg / privacy (10 papers)
+2026-07-08 16:24:58,748 INFO          - gradients / attacks / data (10 papers)
+2026-07-08 16:24:58,748 INFO          - attacks / privacy / trust (10 papers)
+2026-07-08 16:24:58,748 INFO          - aggregation / secure / secure aggregation (7 papers)
+2026-07-08 16:24:58,748 INFO          - knowledge / distillation / forgetting (7 papers)
+2026-07-08 16:24:58,748 INFO          - disease / cnn / leaf (7 papers)
+2026-07-08 16:24:58,748 INFO       done in 5.8s
+2026-07-08 16:24:58,748 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-08 16:24:58,749 INFO       -> 8 candidate gaps
+2026-07-08 16:24:58,749 INFO       done in 0.0s
+2026-07-08 16:24:58,749 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-08 16:25:00,279 WARNING OpenAlex count '"edge computing" "federated learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:02,401 WARNING OpenAlex count '"edge computing" "federated learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:06,553 WARNING OpenAlex count '"edge computing" "federated learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:06,554 WARNING [agent] query unverifiable ("edge computing" "federated learning") for fl / devices / data x data / challenges / research
+2026-07-08 16:25:07,615 WARNING OpenAlex count '"wireless communication" "distributed machine learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:09,783 WARNING OpenAlex count '"wireless communication" "distributed machine learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:14,183 WARNING OpenAlex count '"wireless communication" "distributed machine learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:14,184 WARNING [agent] query unverifiable ("wireless communication" "distributed machine learning") for fl / devices / data x data / challenges / research
+2026-07-08 16:25:14,184 INFO [agent] fl / devices / data x data / challenges / research: 0 recent papers -> UNVERIFIED
+2026-07-08 16:25:16,870 WARNING OpenAlex count '"federated learning" "medical data"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:19,102 WARNING OpenAlex count '"federated learning" "medical data"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:23,335 WARNING OpenAlex count '"federated learning" "medical data"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:23,336 WARNING [agent] query unverifiable ("federated learning" "medical data") for fl / devices / data x healthcare / data / medical
+2026-07-08 16:25:23,641 WARNING OpenAlex count '"edge computing" "healthcare models"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:25,762 WARNING OpenAlex count '"edge computing" "healthcare models"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:29,977 WARNING OpenAlex count '"edge computing" "healthcare models"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:29,978 WARNING [agent] query unverifiable ("edge computing" "healthcare models") for fl / devices / data x healthcare / data / medical
+2026-07-08 16:25:29,978 INFO [agent] fl / devices / data x healthcare / data / medical: 0 recent papers -> UNVERIFIED
+2026-07-08 16:25:31,440 WARNING OpenAlex count '"edge computing" "crop disease detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:33,569 WARNING OpenAlex count '"edge computing" "crop disease detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:37,693 WARNING OpenAlex count '"edge computing" "crop disease detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:37,693 WARNING [agent] query unverifiable ("edge computing" "crop disease detection") for fl / devices / data x disease / cnn / leaf
+2026-07-08 16:25:37,982 WARNING OpenAlex count '"wireless sensor networks" "plant disease classification"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:40,191 WARNING OpenAlex count '"wireless sensor networks" "plant disease classification"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:44,358 WARNING OpenAlex count '"wireless sensor networks" "plant disease classification"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:44,361 WARNING [agent] query unverifiable ("wireless sensor networks" "plant disease classification") for fl / devices / data x disease / cnn / leaf
+2026-07-08 16:25:44,361 INFO [agent] fl / devices / data x disease / cnn / leaf: 0 recent papers -> UNVERIFIED
+2026-07-08 16:25:46,025 WARNING OpenAlex count '"edge computing" "data heterogeneity"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:48,220 WARNING OpenAlex count '"edge computing" "data heterogeneity"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:52,390 WARNING OpenAlex count '"edge computing" "data heterogeneity"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:52,392 WARNING [agent] query unverifiable ("edge computing" "data heterogeneity") for fl / devices / data x local / data / clients
+2026-07-08 16:25:52,672 WARNING OpenAlex count '"federated learning" "client heterogeneity"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:25:54,860 WARNING OpenAlex count '"federated learning" "client heterogeneity"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:25:59,052 WARNING OpenAlex count '"federated learning" "client heterogeneity"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:25:59,053 WARNING [agent] query unverifiable ("federated learning" "client heterogeneity") for fl / devices / data x local / data / clients
+2026-07-08 16:25:59,053 INFO [agent] fl / devices / data x local / data / clients: 0 recent papers -> UNVERIFIED
+2026-07-08 16:26:00,310 WARNING OpenAlex count '"edge computing" "blockchain-based privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:02,454 WARNING OpenAlex count '"edge computing" "blockchain-based privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:06,679 WARNING OpenAlex count '"edge computing" "blockchain-based privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:06,679 WARNING [agent] query unverifiable ("edge computing" "blockchain-based privacy") for fl / devices / data x blockchain / data / privacy
+2026-07-08 16:26:06,994 WARNING OpenAlex count '"wireless communication devices" "secure data sharing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:09,149 WARNING OpenAlex count '"wireless communication devices" "secure data sharing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:13,300 WARNING OpenAlex count '"wireless communication devices" "secure data sharing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:13,301 WARNING [agent] query unverifiable ("wireless communication devices" "secure data sharing") for fl / devices / data x blockchain / data / privacy
+2026-07-08 16:26:13,301 INFO [agent] fl / devices / data x blockchain / data / privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 16:26:14,923 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:17,104 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:21,274 WARNING OpenAlex count '"federated learning" "healthcare data"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:21,274 WARNING [agent] query unverifiable ("federated learning" "healthcare data") for data / challenges / research x healthcare / data / medical
+2026-07-08 16:26:21,754 WARNING OpenAlex count '"distributed machine learning" "medical models"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:23,860 WARNING OpenAlex count '"distributed machine learning" "medical models"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:27,940 WARNING OpenAlex count '"distributed machine learning" "medical models"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:27,941 WARNING [agent] query unverifiable ("distributed machine learning" "medical models") for data / challenges / research x healthcare / data / medical
+2026-07-08 16:26:27,941 INFO [agent] data / challenges / research x healthcare / data / medical: 0 recent papers -> UNVERIFIED
+2026-07-08 16:26:29,353 WARNING OpenAlex count '"edge computing" "poisoning attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:31,508 WARNING OpenAlex count '"edge computing" "poisoning attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:35,735 WARNING OpenAlex count '"edge computing" "poisoning attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:35,737 WARNING [agent] query unverifiable ("edge computing" "poisoning attacks") for fl / devices / data x attacks / backdoor / model
+2026-07-08 16:26:36,672 WARNING OpenAlex count '"wireless communication" "backdoor attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:39,030 WARNING OpenAlex count '"wireless communication" "backdoor attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:43,376 WARNING OpenAlex count '"wireless communication" "backdoor attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:43,376 WARNING [agent] query unverifiable ("wireless communication" "backdoor attacks") for fl / devices / data x attacks / backdoor / model
+2026-07-08 16:26:43,377 INFO [agent] fl / devices / data x attacks / backdoor / model: 0 recent papers -> UNVERIFIED
+2026-07-08 16:26:45,425 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:47,768 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:51,977 WARNING OpenAlex count '"federated learning" "differential privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:51,977 WARNING [agent] query unverifiable ("federated learning" "differential privacy") for fl / devices / data x privacy / differential / differential privacy
+2026-07-08 16:26:52,252 WARNING OpenAlex count '"edge computing" "privacy-preserving"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 16:26:54,436 WARNING OpenAlex count '"edge computing" "privacy-preserving"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 16:26:58,663 WARNING OpenAlex count '"edge computing" "privacy-preserving"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 16:26:58,664 WARNING [agent] query unverifiable ("edge computing" "privacy-preserving") for fl / devices / data x privacy / differential / differential privacy
+2026-07-08 16:26:58,664 INFO [agent] fl / devices / data x privacy / differential / differential privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 16:26:58,664 INFO       -> 0 confirmed, 0 weak, 0 rejected, 8 unverified
+2026-07-08 16:26:58,664 INFO       done in 119.9s
+2026-07-08 16:26:58,664 INFO [6/6] Synthesizing report...
+2026-07-08 16:27:28,701 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-08 16:28:00,744 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
+2026-07-08 16:28:34,778 WARNING Anthropic synthesis failed after 3 attempts, skipping: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+2026-07-08 16:28:34,780 WARNING LLM synthesis unavailable after retries — falling back to plain report
+2026-07-08 16:28:34,780 INFO       done in 96.1s
+2026-07-08 16:28:34,819 INFO === done in 221.9s total ===
+2026-07-08 18:23:55,451 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-08 18:23:55,454 INFO [1/6] Input accepted.
+2026-07-08 18:23:55,454 INFO       done in 0.0s
+2026-07-08 18:23:55,454 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-08 18:23:55,457 INFO       -> 294 unique papers with abstracts
+2026-07-08 18:23:55,458 INFO       done in 0.0s
+2026-07-08 18:23:55,458 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-08 18:24:10,862 INFO       -> 17 topics found:
+2026-07-08 18:24:10,863 INFO          - healthcare / data / medical (27 papers)
+2026-07-08 18:24:10,863 INFO          - local / data / clients (23 papers)
+2026-07-08 18:24:10,863 INFO          - personalized / model / global (23 papers)
+2026-07-08 18:24:10,863 INFO          - data / research / challenges (22 papers)
+2026-07-08 18:24:10,863 INFO          - blockchain / data / privacy (18 papers)
+2026-07-08 18:24:10,863 INFO          - detection / iot / intrusion (16 papers)
+2026-07-08 18:24:10,863 INFO          - devices / convergence / communication (16 papers)
+2026-07-08 18:24:10,863 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-08 18:24:10,863 INFO          - edge / fl / devices (14 papers)
+2026-07-08 18:24:10,863 INFO          - attacks / privacy / security (11 papers)
+2026-07-08 18:24:10,863 INFO          - gradients / attacks / data (10 papers)
+2026-07-08 18:24:10,863 INFO          - privacy / differential / differential privacy (10 papers)
+2026-07-08 18:24:10,863 INFO          - fl / ppagg / privacypreserving (9 papers)
+2026-07-08 18:24:10,863 INFO          - iot / smart / internet (7 papers)
+2026-07-08 18:24:10,863 INFO          - fairness / robustness / fair (7 papers)
+2026-07-08 18:24:10,863 INFO          - wireless / fl / networks (7 papers)
+2026-07-08 18:24:10,863 INFO          - disease / cnn / leaf (7 papers)
+2026-07-08 18:24:10,863 INFO       done in 15.4s
+2026-07-08 18:24:10,863 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-08 18:24:10,866 INFO       -> 8 candidate gaps
+2026-07-08 18:24:10,866 INFO       done in 0.0s
+2026-07-08 18:24:10,866 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-08 18:24:13,046 WARNING OpenAlex count '"medical data" "personalized models"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:15,129 WARNING OpenAlex count '"medical data" "personalized models"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:19,218 WARNING OpenAlex count '"medical data" "personalized models"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:19,219 WARNING [agent] query unverifiable ("medical data" "personalized models") for healthcare / data / medical x personalized / model / global
+2026-07-08 18:24:20,976 WARNING OpenAlex count '"federated learning" "local clients"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:23,067 WARNING OpenAlex count '"federated learning" "local clients"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:27,141 WARNING OpenAlex count '"federated learning" "local clients"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:27,142 WARNING [agent] query unverifiable ("federated learning" "local clients") for healthcare / data / medical x personalized / model / global
+2026-07-08 18:24:27,142 INFO [agent] healthcare / data / medical x personalized / model / global: 0 recent papers -> UNVERIFIED
+2026-07-08 18:24:28,399 WARNING OpenAlex count '"medical data" "non-iid heterogeneity"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:30,488 WARNING OpenAlex count '"medical data" "non-iid heterogeneity"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:34,584 WARNING OpenAlex count '"medical data" "non-iid heterogeneity"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:34,585 WARNING [agent] query unverifiable ("medical data" "non-iid heterogeneity") for healthcare / data / medical x local / data / clients
+2026-07-08 18:24:34,778 WARNING OpenAlex count '"healthcare models" "federated learning clients"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:36,868 WARNING OpenAlex count '"healthcare models" "federated learning clients"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:41,688 WARNING OpenAlex count '"healthcare models" "federated learning clients"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:41,689 WARNING [agent] query unverifiable ("healthcare models" "federated learning clients") for healthcare / data / medical x local / data / clients
+2026-07-08 18:24:41,689 INFO [agent] healthcare / data / medical x local / data / clients: 0 recent papers -> UNVERIFIED
+2026-07-08 18:24:42,835 WARNING OpenAlex count '"federated learning" "machine learning challenges"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:44,933 WARNING OpenAlex count '"federated learning" "machine learning challenges"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:49,035 WARNING OpenAlex count '"federated learning" "machine learning challenges"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:49,036 WARNING [agent] query unverifiable ("federated learning" "machine learning challenges") for healthcare / data / medical x data / research / challenges
+2026-07-08 18:24:49,194 WARNING OpenAlex count '"medical datasets" "distributed machine learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:51,271 WARNING OpenAlex count '"medical datasets" "distributed machine learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:24:55,354 WARNING OpenAlex count '"medical datasets" "distributed machine learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:24:55,354 WARNING [agent] query unverifiable ("medical datasets" "distributed machine learning") for healthcare / data / medical x data / research / challenges
+2026-07-08 18:24:55,354 INFO [agent] healthcare / data / medical x data / research / challenges: 0 recent papers -> UNVERIFIED
+2026-07-08 18:24:56,569 WARNING OpenAlex count '"medical data" "blockchain-based"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:24:58,656 WARNING OpenAlex count '"medical data" "blockchain-based"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:02,745 WARNING OpenAlex count '"medical data" "blockchain-based"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:02,746 WARNING [agent] query unverifiable ("medical data" "blockchain-based") for healthcare / data / medical x blockchain / data / privacy
+2026-07-08 18:25:02,919 WARNING OpenAlex count '"healthcare models" "privacy-preserving sharing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:05,006 WARNING OpenAlex count '"healthcare models" "privacy-preserving sharing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:09,082 WARNING OpenAlex count '"healthcare models" "privacy-preserving sharing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:09,083 WARNING [agent] query unverifiable ("healthcare models" "privacy-preserving sharing") for healthcare / data / medical x blockchain / data / privacy
+2026-07-08 18:25:09,083 INFO [agent] healthcare / data / medical x blockchain / data / privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 18:25:12,754 WARNING OpenAlex count '"medical imaging models" "crop disease detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:14,844 WARNING OpenAlex count '"medical imaging models" "crop disease detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:18,931 WARNING OpenAlex count '"medical imaging models" "crop disease detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:18,933 WARNING [agent] query unverifiable ("medical imaging models" "crop disease detection") for healthcare / data / medical x disease / cnn / leaf
+2026-07-08 18:25:19,088 WARNING OpenAlex count '"federated learning" "plant disease classification"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:21,166 WARNING OpenAlex count '"federated learning" "plant disease classification"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:25,247 WARNING OpenAlex count '"federated learning" "plant disease classification"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:25,248 WARNING [agent] query unverifiable ("federated learning" "plant disease classification") for healthcare / data / medical x disease / cnn / leaf
+2026-07-08 18:25:25,248 INFO [agent] healthcare / data / medical x disease / cnn / leaf: 0 recent papers -> UNVERIFIED
+2026-07-08 18:25:26,473 WARNING OpenAlex count '"medical data" "intrusion detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:28,569 WARNING OpenAlex count '"medical data" "intrusion detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:32,661 WARNING OpenAlex count '"medical data" "intrusion detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:32,661 WARNING [agent] query unverifiable ("medical data" "intrusion detection") for healthcare / data / medical x detection / iot / intrusion
+2026-07-08 18:25:33,551 WARNING OpenAlex count '"healthcare models" "network anomaly detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:35,883 WARNING OpenAlex count '"healthcare models" "network anomaly detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:40,257 WARNING OpenAlex count '"healthcare models" "network anomaly detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:40,258 WARNING [agent] query unverifiable ("healthcare models" "network anomaly detection") for healthcare / data / medical x detection / iot / intrusion
+2026-07-08 18:25:40,258 INFO [agent] healthcare / data / medical x detection / iot / intrusion: 0 recent papers -> UNVERIFIED
+2026-07-08 18:25:45,357 WARNING OpenAlex count '"federated learning" "personalized models"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:47,611 WARNING OpenAlex count '"federated learning" "personalized models"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:51,812 WARNING OpenAlex count '"federated learning" "personalized models"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:51,812 WARNING [agent] query unverifiable ("federated learning" "personalized models") for local / data / clients x personalized / model / global
+2026-07-08 18:25:52,448 WARNING OpenAlex count '"data heterogeneity" "local adaptation"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:25:54,771 WARNING OpenAlex count '"data heterogeneity" "local adaptation"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:25:59,037 WARNING OpenAlex count '"data heterogeneity" "local adaptation"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:25:59,037 WARNING [agent] query unverifiable ("data heterogeneity" "local adaptation") for local / data / clients x personalized / model / global
+2026-07-08 18:25:59,037 INFO [agent] local / data / clients x personalized / model / global: 0 recent papers -> UNVERIFIED
+2026-07-08 18:26:01,043 WARNING OpenAlex count '"data heterogeneity" "federated learning challenges"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:26:03,278 WARNING OpenAlex count '"data heterogeneity" "federated learning challenges"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:26:07,596 WARNING OpenAlex count '"data heterogeneity" "federated learning challenges"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:26:07,597 WARNING [agent] query unverifiable ("data heterogeneity" "federated learning challenges") for local / data / clients x data / research / challenges
+2026-07-08 18:26:08,279 WARNING OpenAlex count '"non-iid data" "distributed machine learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:26:10,584 WARNING OpenAlex count '"non-iid data" "distributed machine learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:26:14,844 WARNING OpenAlex count '"non-iid data" "distributed machine learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:26:14,845 WARNING [agent] query unverifiable ("non-iid data" "distributed machine learning") for local / data / clients x data / research / challenges
+2026-07-08 18:26:14,845 INFO [agent] local / data / clients x data / research / challenges: 0 recent papers -> UNVERIFIED
+2026-07-08 18:26:14,845 INFO       -> 0 confirmed, 0 weak, 0 rejected, 8 unverified
+2026-07-08 18:26:14,845 INFO       done in 124.0s
+2026-07-08 18:26:14,845 INFO [6/6] Synthesizing report...
+2026-07-08 18:26:44,877 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-08 18:27:16,909 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
+2026-07-08 18:27:50,972 WARNING Anthropic synthesis failed after 3 attempts, skipping: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+2026-07-08 18:27:50,974 WARNING LLM synthesis unavailable after retries — falling back to plain report
+2026-07-08 18:27:50,975 INFO       done in 96.1s
+2026-07-08 18:27:51,292 INFO === done in 235.8s total ===
+2026-07-08 18:34:31,397 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-08 18:34:31,398 INFO [1/6] Input accepted.
+2026-07-08 18:34:31,398 INFO       done in 0.0s
+2026-07-08 18:34:31,398 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-08 18:34:31,403 INFO       -> 294 unique papers with abstracts
+2026-07-08 18:34:31,403 INFO       done in 0.0s
+2026-07-08 18:34:31,403 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-08 18:34:37,302 INFO       -> 15 topics found:
+2026-07-08 18:34:37,302 INFO          - local / clients / model (50 papers)
+2026-07-08 18:34:37,302 INFO          - data / research / challenges (31 papers)
+2026-07-08 18:34:37,302 INFO          - privacy / fl / differential (20 papers)
+2026-07-08 18:34:37,302 INFO          - devices / convergence / communication (18 papers)
+2026-07-08 18:34:37,302 INFO          - blockchain / data / privacy (18 papers)
+2026-07-08 18:34:37,302 INFO          - healthcare / data / fl (16 papers)
+2026-07-08 18:34:37,302 INFO          - attacks / backdoor / model (16 papers)
+2026-07-08 18:34:37,302 INFO          - detection / iot / intrusion (15 papers)
+2026-07-08 18:34:37,302 INFO          - edge / fl / devices (13 papers)
+2026-07-08 18:34:37,302 INFO          - attacks / privacy / security (12 papers)
+2026-07-08 18:34:37,302 INFO          - gradients / attacks / data (11 papers)
+2026-07-08 18:34:37,302 INFO          - medical / tumor / image (9 papers)
+2026-07-08 18:34:37,302 INFO          - iot / smart / internet (8 papers)
+2026-07-08 18:34:37,302 INFO          - wireless / fl / networks (7 papers)
+2026-07-08 18:34:37,302 INFO          - disease / cnn / leaf (7 papers)
+2026-07-08 18:34:37,302 INFO       done in 5.9s
+2026-07-08 18:34:37,302 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-08 18:34:37,304 INFO       -> 8 candidate gaps
+2026-07-08 18:34:37,304 INFO       done in 0.0s
+2026-07-08 18:34:37,304 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-08 18:34:39,277 WARNING OpenAlex count '"personalized model" "federated learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:34:41,447 WARNING OpenAlex count '"personalized model" "federated learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:34:45,603 WARNING OpenAlex count '"personalized model" "federated learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:34:45,605 WARNING [agent] query unverifiable ("personalized model" "federated learning") for local / clients / model x data / research / challenges
+2026-07-08 18:34:46,213 WARNING OpenAlex count '"local data" "machine learning challenges"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:34:48,464 WARNING OpenAlex count '"local data" "machine learning challenges"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:34:52,788 WARNING OpenAlex count '"local data" "machine learning challenges"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:34:52,789 WARNING [agent] query unverifiable ("local data" "machine learning challenges") for local / clients / model x data / research / challenges
+2026-07-08 18:34:52,789 INFO [agent] local / clients / model x data / research / challenges: 0 recent papers -> UNVERIFIED
+2026-07-08 18:34:54,138 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:34:56,282 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:00,435 WARNING OpenAlex count '"federated learning" "blockchain privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:00,435 WARNING [agent] query unverifiable ("federated learning" "blockchain privacy") for local / clients / model x blockchain / data / privacy
+2026-07-08 18:35:00,736 WARNING OpenAlex count '"personalized models" "data sharing"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:02,884 WARNING OpenAlex count '"personalized models" "data sharing"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:07,046 WARNING OpenAlex count '"personalized models" "data sharing"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:07,047 WARNING [agent] query unverifiable ("personalized models" "data sharing") for local / clients / model x blockchain / data / privacy
+2026-07-08 18:35:07,047 INFO [agent] local / clients / model x blockchain / data / privacy: 0 recent papers -> UNVERIFIED
+2026-07-08 18:35:08,638 WARNING OpenAlex count 'local disease' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:10,802 WARNING OpenAlex count 'local disease' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:14,977 WARNING OpenAlex count 'local disease' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:14,978 WARNING [agent] query unverifiable (local disease) for local / clients / model x disease / cnn / leaf
+2026-07-08 18:35:15,606 WARNING OpenAlex count 'local clients disease' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:17,888 WARNING OpenAlex count 'local clients disease' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:22,148 WARNING OpenAlex count 'local clients disease' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:22,149 WARNING [agent] query unverifiable (local clients disease) for local / clients / model x disease / cnn / leaf
+2026-07-08 18:35:22,149 INFO [agent] local / clients / model x disease / cnn / leaf: 0 recent papers -> UNVERIFIED
+2026-07-08 18:35:23,631 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:25,779 WARNING OpenAlex count '"federated learning" "differential privacy"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:29,938 WARNING OpenAlex count '"federated learning" "differential privacy"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:29,939 WARNING [agent] query unverifiable ("federated learning" "differential privacy") for local / clients / model x privacy / fl / differential
+2026-07-08 18:35:30,711 WARNING OpenAlex count '"personalized models" "privacy-preserving"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:33,101 WARNING OpenAlex count '"personalized models" "privacy-preserving"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:37,440 WARNING OpenAlex count '"personalized models" "privacy-preserving"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:37,441 WARNING [agent] query unverifiable ("personalized models" "privacy-preserving") for local / clients / model x privacy / fl / differential
+2026-07-08 18:35:37,441 INFO [agent] local / clients / model x privacy / fl / differential: 0 recent papers -> UNVERIFIED
+2026-07-08 18:35:39,501 WARNING OpenAlex count '"personalized model" "federated learning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:41,803 WARNING OpenAlex count '"personalized model" "federated learning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:46,159 WARNING OpenAlex count '"personalized model" "federated learning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:46,159 WARNING [agent] query unverifiable ("personalized model" "federated learning") for local / clients / model x devices / convergence / communication
+2026-07-08 18:35:46,538 WARNING OpenAlex count '"local data" "edge devices"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:48,700 WARNING OpenAlex count '"local data" "edge devices"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:35:52,847 WARNING OpenAlex count '"local data" "edge devices"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:35:52,847 WARNING [agent] query unverifiable ("local data" "edge devices") for local / clients / model x devices / convergence / communication
+2026-07-08 18:35:52,847 INFO [agent] local / clients / model x devices / convergence / communication: 0 recent papers -> UNVERIFIED
+2026-07-08 18:35:54,768 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:35:57,165 WARNING OpenAlex count '"federated learning" "healthcare data"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:01,458 WARNING OpenAlex count '"federated learning" "healthcare data"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:01,459 WARNING [agent] query unverifiable ("federated learning" "healthcare data") for local / clients / model x healthcare / data / fl
+2026-07-08 18:36:01,697 WARNING OpenAlex count '"personalized models" "health datasets"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:36:03,796 WARNING OpenAlex count '"personalized models" "health datasets"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:07,926 WARNING OpenAlex count '"personalized models" "health datasets"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:07,927 WARNING [agent] query unverifiable ("personalized models" "health datasets") for local / clients / model x healthcare / data / fl
+2026-07-08 18:36:07,927 INFO [agent] local / clients / model x healthcare / data / fl: 0 recent papers -> UNVERIFIED
+2026-07-08 18:36:09,108 WARNING OpenAlex count '"federated learning" "backdoor attacks"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:36:11,231 WARNING OpenAlex count '"federated learning" "backdoor attacks"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:15,356 WARNING OpenAlex count '"federated learning" "backdoor attacks"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:15,358 WARNING [agent] query unverifiable ("federated learning" "backdoor attacks") for local / clients / model x attacks / backdoor / model
+2026-07-08 18:36:15,555 WARNING OpenAlex count '"personalized models" "data poisoning"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:36:17,675 WARNING OpenAlex count '"personalized models" "data poisoning"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:21,777 WARNING OpenAlex count '"personalized models" "data poisoning"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:21,777 WARNING [agent] query unverifiable ("personalized models" "data poisoning") for local / clients / model x attacks / backdoor / model
+2026-07-08 18:36:21,777 INFO [agent] local / clients / model x attacks / backdoor / model: 0 recent papers -> UNVERIFIED
+2026-07-08 18:36:23,048 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:36:25,182 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:29,288 WARNING OpenAlex count '"federated learning" "intrusion detection"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:29,289 WARNING [agent] query unverifiable ("federated learning" "intrusion detection") for local / clients / model x detection / iot / intrusion
+2026-07-08 18:36:29,470 WARNING OpenAlex count '"personalized models" "IoT security"' failed (429 rate limited) — retry 1/2 in 2s
+2026-07-08 18:36:31,571 WARNING OpenAlex count '"personalized models" "IoT security"' failed (429 rate limited) — retry 2/2 in 4s
+2026-07-08 18:36:35,705 WARNING OpenAlex count '"personalized models" "IoT security"' failed after 3 attempts, skipping: 429 rate limited
+2026-07-08 18:36:35,706 WARNING [agent] query unverifiable ("personalized models" "IoT security") for local / clients / model x detection / iot / intrusion
+2026-07-08 18:36:35,706 INFO [agent] local / clients / model x detection / iot / intrusion: 0 recent papers -> UNVERIFIED
+2026-07-08 18:36:35,706 INFO       -> 0 confirmed, 0 weak, 0 rejected, 8 unverified
+2026-07-08 18:36:35,706 INFO       done in 118.4s
+2026-07-08 18:36:35,706 INFO [6/6] Synthesizing report...
+2026-07-08 18:37:05,736 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-08 18:37:37,821 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
+2026-07-08 18:38:11,892 WARNING Anthropic synthesis failed after 3 attempts, skipping: Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.
+2026-07-08 18:38:11,893 WARNING LLM synthesis unavailable after retries — falling back to plain report
+2026-07-08 18:38:11,894 INFO       done in 96.2s
+2026-07-08 18:38:11,927 INFO === done in 220.5s total ===
+2026-07-09 06:53:20,997 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-09 06:53:20,998 INFO [1/6] Input accepted.
+2026-07-09 06:53:20,998 INFO       done in 0.0s
+2026-07-09 06:53:20,998 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 06:53:20,999 INFO       -> 294 unique papers with abstracts
+2026-07-09 06:53:20,999 INFO       done in 0.0s
+2026-07-09 06:53:20,999 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 06:53:36,292 INFO       -> 13 topics found:
+2026-07-09 06:53:36,292 INFO          - model / clients / local (46 papers)
+2026-07-09 06:53:36,292 INFO          - healthcare / data / medical (27 papers)
+2026-07-09 06:53:36,292 INFO          - wireless / communication / data (25 papers)
+2026-07-09 06:53:36,292 INFO          - attacks / privacy / data (23 papers)
+2026-07-09 06:53:36,292 INFO          - data / research / challenges (20 papers)
+2026-07-09 06:53:36,292 INFO          - blockchain / data / privacy (18 papers)
+2026-07-09 06:53:36,292 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-09 06:53:36,292 INFO          - privacy / differential / differential privacy (15 papers)
+2026-07-09 06:53:36,292 INFO          - detection / iot / intrusion (15 papers)
+2026-07-09 06:53:36,292 INFO          - edge / fl / devices (14 papers)
+2026-07-09 06:53:36,292 INFO          - fl / ppagg / protocols (8 papers)
+2026-07-09 06:53:36,292 INFO          - iot / smart / data (8 papers)
+2026-07-09 06:53:36,292 INFO          - disease / cnn / leaf (7 papers)
+2026-07-09 06:53:36,292 INFO       done in 15.3s
+2026-07-09 06:53:36,292 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 06:53:36,294 INFO       -> 8 candidate gaps
+2026-07-09 06:53:36,294 INFO       done in 0.0s
+2026-07-09 06:53:36,294 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 06:53:40,550 INFO [agent] query='"federated learning" "medical data"' hits=1080
+2026-07-09 06:53:42,469 INFO [agent] query='"local models" "healthcare datasets"' hits=20
+2026-07-09 06:53:42,470 INFO [agent] model / clients / local x healthcare / data / medical: 1080 recent papers -> REJECTED
+2026-07-09 06:53:45,205 INFO [agent] query='"federated learning" "poisoning attacks"' hits=1796
+2026-07-09 06:53:46,042 INFO [agent] query='"local models" "privacy attacks"' hits=50
+2026-07-09 06:53:46,042 INFO [agent] model / clients / local x attacks / privacy / data: 1796 recent papers -> REJECTED
+2026-07-09 06:53:47,943 INFO [agent] query='"federated learning" "wireless communication"' hits=447
+2026-07-09 06:53:48,560 INFO [agent] query='"distributed models" "convergence devices"' hits=0
+2026-07-09 06:53:48,560 INFO [agent] model / clients / local x wireless / communication / data: 447 recent papers -> REJECTED
+2026-07-09 06:53:50,536 INFO [agent] query='"federated learning" "blockchain privacy"' hits=9
+2026-07-09 06:53:51,189 INFO [agent] query='"distributed machine learning" "decentralized data sharing"' hits=0
+2026-07-09 06:53:51,189 INFO [agent] model / clients / local x blockchain / data / privacy: 9 recent papers -> WEAK
+2026-07-09 06:53:53,879 INFO [agent] query='"federated learning" "crop disease detection"' hits=41
+2026-07-09 06:53:54,565 INFO [agent] query='"distributed models" "plant leaf disease"' hits=0
+2026-07-09 06:53:54,565 INFO [agent] model / clients / local x disease / cnn / leaf: 41 recent papers -> REJECTED
+2026-07-09 06:53:56,516 INFO [agent] query='"federated learning" "machine learning"' hits=16266
+2026-07-09 06:53:57,346 INFO [agent] query='"local models" "data challenges"' hits=12
+2026-07-09 06:53:57,346 INFO [agent] model / clients / local x data / research / challenges: 16266 recent papers -> REJECTED
+2026-07-09 06:53:59,564 INFO [agent] query='"federated learning" "backdoor attacks"' hits=797
+2026-07-09 06:54:00,415 INFO [agent] query='"local models" "poisoning defenses"' hits=8
+2026-07-09 06:54:00,415 INFO [agent] model / clients / local x attacks / backdoor / poisoning: 797 recent papers -> REJECTED
+2026-07-09 06:54:02,557 INFO [agent] query='"federated learning" "differential privacy"' hits=5266
+2026-07-09 06:54:03,491 INFO [agent] query='"local models" "privacy-preserving"' hits=1231
+2026-07-09 06:54:03,491 INFO [agent] model / clients / local x privacy / differential / differential privacy: 5266 recent papers -> REJECTED
+2026-07-09 06:54:03,492 INFO       -> 0 confirmed, 1 weak, 7 rejected, 0 unverified
+2026-07-09 06:54:03,492 INFO       done in 27.2s
+2026-07-09 06:54:03,492 INFO [6/6] Synthesizing report...
+2026-07-09 06:54:23,219 INFO       done in 19.7s
+2026-07-09 06:54:23,474 INFO === done in 62.5s total ===
+2026-07-09 06:59:43,292 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-09 06:59:43,293 INFO [1/6] Input accepted.
+2026-07-09 06:59:43,293 INFO       done in 0.0s
+2026-07-09 06:59:43,293 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 06:59:43,295 INFO       -> 294 unique papers with abstracts
+2026-07-09 06:59:43,296 INFO       done in 0.0s
+2026-07-09 06:59:43,296 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 06:59:58,508 INFO       -> 13 topics found:
+2026-07-09 06:59:58,509 INFO          - model / clients / personalized (30 papers)
+2026-07-09 06:59:58,509 INFO          - wireless / data / communication (27 papers)
+2026-07-09 06:59:58,509 INFO          - healthcare / data / medical (27 papers)
+2026-07-09 06:59:58,509 INFO          - data / research / challenges (25 papers)
+2026-07-09 06:59:58,509 INFO          - iot / detection / intrusion (22 papers)
+2026-07-09 06:59:58,509 INFO          - attacks / privacy / data (22 papers)
+2026-07-09 06:59:58,509 INFO          - local / data / clients (20 papers)
+2026-07-09 06:59:58,509 INFO          - privacy / differential / aggregation (20 papers)
+2026-07-09 06:59:58,509 INFO          - blockchain / data / privacy (18 papers)
+2026-07-09 06:59:58,509 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-09 06:59:58,509 INFO          - edge / fl / devices (15 papers)
+2026-07-09 06:59:58,509 INFO          - fl / ppagg / privacy (9 papers)
+2026-07-09 06:59:58,509 INFO          - disease / cnn / leaf (7 papers)
+2026-07-09 06:59:58,510 INFO       done in 15.2s
+2026-07-09 06:59:58,510 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 06:59:58,512 INFO       -> 8 candidate gaps
+2026-07-09 06:59:58,512 INFO       done in 0.0s
+2026-07-09 06:59:58,512 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 07:00:00,323 INFO [agent] query='"federated learning" "medical data"' hits=1080
+2026-07-09 07:00:02,988 INFO [agent] query='"personalized models" "healthcare datasets"' hits=2
+2026-07-09 07:00:02,988 INFO [agent] model / clients / personalized x healthcare / data / medical: 1080 recent papers -> REJECTED
+2026-07-09 07:00:04,786 INFO [agent] query='"federated learning" "wireless communication"' hits=447
+2026-07-09 07:00:06,668 INFO [agent] query='"personalized models" "edge devices"' hits=63
+2026-07-09 07:00:06,668 INFO [agent] model / clients / personalized x wireless / data / communication: 447 recent papers -> REJECTED
+2026-07-09 07:00:09,012 INFO [agent] query='"personalized model" "data challenges"' hits=7
+2026-07-09 07:00:09,012 INFO [agent] query='"federated learning" "machine learning"' hits=16266
+2026-07-09 07:00:09,012 INFO [agent] model / clients / personalized x data / research / challenges: 16266 recent papers -> REJECTED
+2026-07-09 07:00:12,002 INFO [agent] query='"federated learning" "intrusion detection"' hits=2210
+2026-07-09 07:00:13,551 INFO [agent] query='"personalized models" "IoT security"' hits=0
+2026-07-09 07:00:13,551 INFO [agent] model / clients / personalized x iot / detection / intrusion: 2210 recent papers -> REJECTED
+2026-07-09 07:00:15,775 INFO [agent] query='"federated learning" "poisoning attacks"' hits=1796
+2026-07-09 07:00:16,723 INFO [agent] query='"personalized models" "privacy attacks"' hits=5
+2026-07-09 07:00:16,723 INFO [agent] model / clients / personalized x attacks / privacy / data: 1796 recent papers -> REJECTED
+2026-07-09 07:00:18,489 INFO [agent] query='"wireless communication" "medical data"' hits=54
+2026-07-09 07:00:19,458 INFO [agent] query='"federated learning" "healthcare models"' hits=42
+2026-07-09 07:00:19,459 INFO [agent] wireless / data / communication x healthcare / data / medical: 54 recent papers -> REJECTED
+2026-07-09 07:00:21,130 INFO [agent] query='"medical datasets" "federated learning challenges"' hits=0
+2026-07-09 07:00:22,071 INFO [agent] query='"healthcare models" "distributed machine learning"' hits=2
+2026-07-09 07:00:22,072 INFO [agent] healthcare / data / medical x data / research / challenges: 2 recent papers -> CONFIRMED
+2026-07-09 07:00:24,317 INFO [agent] query='"federated learning" "data heterogeneity"' hits=3733
+2026-07-09 07:00:25,193 INFO [agent] query='"personalized models" "client heterogeneity"' hits=7
+2026-07-09 07:00:25,193 INFO [agent] model / clients / personalized x local / data / clients: 3733 recent papers -> REJECTED
+2026-07-09 07:00:25,193 INFO       -> 1 confirmed, 0 weak, 7 rejected, 0 unverified
+2026-07-09 07:00:25,193 INFO       done in 26.7s
+2026-07-09 07:00:25,193 INFO [6/6] Synthesizing report...
+2026-07-09 07:00:43,216 INFO       done in 18.0s
+2026-07-09 07:00:43,542 INFO === done in 60.3s total ===
+2026-07-09 07:02:18,194 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-09 07:02:18,194 INFO [1/6] Input accepted.
+2026-07-09 07:02:18,195 INFO       done in 0.0s
+2026-07-09 07:02:18,195 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 07:02:18,197 INFO       -> 294 unique papers with abstracts
+2026-07-09 07:02:18,197 INFO       done in 0.0s
+2026-07-09 07:02:18,197 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 07:02:23,305 INFO       -> 4 topics found:
+2026-07-09 07:02:23,305 INFO          - data / fl / model (242 papers)
+2026-07-09 07:02:23,305 INFO          - data / healthcare / medical (27 papers)
+2026-07-09 07:02:23,305 INFO          - blockchain / data / privacy (18 papers)
+2026-07-09 07:02:23,305 INFO          - disease / cnn / leaf (7 papers)
+2026-07-09 07:02:23,305 INFO       done in 5.1s
+2026-07-09 07:02:23,305 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 07:02:23,306 INFO       -> 6 candidate gaps
+2026-07-09 07:02:23,306 INFO       done in 0.0s
+2026-07-09 07:02:23,306 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 07:02:26,835 INFO [agent] query='"federated learning" "healthcare data"' hits=684
+2026-07-09 07:02:28,381 INFO [agent] query='"privacy-preserving training" "medical models"' hits=0
+2026-07-09 07:02:28,381 INFO [agent] data / fl / model x data / healthcare / medical: 684 recent papers -> REJECTED
+2026-07-09 07:02:29,535 INFO [agent] query='"federated learning" "crop disease detection"' hits=41
+2026-07-09 07:02:30,193 INFO [agent] query='"privacy-preserving machine learning" "apple leaf disease"' hits=0
+2026-07-09 07:02:30,193 INFO [agent] data / fl / model x disease / cnn / leaf: 41 recent papers -> REJECTED
+2026-07-09 07:02:32,190 INFO [agent] query='"federated learning" "blockchain"' hits=4787
+2026-07-09 07:02:34,037 INFO [agent] query='"privacy preserving" "distributed ledger"' hits=268
+2026-07-09 07:02:34,038 INFO [agent] data / fl / model x blockchain / data / privacy: 4787 recent papers -> REJECTED
+2026-07-09 07:02:36,372 INFO [agent] query='"medical datasets" "blockchain privacy"' hits=0
+2026-07-09 07:02:37,326 INFO [agent] query='"federated learning" "secure data sharing"' hits=157
+2026-07-09 07:02:37,326 INFO [agent] data / healthcare / medical x blockchain / data / privacy: 157 recent papers -> REJECTED
+2026-07-09 07:02:38,644 INFO [agent] query='"federated learning" "crop disease detection"' hits=41
+2026-07-09 07:02:39,288 INFO [agent] query='"medical imaging models" "apple leaf disease"' hits=0
+2026-07-09 07:02:39,288 INFO [agent] data / healthcare / medical x disease / cnn / leaf: 41 recent papers -> REJECTED
+2026-07-09 07:02:41,771 INFO [agent] query='"secure data sharing" "crop disease detection"' hits=2
+2026-07-09 07:02:42,442 INFO [agent] query='"privacy-preserving models" "plant leaf disease"' hits=0
+2026-07-09 07:02:42,442 INFO [agent] blockchain / data / privacy x disease / cnn / leaf: 2 recent papers -> CONFIRMED
+2026-07-09 07:02:42,442 INFO       -> 1 confirmed, 0 weak, 5 rejected, 0 unverified
+2026-07-09 07:02:42,442 INFO       done in 19.1s
+2026-07-09 07:02:42,442 INFO [6/6] Synthesizing report...
+2026-07-09 07:02:59,304 INFO       done in 16.9s
+2026-07-09 07:02:59,312 INFO === done in 41.1s total ===
+2026-07-09 07:10:12,606 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-09 07:10:12,607 INFO [1/6] Input accepted.
+2026-07-09 07:10:12,608 INFO       done in 0.0s
+2026-07-09 07:10:12,608 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 07:10:12,614 INFO       -> 294 unique papers with abstracts
+2026-07-09 07:10:12,615 INFO       done in 0.0s
+2026-07-09 07:10:12,615 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 07:10:18,961 INFO       -> 17 topics found:
+2026-07-09 07:10:18,961 INFO          - data / research / challenges (31 papers)
+2026-07-09 07:10:18,961 INFO          - iot / detection / intrusion (22 papers)
+2026-07-09 07:10:18,961 INFO          - personalized / model / local (21 papers)
+2026-07-09 07:10:18,961 INFO          - local / data / heterogeneity (18 papers)
+2026-07-09 07:10:18,961 INFO          - blockchain / data / privacy (18 papers)
+2026-07-09 07:10:18,961 INFO          - attacks / backdoor / model (16 papers)
+2026-07-09 07:10:18,961 INFO          - edge / fl / devices (15 papers)
+2026-07-09 07:10:18,961 INFO          - devices / communication / convergence (15 papers)
+2026-07-09 07:10:18,961 INFO          - healthcare / data / fl (14 papers)
+2026-07-09 07:10:18,961 INFO          - privacy / differential / dp (14 papers)
+2026-07-09 07:10:18,961 INFO          - attacks / privacy / trust (12 papers)
+2026-07-09 07:10:18,961 INFO          - medical / tumor / image (9 papers)
+2026-07-09 07:10:18,961 INFO          - gradients / attacks / poisoning (8 papers)
+2026-07-09 07:10:18,961 INFO          - fl / ppagg / llms (8 papers)
+2026-07-09 07:10:18,961 INFO          - knowledge / distillation / forgetting (7 papers)
+2026-07-09 07:10:18,961 INFO          - wireless / fl / networks (7 papers)
+2026-07-09 07:10:18,961 INFO          - disease / cnn / leaf (7 papers)
+2026-07-09 07:10:18,961 INFO       done in 6.3s
+2026-07-09 07:10:18,961 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 07:10:18,964 INFO       -> 8 candidate gaps
+2026-07-09 07:10:18,964 INFO       done in 0.0s
+2026-07-09 07:10:18,964 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 07:16:04,400 WARNING Anthropic query-gen for data / research / challenges x iot / detection / intrusion failed (Connection error.) — retry 1/2 in 2s
+2026-07-09 07:16:10,797 INFO [agent] query='"machine learning" "intrusion detection"' hits=12973
+2026-07-09 07:16:13,075 INFO [agent] query='"federated learning" "internet of things"' hits=4929
+2026-07-09 07:16:13,075 INFO [agent] data / research / challenges x iot / detection / intrusion: 12973 recent papers -> REJECTED
+2026-07-09 07:16:15,311 INFO [agent] query='"machine learning" "personalized models"' hits=486
+2026-07-09 07:16:16,901 INFO [agent] query='"federated learning" "local clients"' hits=709
+2026-07-09 07:16:16,901 INFO [agent] data / research / challenges x personalized / model / local: 709 recent papers -> REJECTED
+2026-07-09 07:16:18,744 INFO [agent] query='"machine learning" "data heterogeneity"' hits=2023
+2026-07-09 07:16:19,663 INFO [agent] query='"federated learning" "label distribution"' hits=274
+2026-07-09 07:16:19,663 INFO [agent] data / research / challenges x local / data / heterogeneity: 2023 recent papers -> REJECTED
+2026-07-09 07:16:22,523 INFO [agent] query='"machine learning" "blockchain privacy"' hits=8
+2026-07-09 07:16:23,230 INFO [agent] query='"federated learning" "data sharing"' hits=2645
+2026-07-09 07:16:23,230 INFO [agent] data / research / challenges x blockchain / data / privacy: 2645 recent papers -> REJECTED
+2026-07-09 07:16:25,144 INFO [agent] query='"machine learning" "crop disease detection"' hits=354
+2026-07-09 07:16:27,127 INFO [agent] query='"federated learning" "plant disease classification"' hits=9
+2026-07-09 07:16:27,127 INFO [agent] data / research / challenges x disease / cnn / leaf: 354 recent papers -> REJECTED
+2026-07-09 07:16:31,740 INFO [agent] query='"machine learning" "backdoor attacks"' hits=567
+2026-07-09 07:16:31,740 INFO [agent] query='"federated learning" "poisoning attacks"' hits=1796
+2026-07-09 07:16:31,740 INFO [agent] data / research / challenges x attacks / backdoor / model: 1796 recent papers -> REJECTED
+2026-07-09 07:16:33,518 INFO [agent] query='"intrusion detection" "crop disease"' hits=1
+2026-07-09 07:16:34,144 INFO [agent] query='"IoT detection" "leaf disease"' hits=0
+2026-07-09 07:16:34,144 INFO [agent] iot / detection / intrusion x disease / cnn / leaf: 1 recent papers -> CONFIRMED
+2026-07-09 07:16:36,099 INFO [agent] query='"machine learning" "edge devices"' hits=3623
+2026-07-09 07:16:37,002 INFO [agent] query='"federated learning" "mobile data"' hits=37
+2026-07-09 07:16:37,002 INFO [agent] data / research / challenges x edge / fl / devices: 3623 recent papers -> REJECTED
+2026-07-09 07:16:37,002 INFO       -> 1 confirmed, 0 weak, 7 rejected, 0 unverified
+2026-07-09 07:16:37,002 INFO       done in 33.2s
+2026-07-09 07:16:37,002 INFO [6/6] Synthesizing report...
+2026-07-09 07:16:59,176 INFO       done in 22.2s
+2026-07-09 07:16:59,195 INFO === done in 61.7s total ===
+2026-07-09 07:27:02,936 INFO === ResearchGap AI engine — topic: 'federated learning' (300 papers) ===
+2026-07-09 07:27:02,936 INFO [1/6] Input accepted.
+2026-07-09 07:27:02,936 INFO       done in 0.0s
+2026-07-09 07:27:02,936 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 07:27:02,947 INFO       -> 294 unique papers with abstracts
+2026-07-09 07:27:02,948 INFO       done in 0.0s
+2026-07-09 07:27:02,950 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 07:27:09,477 INFO       -> 14 topics found:
+2026-07-09 07:27:09,477 INFO          - data / research / challenges (30 papers)
+2026-07-09 07:27:09,477 INFO          - healthcare / data / medical (27 papers)
+2026-07-09 07:27:09,477 INFO          - wireless / communication / data (26 papers)
+2026-07-09 07:27:09,477 INFO          - privacy / fl / privacypreserving (25 papers)
+2026-07-09 07:27:09,477 INFO          - edge / iot / fl (22 papers)
+2026-07-09 07:27:09,477 INFO          - personalized / model / clients (21 papers)
+2026-07-09 07:27:09,477 INFO          - blockchain / data / privacy (18 papers)
+2026-07-09 07:27:09,477 INFO          - attacks / backdoor / poisoning (15 papers)
+2026-07-09 07:27:09,477 INFO          - detection / iot / intrusion (15 papers)
+2026-07-09 07:27:09,477 INFO          - local / data / noniid (13 papers)
+2026-07-09 07:27:09,477 INFO          - gradients / attacks / data (10 papers)
+2026-07-09 07:27:09,477 INFO          - attacks / privacy / trust (10 papers)
+2026-07-09 07:27:09,477 INFO          - model / distillation / knowledge (9 papers)
+2026-07-09 07:27:09,477 INFO          - disease / cnn / leaf (7 papers)
+2026-07-09 07:27:09,477 INFO       done in 6.5s
+2026-07-09 07:27:09,477 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 07:27:09,479 INFO       -> 8 candidate gaps
+2026-07-09 07:27:09,479 INFO       done in 0.0s
+2026-07-09 07:27:09,479 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 07:27:12,507 INFO [agent] query='"machine learning challenges" "healthcare data"' hits=0
+2026-07-09 07:27:14,064 INFO [agent] query='"federated learning" "medical models"' hits=23
+2026-07-09 07:27:14,064 INFO [agent] data / research / challenges x healthcare / data / medical: 23 recent papers -> WEAK
+2026-07-09 07:27:16,968 INFO [agent] query='"machine learning" "wireless communication"' hits=2618
+2026-07-09 07:27:17,743 INFO [agent] query='"federated learning" "IoT devices"' hits=2160
+2026-07-09 07:27:17,743 INFO [agent] data / research / challenges x wireless / communication / data: 2618 recent papers -> REJECTED
+2026-07-09 07:27:18,845 INFO [agent] query='"federated learning" "differential privacy"' hits=5266
+2026-07-09 07:27:20,408 INFO [agent] query='"machine learning" "privacy preserving"' hits=8324
+2026-07-09 07:27:20,408 INFO [agent] data / research / challenges x privacy / fl / privacypreserving: 8324 recent papers -> REJECTED
+2026-07-09 07:27:22,326 INFO [agent] query='"medical data" "wireless communication"' hits=54
+2026-07-09 07:27:23,901 INFO [agent] query='"federated learning" "edge devices"' hits=3046
+2026-07-09 07:27:23,902 INFO [agent] healthcare / data / medical x wireless / communication / data: 3046 recent papers -> REJECTED
+2026-07-09 07:27:26,593 INFO [agent] query='"medical models" "differential privacy"' hits=7
+2026-07-09 07:27:28,034 INFO [agent] query='"healthcare datasets" "privacy-preserving"' hits=116
+2026-07-09 07:27:28,034 INFO [agent] healthcare / data / medical x privacy / fl / privacypreserving: 116 recent papers -> REJECTED
+2026-07-09 07:27:29,041 INFO [agent] query='"machine learning" "edge devices"' hits=3623
+2026-07-09 07:27:30,612 INFO [agent] query='"federated learning" "IoT data"' hits=314
+2026-07-09 07:27:30,613 INFO [agent] data / research / challenges x edge / iot / fl: 3623 recent papers -> REJECTED
+2026-07-09 07:27:32,299 INFO [agent] query='"federated learning" "personalized models"' hits=809
+2026-07-09 07:27:32,767 INFO [agent] query='"machine learning challenges" "global model personalization"' hits=0
+2026-07-09 07:27:32,767 INFO [agent] data / research / challenges x personalized / model / clients: 809 recent papers -> REJECTED
+2026-07-09 07:27:33,786 INFO [agent] query='"federated learning" "blockchain privacy"' hits=9
+2026-07-09 07:27:34,522 INFO [agent] query='"machine learning" "blockchain data sharing"' hits=2
+2026-07-09 07:27:34,522 INFO [agent] data / research / challenges x blockchain / data / privacy: 9 recent papers -> WEAK
+2026-07-09 07:27:34,522 INFO       -> 0 confirmed, 2 weak, 6 rejected, 0 unverified
+2026-07-09 07:27:34,522 INFO       done in 25.0s
+2026-07-09 07:27:34,522 INFO [6/6] Synthesizing report...
+2026-07-09 07:27:58,577 INFO       done in 24.1s
+2026-07-09 07:27:58,595 INFO === done in 55.7s total ===
+2026-07-09 07:42:21,037 INFO === ResearchGap AI engine — topic: 'medical image segmentation' (300 papers) ===
+2026-07-09 07:42:21,040 INFO [1/6] Input accepted.
+2026-07-09 07:42:21,042 INFO       done in 0.0s
+2026-07-09 07:42:21,042 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 07:42:35,674 WARNING S2 search 'medical image segmentation' offset=200 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 07:42:41,311 WARNING S2 search 'medical image segmentation' offset=200 failed (Server error '500 Internal Server Error' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=medical+image+segmentation&offset=200&limit=100&fields=title%2Cabstract%2Cyear%2CcitationCount%2CexternalIds%2CfieldsOfStudy'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500) — retry 2/2 in 4s
+2026-07-09 07:42:52,604 WARNING S2 search 'medical image segmentation' offset=300 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 07:43:10,252 INFO       -> 290 unique papers with abstracts
+2026-07-09 07:43:10,254 INFO       done in 49.2s
+2026-07-09 07:43:10,255 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 07:43:16,660 INFO       -> 7 topics found:
+2026-07-09 07:43:16,660 INFO          - unet / network / convolutional (173 papers)
+2026-07-09 07:43:16,660 INFO          - semisupervised / data / learning (45 papers)
+2026-07-09 07:43:16,660 INFO          - domain / sam / model (26 papers)
+2026-07-09 07:43:16,660 INFO          - annotations / training / learning (16 papers)
+2026-07-09 07:43:16,660 INFO          - mamba / modeling / 3d (9 papers)
+2026-07-09 07:43:16,660 INFO          - fewshot / prototype / query (9 papers)
+2026-07-09 07:43:16,660 INFO          - diffusion / model / models (9 papers)
+2026-07-09 07:43:16,660 INFO       done in 6.4s
+2026-07-09 07:43:16,660 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 07:43:16,662 INFO       -> 8 candidate gaps
+2026-07-09 07:43:16,662 INFO       done in 0.0s
+2026-07-09 07:43:16,662 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 07:43:20,103 INFO [agent] query='"convolutional neural networks" "semi-supervised learning"' hits=462
+2026-07-09 07:43:21,693 INFO [agent] query='"transformer" "unlabeled data"' hits=787
+2026-07-09 07:43:21,693 INFO [agent] unet / network / convolutional x semisupervised / data / learning: 787 recent papers -> REJECTED
+2026-07-09 07:43:24,972 INFO [agent] query='"convolutional neural networks" "domain adaptation"' hits=918
+2026-07-09 07:43:26,601 INFO [agent] query='"transformer" "segmentation anything model"' hits=11
+2026-07-09 07:43:26,602 INFO [agent] unet / network / convolutional x domain / sam / model: 918 recent papers -> REJECTED
+2026-07-09 07:43:29,169 INFO [agent] query='"convolutional neural networks" "annotation data"' hits=34
+2026-07-09 07:43:30,700 INFO [agent] query='"transformer architecture" "training knowledge"' hits=1
+2026-07-09 07:43:30,700 INFO [agent] unet / network / convolutional x annotations / training / learning: 34 recent papers -> REJECTED
+2026-07-09 07:43:33,431 INFO [agent] query='"convolutional transformer" "state space modeling"' hits=11
+2026-07-09 07:43:34,721 INFO [agent] query='"deep learning network" "3d state space"' hits=0
+2026-07-09 07:43:34,722 INFO [agent] unet / network / convolutional x mamba / modeling / 3d: 11 recent papers -> WEAK
+2026-07-09 07:43:37,356 INFO [agent] query='"deep learning" "few-shot learning"' hits=1691
+2026-07-09 07:43:38,939 INFO [agent] query='"convolutional neural networks" "prototype networks"' hits=92
+2026-07-09 07:43:38,939 INFO [agent] unet / network / convolutional x fewshot / prototype / query: 1691 recent papers -> REJECTED
+2026-07-09 07:43:40,810 INFO [agent] query='"convolutional network" "diffusion models"' hits=189
+2026-07-09 07:43:42,515 INFO [agent] query='"transformer" "generation"' hits=24744
+2026-07-09 07:43:42,515 INFO [agent] unet / network / convolutional x diffusion / model / models: 24744 recent papers -> REJECTED
+2026-07-09 07:43:44,447 INFO [agent] query='"semi-supervised learning" "domain adaptation"' hits=215
+2026-07-09 07:43:45,213 INFO [agent] query='"uncertainty sampling" "domain shift"' hits=4
+2026-07-09 07:43:45,214 INFO [agent] semisupervised / data / learning x domain / sam / model: 215 recent papers -> REJECTED
+2026-07-09 07:43:47,031 INFO [agent] query='"semi-supervised learning" "annotation"' hits=1482
+2026-07-09 07:43:47,804 INFO [agent] query='"unlabeled data" "training annotations"' hits=4
+2026-07-09 07:43:47,805 INFO [agent] semisupervised / data / learning x annotations / training / learning: 1482 recent papers -> REJECTED
+2026-07-09 07:43:47,805 INFO       -> 0 confirmed, 1 weak, 7 rejected, 0 unverified
+2026-07-09 07:43:47,805 INFO       done in 31.1s
+2026-07-09 07:43:47,805 INFO [6/6] Synthesizing report...
+2026-07-09 07:44:06,133 INFO       done in 18.3s
+2026-07-09 07:44:06,160 INFO === done in 105.1s total ===
+2026-07-09 08:54:42,308 INFO === ResearchGap AI engine — topic: 'wireless sensor networks security' (300 papers) ===
+2026-07-09 08:54:42,309 INFO [1/6] Input accepted.
+2026-07-09 08:54:42,309 INFO       done in 0.0s
+2026-07-09 08:54:42,309 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 08:54:43,326 WARNING S2 search 'wireless sensor networks security' offset=0 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:54:46,019 WARNING S2 search 'wireless sensor networks security' offset=0 failed (429 rate limited) — retry 2/2 in 4s
+2026-07-09 08:54:54,812 WARNING S2 search 'wireless sensor networks security' offset=100 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:54:57,131 WARNING S2 search 'wireless sensor networks security' offset=100 failed (429 rate limited) — retry 2/2 in 4s
+2026-07-09 08:55:08,979 WARNING S2 search 'wireless sensor networks security' offset=300 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:55:14,750 WARNING S2 search 'wireless sensor networks security' offset=400 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:55:39,218 WARNING S2 search 'wireless sensor networks security' offset=913 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:55:50,583 WARNING S2 search 'wireless sensor networks security' offset=953 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 08:55:53,349 WARNING S2 search 'wireless sensor networks security' offset=953 failed (429 rate limited) — retry 2/2 in 4s
+2026-07-09 08:55:57,614 WARNING S2 search 'wireless sensor networks security' offset=953 failed after 3 attempts, skipping: 429 rate limited
+2026-07-09 08:55:57,614 WARNING S2 search giving up early — returning 289 papers so far
+2026-07-09 08:55:59,838 INFO       -> 258 unique papers with abstracts
+2026-07-09 08:55:59,838 INFO       done in 77.5s
+2026-07-09 08:55:59,838 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 08:56:06,292 INFO       -> 10 topics found:
+2026-07-09 08:56:06,296 INFO          - network / attacks / wsns (142 papers)
+2026-07-09 08:56:06,296 INFO          - authentication / protocol / scheme (19 papers)
+2026-07-09 08:56:06,296 INFO          - trust / evaluation / nodes (16 papers)
+2026-07-09 08:56:06,296 INFO          - key / management / key management (16 papers)
+2026-07-09 08:56:06,296 INFO          - wban / body / area (12 papers)
+2026-07-09 08:56:06,296 INFO          - blockchain / data / blockchainbased (9 papers)
+2026-07-09 08:56:06,296 INFO          - medical / authentication / body (8 papers)
+2026-07-09 08:56:06,296 INFO          - healthcare / patient / medical (7 papers)
+2026-07-09 08:56:06,296 INFO          - underwater / uwsns / acoustic (6 papers)
+2026-07-09 08:56:06,296 INFO          - protocol / authentication / user (6 papers)
+2026-07-09 08:56:06,296 INFO       done in 6.5s
+2026-07-09 08:56:06,296 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 08:56:06,300 INFO       -> 8 candidate gaps
+2026-07-09 08:56:06,300 INFO       done in 0.0s
+2026-07-09 08:56:06,300 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 08:56:08,581 INFO [agent] query='"attack detection" "body area network"' hits=8
+2026-07-09 08:56:10,592 INFO [agent] query='"wireless sensor network" "wearable body area"' hits=1
+2026-07-09 08:56:10,592 INFO [agent] network / attacks / wsns x wban / body / area: 8 recent papers -> WEAK
+2026-07-09 08:56:12,605 INFO [agent] query='"wsn attacks" "authentication protocol"' hits=0
+2026-07-09 08:56:14,513 INFO [agent] query='"node detection" "secure scheme"' hits=1
+2026-07-09 08:56:14,513 INFO [agent] network / attacks / wsns x authentication / protocol / scheme: 1 recent papers -> CONFIRMED
+2026-07-09 08:56:16,238 INFO [agent] query='"trust evaluation" "wireless body area network"' hits=2
+2026-07-09 08:56:17,213 INFO [agent] query='"trust mechanism" "body area network"' hits=0
+2026-07-09 08:56:17,213 INFO [agent] trust / evaluation / nodes x wban / body / area: 2 recent papers -> CONFIRMED
+2026-07-09 08:56:18,639 INFO [agent] query='"WSN security" "medical authentication"' hits=0
+2026-07-09 08:56:20,799 INFO [agent] query='"attack detection" "body sensor networks"' hits=2
+2026-07-09 08:56:20,799 INFO [agent] network / attacks / wsns x medical / authentication / body: 2 recent papers -> CONFIRMED
+2026-07-09 08:56:24,101 INFO [agent] query='"wireless sensor networks" "trust evaluation"' hits=116
+2026-07-09 08:56:24,742 INFO [agent] query='"attack detection" "trust mechanism"' hits=18
+2026-07-09 08:56:24,742 INFO [agent] network / attacks / wsns x trust / evaluation / nodes: 116 recent papers -> REJECTED
+2026-07-09 08:56:26,881 INFO [agent] query='"attack detection" "blockchain based"' hits=152
+2026-07-09 08:56:28,033 INFO [agent] query='"wireless sensor networks" "IoT routing"' hits=21
+2026-07-09 08:56:28,033 INFO [agent] network / attacks / wsns x blockchain / data / blockchainbased: 152 recent papers -> REJECTED
+2026-07-09 08:56:30,136 INFO [agent] query='"body area network" "underwater acoustic"' hits=0
+2026-07-09 08:56:31,073 INFO [agent] query='"wearable body sensor" "underwater wireless sensor"' hits=0
+2026-07-09 08:56:31,074 INFO [agent] wban / body / area x underwater / uwsns / acoustic: 0 recent papers -> CONFIRMED
+2026-07-09 08:56:32,872 INFO [agent] query='"wsn attacks" "key management"' hits=0
+2026-07-09 08:56:33,495 INFO [agent] query='"detection schemes" "wireless sensor networks"' hits=62
+2026-07-09 08:56:33,496 INFO [agent] network / attacks / wsns x key / management / key management: 62 recent papers -> REJECTED
+2026-07-09 08:56:33,496 INFO       -> 4 confirmed, 1 weak, 3 rejected, 0 unverified
+2026-07-09 08:56:33,496 INFO       done in 27.2s
+2026-07-09 08:56:33,496 INFO [6/6] Synthesizing report...
+2026-07-09 08:57:03,535 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-09 08:57:34,918 INFO       done in 61.4s
+2026-07-09 08:57:34,959 INFO === done in 172.7s total ===

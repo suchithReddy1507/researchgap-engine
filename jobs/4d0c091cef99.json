@@ -1,0 +1,422 @@
+{
+  "job_id": "4d0c091cef99",
+  "status": "done",
+  "topic": "wireless sensor networks security",
+  "papers": 300,
+  "stage": 6,
+  "stage_label": "Done",
+  "created_at": 1783567482.296133,
+  "updated_at": 1783567654.959299,
+  "result": {
+    "topic": "wireless sensor networks security",
+    "papers_count": 257,
+    "topics": [
+      {
+        "label": "network / attacks / wsns",
+        "keywords": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "size": 142,
+        "mean_year": 2016.2,
+        "x": 0.33251479268074036,
+        "y": 0.5812970995903015
+      },
+      {
+        "label": "authentication / protocol / scheme",
+        "keywords": [
+          "authentication",
+          "protocol",
+          "scheme",
+          "user",
+          "secure",
+          "proposed"
+        ],
+        "size": 19,
+        "mean_year": 2016.6,
+        "x": 0.5645594000816345,
+        "y": 0.4354953467845917
+      },
+      {
+        "label": "trust / evaluation / nodes",
+        "keywords": [
+          "trust",
+          "evaluation",
+          "nodes",
+          "trust evaluation",
+          "attacks",
+          "mechanism"
+        ],
+        "size": 16,
+        "mean_year": 2016.3,
+        "x": 0.26615357398986816,
+        "y": 1.0
+      },
+      {
+        "label": "key / management / key management",
+        "keywords": [
+          "key",
+          "management",
+          "key management",
+          "nodes",
+          "schemes",
+          "scheme"
+        ],
+        "size": 16,
+        "mean_year": 2014.8,
+        "x": 0.045070093125104904,
+        "y": 0.4171735346317291
+      },
+      {
+        "label": "wban / body / area",
+        "keywords": [
+          "wban",
+          "body",
+          "area",
+          "body area",
+          "network",
+          "data"
+        ],
+        "size": 12,
+        "mean_year": 2016.0,
+        "x": 0.9275433421134949,
+        "y": 0.36546215415000916
+      },
+      {
+        "label": "blockchain / data / blockchainbased",
+        "keywords": [
+          "blockchain",
+          "data",
+          "blockchainbased",
+          "routing",
+          "iot",
+          "malicious"
+        ],
+        "size": 9,
+        "mean_year": 2019.3,
+        "x": 0.0,
+        "y": 0.8276352286338806
+      },
+      {
+        "label": "medical / authentication / body",
+        "keywords": [
+          "medical",
+          "authentication",
+          "body",
+          "scheme",
+          "proposed",
+          "patients"
+        ],
+        "size": 8,
+        "mean_year": 2018.2,
+        "x": 0.738766074180603,
+        "y": 0.017874155193567276
+      },
+      {
+        "label": "healthcare / patient / medical",
+        "keywords": [
+          "healthcare",
+          "patient",
+          "medical",
+          "applications",
+          "healthcare applications",
+          "using"
+        ],
+        "size": 7,
+        "mean_year": 2015.0,
+        "x": 1.0,
+        "y": 0.0
+      },
+      {
+        "label": "underwater / uwsns / acoustic",
+        "keywords": [
+          "underwater",
+          "uwsns",
+          "acoustic",
+          "uwsn",
+          "challenges",
+          "threats"
+        ],
+        "size": 6,
+        "mean_year": 2017.7,
+        "x": 0.2961553633213043,
+        "y": 0.2033572643995285
+      },
+      {
+        "label": "protocol / authentication / user",
+        "keywords": [
+          "protocol",
+          "authentication",
+          "user",
+          "user authentication",
+          "authentication protocol",
+          "wsns"
+        ],
+        "size": 6,
+        "mean_year": 2013.5,
+        "x": 0.6501071453094482,
+        "y": 0.8347768187522888
+      }
+    ],
+    "gaps": [
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "wban / body / area",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "wban",
+          "body",
+          "area",
+          "body area",
+          "network",
+          "data"
+        ],
+        "bridge_papers": 46,
+        "size_a": 142,
+        "size_b": 12,
+        "prominence": 0.92,
+        "verification_queries": [
+          "\"attack detection\" \"body area network\"",
+          "\"wireless sensor network\" \"wearable body area\""
+        ],
+        "recent_papers_found": 8,
+        "verdict": "WEAK",
+        "confidence": 0.68
+      },
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "authentication / protocol / scheme",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "authentication",
+          "protocol",
+          "scheme",
+          "user",
+          "secure",
+          "proposed"
+        ],
+        "bridge_papers": 157,
+        "size_a": 142,
+        "size_b": 19,
+        "prominence": 0.35,
+        "verification_queries": [
+          "\"wsn attacks\" \"authentication protocol\"",
+          "\"node detection\" \"secure scheme\""
+        ],
+        "recent_papers_found": 1,
+        "verdict": "CONFIRMED",
+        "confidence": 0.96
+      },
+      {
+        "topic_a": "trust / evaluation / nodes",
+        "topic_b": "wban / body / area",
+        "keywords_a": [
+          "trust",
+          "evaluation",
+          "nodes",
+          "trust evaluation",
+          "attacks",
+          "mechanism"
+        ],
+        "keywords_b": [
+          "wban",
+          "body",
+          "area",
+          "body area",
+          "network",
+          "data"
+        ],
+        "bridge_papers": 43,
+        "size_a": 16,
+        "size_b": 12,
+        "prominence": 0.33,
+        "verification_queries": [
+          "\"trust evaluation\" \"wireless body area network\"",
+          "\"trust mechanism\" \"body area network\""
+        ],
+        "recent_papers_found": 2,
+        "verdict": "CONFIRMED",
+        "confidence": 0.92
+      },
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "medical / authentication / body",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "medical",
+          "authentication",
+          "body",
+          "scheme",
+          "proposed",
+          "patients"
+        ],
+        "bridge_papers": 115,
+        "size_a": 142,
+        "size_b": 8,
+        "prominence": 0.31,
+        "verification_queries": [
+          "\"WSN security\" \"medical authentication\"",
+          "\"attack detection\" \"body sensor networks\""
+        ],
+        "recent_papers_found": 2,
+        "verdict": "CONFIRMED",
+        "confidence": 0.92
+      },
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "trust / evaluation / nodes",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "trust",
+          "evaluation",
+          "nodes",
+          "trust evaluation",
+          "attacks",
+          "mechanism"
+        ],
+        "bridge_papers": 166,
+        "size_a": 142,
+        "size_b": 16,
+        "prominence": 0.3,
+        "verification_queries": [
+          "\"wireless sensor networks\" \"trust evaluation\"",
+          "\"attack detection\" \"trust mechanism\""
+        ],
+        "recent_papers_found": 116,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "blockchain / data / blockchainbased",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "blockchain",
+          "data",
+          "blockchainbased",
+          "routing",
+          "iot",
+          "malicious"
+        ],
+        "bridge_papers": 124,
+        "size_a": 142,
+        "size_b": 9,
+        "prominence": 0.3,
+        "verification_queries": [
+          "\"attack detection\" \"blockchain based\"",
+          "\"wireless sensor networks\" \"IoT routing\""
+        ],
+        "recent_papers_found": 152,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "wban / body / area",
+        "topic_b": "underwater / uwsns / acoustic",
+        "keywords_a": [
+          "wban",
+          "body",
+          "area",
+          "body area",
+          "network",
+          "data"
+        ],
+        "keywords_b": [
+          "underwater",
+          "uwsns",
+          "acoustic",
+          "uwsn",
+          "challenges",
+          "threats"
+        ],
+        "bridge_papers": 29,
+        "size_a": 12,
+        "size_b": 6,
+        "prominence": 0.3,
+        "verification_queries": [
+          "\"body area network\" \"underwater acoustic\"",
+          "\"wearable body sensor\" \"underwater wireless sensor\""
+        ],
+        "recent_papers_found": 0,
+        "verdict": "CONFIRMED",
+        "confidence": 1.0
+      },
+      {
+        "topic_a": "network / attacks / wsns",
+        "topic_b": "key / management / key management",
+        "keywords_a": [
+          "network",
+          "attacks",
+          "wsns",
+          "wsn",
+          "nodes",
+          "detection"
+        ],
+        "keywords_b": [
+          "key",
+          "management",
+          "key management",
+          "nodes",
+          "schemes",
+          "scheme"
+        ],
+        "bridge_papers": 163,
+        "size_a": 142,
+        "size_b": 16,
+        "prominence": 0.29,
+        "verification_queries": [
+          "\"wsn attacks\" \"key management\"",
+          "\"detection schemes\" \"wireless sensor networks\""
+        ],
+        "recent_papers_found": 62,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      }
+    ],
+    "confirmed_count": 4,
+    "weak_count": 1,
+    "rejected_count": 3,
+    "unverified_count": 0,
+    "report": "# Research-Gap Report: Wireless Sensor Networks Security\n\n## Topic Landscape\n\nThe WSN security literature clusters into ten identifiable themes, dominated by a large general-purpose attack-and-detection body (142 papers, mean year 2016.2) that sits alongside smaller, more specialised clusters covering authentication protocols (19 papers), trust evaluation (16), key management (16), wireless body-area networks (12), blockchain-based approaches (9, the most recent at mean year 2019.3), medical authentication (8), healthcare applications (7), underwater acoustic sensor networks (6), and user-facing authentication schemes (6). The field's centre of gravity remains mid-2010s, with only the blockchain cluster showing markedly recent activity, suggesting that several applied sub-domains have not yet been fully connected to the maturing core security literature.\n\n---\n\n## Validated Research Gaps\n\n### Gap 1 \u2014 Attack-Resilient Authentication Protocols for WSNs\n**Why it is a gap:** The bridge between the attack-detection cluster (n = 142) and the authentication-protocol cluster (n = 19) is supported by 157 bridge papers yet carries a prominence score of only 0.35, indicating that the two bodies of work remain largely parallel rather than integrated. Critically, verification queries returned just 1 recent paper, the lowest count among all confirmed gaps, and the gap holds the highest confidence of any candidate (0.96). Work on detecting attacks and work on designing authentication schemes have not converged into unified, attack-aware protocol design.\n\n**Research Agenda:**\n1. Conduct a systematic review mapping which attack classes (replay, Sybil, node-capture, etc.) are explicitly modelled in existing WSN authentication schemes, quantifying the coverage deficit.\n2. Design and formally verify an authentication protocol framework that embeds real-time anomaly/attack signals as first-class inputs to the authentication decision logic.\n3. Prototype and benchmark the framework on resource-constrained hardware, evaluating the latency\u2013security trade-off against attack injection experiments.\n\n---\n\n### Gap 2 \u2014 Trust Evaluation Mechanisms for Wireless Body-Area Networks\n**Why it is a gap:** The trust-evaluation cluster (n = 16) and the WBAN cluster (n = 12) share 43 bridge papers but show a prominence score of 0.33 and only 2 recent papers found, at a confidence of 0.92. Trust management is well studied for generic WSNs, but the body-area context introduces unique constraints (node proximity, physiological data sensitivity, patient mobility) that existing trust models have not addressed.\n\n**Research Agenda:**\n1. Identify the specific trust-model requirements that differ in WBANs \u2014 continuous node co-location, medical-data integrity, caregiver-vs-patient authority \u2014 through structured interviews and literature mapping.\n2. Develop a lightweight, context-aware trust-evaluation mechanism tailored to WBAN topologies and test it against insider-threat and node-compromise scenarios.\n3. Validate the mechanism in an end-to-end WBAN testbed, measuring energy overhead and trust-convergence time relative to general WSN baselines.\n\n---\n\n### Gap 3 \u2014 Integrated Attack Detection for Medical Body-Sensor Authentication\n**Why it is a gap:** The attack-detection cluster (n = 142) and the medical-authentication cluster (n = 8) are linked by 115 bridge papers yet achieve a prominence of only 0.31 and just 2 recent papers, confirmed at 0.92 confidence. Medical authentication schemes focus on usability and patient identity but largely ignore the threat landscape (e.g., impersonation, man-in-the-middle attacks on patient data streams) that the broader WSN security literature has catalogued extensively.\n\n**Research Agenda:**\n1. Profile the intersection of known WSN attack vectors with the specific communication flows in medical body-sensor deployments (e.g., ECG streaming, insulin-pump telemetry) to produce a ranked threat model.\n2. Design an authentication scheme for medical WBANs that incorporates threat-model outputs as explicit security requirements, with formal security proofs against the prioritised attack classes.\n3. Evaluate the scheme in a simulated clinical environment, assessing false-rejection rates, latency under attack, and compliance with medical-device regulatory constraints.\n\n---\n\n### Gap 4 \u2014 Cross-Domain Security Framework Bridging Body-Area and Underwater Sensor Networks\n**Why it is a gap:** The WBAN cluster (n = 12) and the underwater acoustic sensor network cluster (n = 6) share 29 bridge papers, have a prominence score of 0.30, and returned zero recent papers \u2014 the only confirmed gap with no recent literature at all \u2014 yielding the maximum confidence of 1.00. Both domains share structural characteristics (extreme energy constraints, hostile physical environments, non-standard propagation channels) yet their security research communities are entirely siloed.\n\n**Research Agenda:**\n1. Perform a comparative security analysis of WBAN and UWSN threat models, identifying shared vulnerability classes (e.g., physical-layer eavesdropping, relay attacks) that could justify common countermeasures.\n2. Abstract a domain-agnostic security primitive layer addressing the shared constraints (low bandwidth, intermittent connectivity, non-IP stacks) and instantiate it for each environment.\n3. Publish cross-domain benchmark datasets and evaluation criteria to catalyse community engagement and enable reproducible comparison of proposed solutions.\n\n---\n\n## Rejected Candidates\n\nThree candidate gaps \u2014 attacks \u00d7 trust evaluation (116 recent papers), attacks \u00d7 blockchain (152 recent papers), and attacks \u00d7 key management (62 recent papers) \u2014 were rejected as already actively covered in the recent literature and therefore do not represent open research needs."
+  },
+  "error": null
+}

@@ -1,0 +1,7 @@
+httpx
+sentence-transformers
+bertopic
+python-dotenv
+anthropic
+fastapi
+uvicorn

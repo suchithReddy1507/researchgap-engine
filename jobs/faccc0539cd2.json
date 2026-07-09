@@ -1,0 +1,467 @@
+{
+  "job_id": "faccc0539cd2",
+  "status": "done",
+  "topic": "federated learning",
+  "papers": 300,
+  "stage": 6,
+  "stage_label": "Done",
+  "created_at": 1783560583.291039,
+  "updated_at": 1783560643.544106,
+  "result": {
+    "topic": "federated learning",
+    "papers_count": 294,
+    "topics": [
+      {
+        "label": "model / clients / personalized",
+        "keywords": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "size": 30,
+        "mean_year": 2021.3,
+        "x": 0.9394096732139587,
+        "y": 0.29454299807548523
+      },
+      {
+        "label": "wireless / data / communication",
+        "keywords": [
+          "wireless",
+          "data",
+          "communication",
+          "devices",
+          "convergence",
+          "fl"
+        ],
+        "size": 27,
+        "mean_year": 2020.1,
+        "x": 0.7811375260353088,
+        "y": 0.12020088732242584
+      },
+      {
+        "label": "healthcare / data / medical",
+        "keywords": [
+          "healthcare",
+          "data",
+          "medical",
+          "models",
+          "fl",
+          "datasets"
+        ],
+        "size": 27,
+        "mean_year": 2022.3,
+        "x": 0.6834028959274292,
+        "y": 0.6756373643875122
+      },
+      {
+        "label": "data / research / challenges",
+        "keywords": [
+          "data",
+          "research",
+          "challenges",
+          "machine",
+          "fl",
+          "dfl"
+        ],
+        "size": 25,
+        "mean_year": 2021.2,
+        "x": 0.4556405544281006,
+        "y": 0.6712585687637329
+      },
+      {
+        "label": "iot / detection / intrusion",
+        "keywords": [
+          "iot",
+          "detection",
+          "intrusion",
+          "intrusion detection",
+          "data",
+          "internet"
+        ],
+        "size": 22,
+        "mean_year": 2022.6,
+        "x": 0.4675103724002838,
+        "y": 0.25989019870758057
+      },
+      {
+        "label": "attacks / privacy / data",
+        "keywords": [
+          "attacks",
+          "privacy",
+          "data",
+          "gradients",
+          "poisoning",
+          "model"
+        ],
+        "size": 22,
+        "mean_year": 2021.8,
+        "x": 0.21710483729839325,
+        "y": 0.5241010785102844
+      },
+      {
+        "label": "local / data / clients",
+        "keywords": [
+          "local",
+          "data",
+          "clients",
+          "heterogeneity",
+          "client",
+          "models"
+        ],
+        "size": 20,
+        "mean_year": 2021.2,
+        "x": 1.0,
+        "y": 0.6034623384475708
+      },
+      {
+        "label": "privacy / differential / aggregation",
+        "keywords": [
+          "privacy",
+          "differential",
+          "aggregation",
+          "differential privacy",
+          "dp",
+          "secure"
+        ],
+        "size": 20,
+        "mean_year": 2021.5,
+        "x": 0.0,
+        "y": 0.6407895088195801
+      },
+      {
+        "label": "blockchain / data / privacy",
+        "keywords": [
+          "blockchain",
+          "data",
+          "privacy",
+          "sharing",
+          "model",
+          "blockchainbased"
+        ],
+        "size": 18,
+        "mean_year": 2021.5,
+        "x": 0.17183610796928406,
+        "y": 0.8494425415992737
+      },
+      {
+        "label": "attacks / backdoor / poisoning",
+        "keywords": [
+          "attacks",
+          "backdoor",
+          "poisoning",
+          "model",
+          "defenses",
+          "poisoning attacks"
+        ],
+        "size": 15,
+        "mean_year": 2020.8,
+        "x": 0.18649590015411377,
+        "y": 0.22603702545166016
+      },
+      {
+        "label": "edge / fl / devices",
+        "keywords": [
+          "edge",
+          "fl",
+          "devices",
+          "model",
+          "mobile",
+          "data"
+        ],
+        "size": 15,
+        "mean_year": 2019.9,
+        "x": 0.6468746066093445,
+        "y": 0.0
+      },
+      {
+        "label": "fl / ppagg / privacy",
+        "keywords": [
+          "fl",
+          "ppagg",
+          "privacy",
+          "llms",
+          "data",
+          "sl"
+        ],
+        "size": 9,
+        "mean_year": 2022.1,
+        "x": 0.3992457091808319,
+        "y": 1.0
+      },
+      {
+        "label": "disease / cnn / leaf",
+        "keywords": [
+          "disease",
+          "cnn",
+          "leaf",
+          "diseases",
+          "apple",
+          "crop"
+        ],
+        "size": 7,
+        "mean_year": 2023.0,
+        "x": 0.8309095501899719,
+        "y": 0.7857346534729004
+      }
+    ],
+    "gaps": [
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "healthcare / data / medical",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "healthcare",
+          "data",
+          "medical",
+          "models",
+          "fl",
+          "datasets"
+        ],
+        "bridge_papers": 262,
+        "size_a": 30,
+        "size_b": 27,
+        "prominence": 0.14,
+        "verification_queries": [
+          "\"federated learning\" \"medical data\"",
+          "\"personalized models\" \"healthcare datasets\""
+        ],
+        "recent_papers_found": 1080,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "wireless / data / communication",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "wireless",
+          "data",
+          "communication",
+          "devices",
+          "convergence",
+          "fl"
+        ],
+        "bridge_papers": 275,
+        "size_a": 30,
+        "size_b": 27,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"federated learning\" \"wireless communication\"",
+          "\"personalized models\" \"edge devices\""
+        ],
+        "recent_papers_found": 447,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "data / research / challenges",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "data",
+          "research",
+          "challenges",
+          "machine",
+          "fl",
+          "dfl"
+        ],
+        "bridge_papers": 273,
+        "size_a": 30,
+        "size_b": 25,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"personalized model\" \"data challenges\"",
+          "\"federated learning\" \"machine learning\""
+        ],
+        "recent_papers_found": 16266,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "iot / detection / intrusion",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "iot",
+          "detection",
+          "intrusion",
+          "intrusion detection",
+          "data",
+          "internet"
+        ],
+        "bridge_papers": 269,
+        "size_a": 30,
+        "size_b": 22,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"federated learning\" \"intrusion detection\"",
+          "\"personalized models\" \"IoT security\""
+        ],
+        "recent_papers_found": 2210,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "attacks / privacy / data",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "attacks",
+          "privacy",
+          "data",
+          "gradients",
+          "poisoning",
+          "model"
+        ],
+        "bridge_papers": 264,
+        "size_a": 30,
+        "size_b": 22,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"federated learning\" \"poisoning attacks\"",
+          "\"personalized models\" \"privacy attacks\""
+        ],
+        "recent_papers_found": 1796,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "wireless / data / communication",
+        "topic_b": "healthcare / data / medical",
+        "keywords_a": [
+          "wireless",
+          "data",
+          "communication",
+          "devices",
+          "convergence",
+          "fl"
+        ],
+        "keywords_b": [
+          "healthcare",
+          "data",
+          "medical",
+          "models",
+          "fl",
+          "datasets"
+        ],
+        "bridge_papers": 265,
+        "size_a": 27,
+        "size_b": 27,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"wireless communication\" \"medical data\"",
+          "\"federated learning\" \"healthcare models\""
+        ],
+        "recent_papers_found": 54,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "healthcare / data / medical",
+        "topic_b": "data / research / challenges",
+        "keywords_a": [
+          "healthcare",
+          "data",
+          "medical",
+          "models",
+          "fl",
+          "datasets"
+        ],
+        "keywords_b": [
+          "data",
+          "research",
+          "challenges",
+          "machine",
+          "fl",
+          "dfl"
+        ],
+        "bridge_papers": 270,
+        "size_a": 27,
+        "size_b": 25,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"medical datasets\" \"federated learning challenges\"",
+          "\"healthcare models\" \"distributed machine learning\""
+        ],
+        "recent_papers_found": 2,
+        "verdict": "CONFIRMED",
+        "confidence": 0.92
+      },
+      {
+        "topic_a": "model / clients / personalized",
+        "topic_b": "local / data / clients",
+        "keywords_a": [
+          "model",
+          "clients",
+          "personalized",
+          "local",
+          "global",
+          "fl"
+        ],
+        "keywords_b": [
+          "local",
+          "data",
+          "clients",
+          "heterogeneity",
+          "client",
+          "models"
+        ],
+        "bridge_papers": 260,
+        "size_a": 30,
+        "size_b": 20,
+        "prominence": 0.12,
+        "verification_queries": [
+          "\"federated learning\" \"data heterogeneity\"",
+          "\"personalized models\" \"client heterogeneity\""
+        ],
+        "recent_papers_found": 3733,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      }
+    ],
+    "confirmed_count": 1,
+    "weak_count": 0,
+    "rejected_count": 7,
+    "unverified_count": 0,
+    "report": "# Research-Gap Report: Federated Learning\n\n## Topic Landscape\n\nThe federated learning literature organises into roughly thirteen identifiable clusters spanning core algorithmic concerns (personalisation, local training, aggregation), deployment contexts (wireless/edge, IoT/intrusion detection, healthcare/medical), and security/privacy threads (differential privacy, backdoor/poisoning attacks, blockchain-based privacy). The largest clusters\u2014personalised models (n = 30, mean year 2021.3), wireless communication (n = 27, mean year 2020.1), and healthcare applications (n = 27, mean year 2022.3)\u2014reflect the field's dual preoccupation with system efficiency and real-world deployment, while newer, smaller clusters such as privacy-preserving aggregation (n = 9, mean year 2022.1) and disease/CNN applications (n = 7, mean year 2023.0) signal emerging specialisations that have not yet attracted high paper volume.\n\n---\n\n## Validated Gap\n\n### Gap 1 \u2014 Systematic Benchmarking of FL under Healthcare-Specific Data Challenges\n\n**Why it is a gap.**\nThe healthcare cluster (n = 27, mean year 2022.3) and the general FL challenges cluster (n = 25, mean year 2021.2) are bridged by only **270 papers** and carry a low cross-cluster prominence score of **0.13**. Agentic validation using the targeted queries *\"medical datasets\" + \"federated learning challenges\"* and *\"healthcare models\" + \"distributed machine learning\"* retrieved just **2 recent papers** (confidence = 0.92, verdict: CONFIRMED). This means that although researchers are actively publishing on healthcare FL deployments and on FL's general data challenges in parallel, work that directly and rigorously characterises how healthcare-specific data properties\u2014severe non-IID distributions arising from hospital heterogeneity, extreme class imbalance in rare-disease datasets, regulatory constraints on surrogate public datasets\u2014interact with known FL failure modes remains sparse relative to the size of both parent clusters.\n\n**Research Agenda**\n\n1. **Characterise the problem space.** Compile and taxonomise publicly available (or privacy-cleared synthetic) medical FL datasets, annotating each for degree of non-IID-ness, class imbalance, modality, and regulatory regime. Use these attributes to produce a structured benchmark suite analogous to LEAF but targeted at healthcare.\n2. **Stress-test existing FL algorithms.** Systematically evaluate representative personalisation, aggregation, and communication-efficient algorithms (e.g., FedAvg, FedProx, SCAFFOLD, Ditto) against the benchmark suite, measuring convergence, fairness across hospital sites, and privacy-utility trade-offs under healthcare-realistic conditions.\n3. **Develop and validate healthcare-aware FL protocols.** Use findings from step 2 to design adaptive mechanisms\u2014such as heterogeneity-aware client selection or domain-shift-robust aggregation\u2014and validate them in at least one clinically motivated task (e.g., multi-site EHR modelling or medical imaging), reporting both technical metrics and practical deployment constraints.\n\n---\n\n## Rejected Candidates\n\nSeven candidate gaps were rejected because agentic validation found substantial recent literature already covering those intersections (ranging from 54 to 16,266 recent papers), indicating active rather than underserved research territory."
+  },
+  "error": null
+}

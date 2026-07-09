@@ -1,0 +1,194 @@
+[
+  {
+    "topic_a": "data / fl / model",
+    "topic_b": "data / healthcare / medical",
+    "keywords_a": [
+      "data",
+      "fl",
+      "model",
+      "privacy",
+      "training",
+      "local"
+    ],
+    "keywords_b": [
+      "data",
+      "healthcare",
+      "medical",
+      "fl",
+      "models",
+      "datasets"
+    ],
+    "bridge_papers": 267,
+    "size_a": 242,
+    "size_b": 27,
+    "prominence": 0.4,
+    "verification_queries": [
+      "\"federated learning\" \"medical data\"",
+      "\"privacy-preserving training\" \"healthcare models\"",
+      "\"local model\" \"clinical datasets\""
+    ],
+    "recent_papers_found": 1078,
+    "verdict": "REJECTED",
+    "confidence": 0.0
+  },
+  {
+    "topic_a": "data / fl / model",
+    "topic_b": "disease / cnn / leaf",
+    "keywords_a": [
+      "data",
+      "fl",
+      "model",
+      "privacy",
+      "training",
+      "local"
+    ],
+    "keywords_b": [
+      "disease",
+      "cnn",
+      "leaf",
+      "diseases",
+      "apple",
+      "crop"
+    ],
+    "bridge_papers": 155,
+    "size_a": 242,
+    "size_b": 7,
+    "prominence": 0.35,
+    "verification_queries": [
+      "\"federated learning\" \"crop disease detection\"",
+      "\"privacy-preserving training\" \"apple leaf disease\"",
+      "\"local model training\" \"CNN disease classification\""
+    ],
+    "recent_papers_found": 41,
+    "verdict": "REJECTED",
+    "confidence": 0.0
+  },
+  {
+    "topic_a": "data / fl / model",
+    "topic_b": "blockchain / data / privacy",
+    "keywords_a": [
+      "data",
+      "fl",
+      "model",
+      "privacy",
+      "training",
+      "local"
+    ],
+    "keywords_b": [
+      "blockchain",
+      "data",
+      "privacy",
+      "model",
+      "sharing",
+      "security"
+    ],
+    "bridge_papers": 260,
+    "size_a": 242,
+    "size_b": 18,
+    "prominence": 0.33,
+    "verification_queries": [
+      "\"federated learning\" \"blockchain\"",
+      "\"privacy-preserving training\" \"secure data sharing\"",
+      "\"distributed machine learning\" \"decentralized security\""
+    ],
+    "recent_papers_found": 4781,
+    "verdict": "REJECTED",
+    "confidence": 0.0
+  },
+  {
+    "topic_a": "data / healthcare / medical",
+    "topic_b": "blockchain / data / privacy",
+    "keywords_a": [
+      "data",
+      "healthcare",
+      "medical",
+      "fl",
+      "models",
+      "datasets"
+    ],
+    "keywords_b": [
+      "blockchain",
+      "data",
+      "privacy",
+      "model",
+      "sharing",
+      "security"
+    ],
+    "bridge_papers": 250,
+    "size_a": 27,
+    "size_b": 18,
+    "prominence": 0.12,
+    "verification_queries": [
+      "\"medical datasets\" \"blockchain privacy\"",
+      "\"healthcare models\" \"secure data sharing\"",
+      "\"federated learning\" \"blockchain security\""
+    ],
+    "recent_papers_found": 43,
+    "verdict": "REJECTED",
+    "confidence": 0.0
+  },
+  {
+    "topic_a": "data / healthcare / medical",
+    "topic_b": "disease / cnn / leaf",
+    "keywords_a": [
+      "data",
+      "healthcare",
+      "medical",
+      "fl",
+      "models",
+      "datasets"
+    ],
+    "keywords_b": [
+      "disease",
+      "cnn",
+      "leaf",
+      "diseases",
+      "apple",
+      "crop"
+    ],
+    "bridge_papers": 161,
+    "size_a": 27,
+    "size_b": 7,
+    "prominence": 0.12,
+    "verification_queries": [
+      "\"federated learning\" \"crop disease detection\"",
+      "\"medical imaging models\" \"apple leaf diseases\"",
+      "\"healthcare datasets\" \"CNN disease classification\""
+    ],
+    "recent_papers_found": 41,
+    "verdict": "REJECTED",
+    "confidence": 0.0
+  },
+  {
+    "topic_a": "blockchain / data / privacy",
+    "topic_b": "disease / cnn / leaf",
+    "keywords_a": [
+      "blockchain",
+      "data",
+      "privacy",
+      "model",
+      "sharing",
+      "security"
+    ],
+    "keywords_b": [
+      "disease",
+      "cnn",
+      "leaf",
+      "diseases",
+      "apple",
+      "crop"
+    ],
+    "bridge_papers": 142,
+    "size_a": 18,
+    "size_b": 7,
+    "prominence": 0.1,
+    "verification_queries": [
+      "\"blockchain\" \"crop disease detection\"",
+      "\"privacy-preserving machine learning\" \"plant disease\"",
+      "\"secure data sharing\" \"apple leaf disease\""
+    ],
+    "recent_papers_found": 12,
+    "verdict": "WEAK",
+    "confidence": 0.52
+  }
+]
