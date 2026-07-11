@@ -1,0 +1,512 @@
+{
+  "job_id": "b9c38eab9df5",
+  "status": "done",
+  "topic": "reinforcement learning robotics",
+  "papers": 300,
+  "stage": 6,
+  "stage_label": "Done",
+  "created_at": 1783617518.268218,
+  "updated_at": 1783617704.633097,
+  "result": {
+    "topic": "reinforcement learning robotics",
+    "papers_count": 300,
+    "topics": [
+      {
+        "label": "locomotion / robot / robots",
+        "keywords": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "size": 39,
+        "mean_year": 2020.3,
+        "x": 0.47763654589653015,
+        "y": 0.23313471674919128
+      },
+      {
+        "label": "navigation / robot / environments",
+        "keywords": [
+          "navigation",
+          "robot",
+          "environments",
+          "deep",
+          "mobile",
+          "robots"
+        ],
+        "size": 31,
+        "mean_year": 2020.2,
+        "x": 0.296053946018219,
+        "y": 0.7733598947525024
+      },
+      {
+        "label": "deep / applications / rl",
+        "keywords": [
+          "deep",
+          "applications",
+          "rl",
+          "drl",
+          "algorithms",
+          "environment"
+        ],
+        "size": 25,
+        "mean_year": 2019.4,
+        "x": 0.19378744065761566,
+        "y": 0.9934243559837341
+      },
+      {
+        "label": "human / tasks / robot",
+        "keywords": [
+          "human",
+          "tasks",
+          "robot",
+          "manipulation",
+          "reward",
+          "objects"
+        ],
+        "size": 22,
+        "mean_year": 2018.6,
+        "x": 0.6809147000312805,
+        "y": 0.8772963881492615
+      },
+      {
+        "label": "tasks / action / demonstrations",
+        "keywords": [
+          "tasks",
+          "action",
+          "demonstrations",
+          "rl",
+          "task",
+          "space"
+        ],
+        "size": 21,
+        "mean_year": 2019.6,
+        "x": 0.6743921041488647,
+        "y": 0.5428849458694458
+      },
+      {
+        "label": "manipulation / grasping / deep",
+        "keywords": [
+          "manipulation",
+          "grasping",
+          "deep",
+          "robotic",
+          "dexterous",
+          "hands"
+        ],
+        "size": 20,
+        "mean_year": 2019.2,
+        "x": 0.8854014873504639,
+        "y": 0.5698627829551697
+      },
+      {
+        "label": "safe / safety / control",
+        "keywords": [
+          "safe",
+          "safety",
+          "control",
+          "safe rl",
+          "rl",
+          "rl algorithms"
+        ],
+        "size": 14,
+        "mean_year": 2020.9,
+        "x": 0.2055656611919403,
+        "y": 0.3972134292125702
+      },
+      {
+        "label": "assembly / tasks / manipulation",
+        "keywords": [
+          "assembly",
+          "tasks",
+          "manipulation",
+          "control",
+          "deformable",
+          "force"
+        ],
+        "size": 13,
+        "mean_year": 2020.5,
+        "x": 1.0,
+        "y": 0.7435697913169861
+      },
+      {
+        "label": "control / model / algorithm",
+        "keywords": [
+          "control",
+          "model",
+          "algorithm",
+          "physical",
+          "policy",
+          "optimization"
+        ],
+        "size": 11,
+        "mean_year": 2017.4,
+        "x": 0.5510300993919373,
+        "y": 0.0
+      },
+      {
+        "label": "research / survey / challenges",
+        "keywords": [
+          "research",
+          "survey",
+          "challenges",
+          "qlearning",
+          "social",
+          "problems"
+        ],
+        "size": 11,
+        "mean_year": 2018.2,
+        "x": 0.27825602889060974,
+        "y": 0.11350831389427185
+      },
+      {
+        "label": "multirobot / multiagent / robots",
+        "keywords": [
+          "multirobot",
+          "multiagent",
+          "robots",
+          "swarm",
+          "mapf",
+          "agents"
+        ],
+        "size": 10,
+        "mean_year": 2019.0,
+        "x": 0.10831467062234879,
+        "y": 0.6979186534881592
+      },
+      {
+        "label": "soft / control / soft robots",
+        "keywords": [
+          "soft",
+          "control",
+          "soft robots",
+          "continuum",
+          "robot",
+          "soft robot"
+        ],
+        "size": 9,
+        "mean_year": 2020.8,
+        "x": 0.8255193829536438,
+        "y": 0.25699180364608765
+      },
+      {
+        "label": "deep / flight / real",
+        "keywords": [
+          "deep",
+          "flight",
+          "real",
+          "user",
+          "realworld",
+          "world"
+        ],
+        "size": 9,
+        "mean_year": 2018.8,
+        "x": 0.43308332562446594,
+        "y": 1.0
+      },
+      {
+        "label": "adaptation / domain / controllers",
+        "keywords": [
+          "adaptation",
+          "domain",
+          "controllers",
+          "simulation",
+          "metarl",
+          "domain adaptation"
+        ],
+        "size": 9,
+        "mean_year": 2019.7,
+        "x": 0.47221818566322327,
+        "y": 0.5152854323387146
+      },
+      {
+        "label": "avoidance / collision / collision avoidance",
+        "keywords": [
+          "avoidance",
+          "collision",
+          "collision avoidance",
+          "multirobot",
+          "policy",
+          "robots"
+        ],
+        "size": 8,
+        "mean_year": 2020.0,
+        "x": 0.0,
+        "y": 0.8048663139343262
+      },
+      {
+        "label": "surgical / surgery / demonstration",
+        "keywords": [
+          "surgical",
+          "surgery",
+          "demonstration",
+          "robotassisted",
+          "surgeons",
+          "tissue"
+        ],
+        "size": 7,
+        "mean_year": 2020.6,
+        "x": 0.8544619083404541,
+        "y": 0.8074470162391663
+      }
+    ],
+    "gaps": [
+      {
+        "topic_a": "locomotion / robot / robots",
+        "topic_b": "navigation / robot / environments",
+        "keywords_a": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "keywords_b": [
+          "navigation",
+          "robot",
+          "environments",
+          "deep",
+          "mobile",
+          "robots"
+        ],
+        "bridge_papers": 241,
+        "size_a": 39,
+        "size_b": 31,
+        "prominence": 0.18,
+        "verification_queries": [
+          "\"bipedal walking\" \"robot navigation\"",
+          "\"humanoid locomotion\" \"mobile robot environments\""
+        ],
+        "recent_papers_found": 0,
+        "verdict": "CONFIRMED",
+        "confidence": 1.0
+      },
+      {
+        "topic_a": "locomotion / robot / robots",
+        "topic_b": "deep / applications / rl",
+        "keywords_a": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "keywords_b": [
+          "deep",
+          "applications",
+          "rl",
+          "drl",
+          "algorithms",
+          "environment"
+        ],
+        "bridge_papers": 207,
+        "size_a": 39,
+        "size_b": 25,
+        "prominence": 0.18,
+        "verification_queries": [
+          "\"bipedal walking\" \"deep reinforcement learning\"",
+          "\"humanoid robot\" \"reinforcement learning algorithms\""
+        ],
+        "recent_papers_found": 34,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "navigation / robot / environments",
+        "topic_b": "deep / applications / rl",
+        "keywords_a": [
+          "navigation",
+          "robot",
+          "environments",
+          "deep",
+          "mobile",
+          "robots"
+        ],
+        "keywords_b": [
+          "deep",
+          "applications",
+          "rl",
+          "drl",
+          "algorithms",
+          "environment"
+        ],
+        "bridge_papers": 223,
+        "size_a": 31,
+        "size_b": 25,
+        "prominence": 0.15,
+        "verification_queries": [
+          "\"mobile robot navigation\" \"deep reinforcement learning\"",
+          "\"robot environments\" \"deep reinforcement learning algorithms\""
+        ],
+        "recent_papers_found": 113,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "locomotion / robot / robots",
+        "topic_b": "human / tasks / robot",
+        "keywords_a": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "keywords_b": [
+          "human",
+          "tasks",
+          "robot",
+          "manipulation",
+          "reward",
+          "objects"
+        ],
+        "bridge_papers": 243,
+        "size_a": 39,
+        "size_b": 22,
+        "prominence": 0.14,
+        "verification_queries": [
+          "\"bipedal walking\" \"object manipulation\"",
+          "\"humanoid locomotion\" \"task reward\""
+        ],
+        "recent_papers_found": 1,
+        "verdict": "CONFIRMED",
+        "confidence": 0.96
+      },
+      {
+        "topic_a": "locomotion / robot / robots",
+        "topic_b": "tasks / action / demonstrations",
+        "keywords_a": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "keywords_b": [
+          "tasks",
+          "action",
+          "demonstrations",
+          "rl",
+          "task",
+          "space"
+        ],
+        "bridge_papers": 254,
+        "size_a": 39,
+        "size_b": 21,
+        "prominence": 0.14,
+        "verification_queries": [
+          "\"bipedal walking\" \"reinforcement learning\"",
+          "\"humanoid robot\" \"task demonstrations\""
+        ],
+        "recent_papers_found": 62,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "locomotion / robot / robots",
+        "topic_b": "manipulation / grasping / deep",
+        "keywords_a": [
+          "locomotion",
+          "robot",
+          "robots",
+          "humanoid",
+          "bipedal",
+          "walking"
+        ],
+        "keywords_b": [
+          "manipulation",
+          "grasping",
+          "deep",
+          "robotic",
+          "dexterous",
+          "hands"
+        ],
+        "bridge_papers": 244,
+        "size_a": 39,
+        "size_b": 20,
+        "prominence": 0.14,
+        "verification_queries": [
+          "\"bipedal walking\" \"robotic manipulation\"",
+          "\"humanoid robot\" \"dexterous grasping\""
+        ],
+        "recent_papers_found": 8,
+        "verdict": "WEAK",
+        "confidence": 0.68
+      },
+      {
+        "topic_a": "deep / applications / rl",
+        "topic_b": "human / tasks / robot",
+        "keywords_a": [
+          "deep",
+          "applications",
+          "rl",
+          "drl",
+          "algorithms",
+          "environment"
+        ],
+        "keywords_b": [
+          "human",
+          "tasks",
+          "robot",
+          "manipulation",
+          "reward",
+          "objects"
+        ],
+        "bridge_papers": 209,
+        "size_a": 25,
+        "size_b": 22,
+        "prominence": 0.13,
+        "verification_queries": [
+          "deep human",
+          "deep applications human"
+        ],
+        "recent_papers_found": 189542,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "deep / applications / rl",
+        "topic_b": "manipulation / grasping / deep",
+        "keywords_a": [
+          "deep",
+          "applications",
+          "rl",
+          "drl",
+          "algorithms",
+          "environment"
+        ],
+        "keywords_b": [
+          "manipulation",
+          "grasping",
+          "deep",
+          "robotic",
+          "dexterous",
+          "hands"
+        ],
+        "bridge_papers": 208,
+        "size_a": 25,
+        "size_b": 20,
+        "prominence": 0.13,
+        "verification_queries": [
+          "\"deep reinforcement learning\" \"robotic manipulation\"",
+          "\"drl algorithms\" \"dexterous grasping\""
+        ],
+        "recent_papers_found": 173,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      }
+    ],
+    "confirmed_count": 2,
+    "weak_count": 1,
+    "rejected_count": 5,
+    "unverified_count": 0,
+    "report": "# Research-Gap Report: Reinforcement Learning Robotics\n\n---\n\n## Domain Landscape\n\nThe RL-robotics literature organizes into three mature, high-volume clusters\u2014**locomotion** (39 papers, mean year 2020.3), **navigation** (31, 2020.2), and **deep RL applications** (25, 2019.4)\u2014alongside active mid-size clusters in human\u2013robot interaction (22, 2018.6), imitation/demonstration learning (21, 2019.6), and manipulation/grasping (20, 2019.2). Emerging threads include safety-constrained control (14, 2020.9), precision assembly (13, 2020.5), and soft robotics (9, 2020.8). The overall center of gravity sits in 2019\u20132020, indicating a field that has recently consolidated core deep-RL techniques for individual sub-problems but has not yet systematically bridged them.\n\n---\n\n## Validated Gaps\n\n### Gap 1 \u2014 Whole-Body Navigation: Integrating Bipedal Locomotion with Mobile-Robot Navigation\n**Confidence: 1.0 (CONFIRMED)**\n\n**Why it is a gap:** The locomotion cluster (size 39) and the navigation cluster (size 31) share 241 bridge papers, yet a prominence score of only 0.18 and **zero recent papers** returned for the direct queries `\"bipedal walking\" + \"robot navigation\"` and `\"humanoid locomotion\" + \"mobile robot environments\"` confirm that these two bodies of work have not been jointly addressed in current research. Work on legged locomotion optimizes gait and stability in isolation, while navigation research assumes a kinematically simple mobile base; the compound problem of a bipedal or humanoid robot planning and executing navigation in unstructured environments remains open.\n\n**Research Agenda:**\n1. **Benchmark development** \u2014 Create standardized simulation and real-world benchmarks that couple terrain-adaptive locomotion with goal-directed navigation tasks (e.g., traverse rough terrain to reach a waypoint), enabling apples-to-apples comparison of joint vs. hierarchical policies.\n2. **Hierarchical policy architecture** \u2014 Design a two-level RL framework in which a high-level navigation planner generates locomotion-aware waypoints and a low-level locomotion controller executes them, with gradient or reward signal flowing between levels.\n3. **Sim-to-real transfer evaluation** \u2014 Systematically test the combined policy on physical bipedal/humanoid platforms, quantifying the additional domain-gap costs introduced by coupling the two sub-problems.\n\n---\n\n### Gap 2 \u2014 Loco-Manipulation: Coupling Bipedal Walking with Task-Directed Object Interaction\n**Confidence: 0.96 (CONFIRMED)**\n\n**Why it is a gap:** The locomotion cluster (size 39) and the human/tasks cluster (size 22) share 243 bridge papers, yet a prominence score of 0.14 and only **1 recent paper** found for the queries `\"bipedal walking\" + \"object manipulation\"` and `\"humanoid locomotion\" + \"task reward\"` indicate that joint locomotion\u2013task-execution policies are nearly absent from current literature. Existing reward shaping and task-completion research assumes a stationary or wheeled base, while locomotion work ignores task objectives entirely.\n\n**Research Agenda:**\n1. **Composite reward design** \u2014 Investigate reward formulations that simultaneously encode locomotion stability, energy efficiency, and task-completion criteria (e.g., pick-and-place while walking), studying trade-offs and shaping strategies.\n2. **Unified policy learning** \u2014 Train end-to-end RL agents on loco-manipulation tasks in simulation, comparing monolithic policies against modular architectures that share a latent representation of body state and task context.\n3. **Human-study evaluation** \u2014 Assess learned behaviors against human expectations of naturalness and safety in human-proximate environments, closing the loop with the human\u2013robot interaction literature.\n\n---\n\n### Gap 3 \u2014 Dexterous Grasping on Legged Platforms *(Weak Signal \u2014 Early Exploration Warranted)*\n**Confidence: 0.68 (WEAK)**\n\n**Why it is a gap (with caveats):** The locomotion cluster (size 39) and the manipulation/grasping cluster (size 20) share 244 bridge papers, but a prominence score of 0.14 and **8 recent papers** on `\"bipedal walking\" + \"robotic manipulation\"` and `\"humanoid robot\" + \"dexterous grasping\"` place this at the boundary between emerging research and a true gap. Activity exists but remains sparse relative to the individual cluster sizes, suggesting the integration of dexterous hand control with whole-body locomotion dynamics is only beginning to be tackled.\n\n**Research Agenda:**\n1. **Systematic literature audit** \u2014 Catalog the 8 identified papers to characterize which sub-problems (arm\u2013leg coordination, reactive grasping under motion disturbance, etc.) remain unaddressed and where duplication exists.\n2. **Disturbance-aware manipulation policies** \u2014 Develop RL controllers that explicitly model locomotion-induced base perturbations as disturbances to the grasping task, training policies robust to dynamic base motion.\n3. **Longitudinal monitoring** \u2014 Re-evaluate publication volume in 6\u201312 months; if paper count remains below ~20, escalate to a confirmed gap; if it accelerates rapidly, reframe as a fast-moving frontier requiring survey rather than gap-filling work.\n\n---\n\n## Rejected Candidates\n\nFive candidate gaps were rejected due to abundant recent literature: locomotion \u00d7 deep RL (34 papers), navigation \u00d7 deep RL (113), locomotion \u00d7 demonstrations (62), deep RL \u00d7 human/tasks (189,542), and deep RL \u00d7 manipulation (173) \u2014 all indicating active or saturated research fronts rather than genuine gaps."
+  },
+  "error": null
+}

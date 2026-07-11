@@ -922,3 +922,123 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-07-09 08:57:03,535 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
 2026-07-09 08:57:34,918 INFO       done in 61.4s
 2026-07-09 08:57:34,959 INFO === done in 172.7s total ===
+2026-07-09 22:41:42,966 INFO === ResearchGap AI engine — topic: 'speech emotion recognition' (300 papers) ===
+2026-07-09 22:41:42,969 INFO [1/6] Input accepted.
+2026-07-09 22:41:43,053 INFO       done in 0.0s
+2026-07-09 22:41:43,053 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 22:41:51,639 WARNING S2 search 'speech emotion recognition' offset=200 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 22:42:03,205 WARNING S2 search 'speech emotion recognition' offset=372 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 22:42:12,049 INFO       -> 295 unique papers with abstracts
+2026-07-09 22:42:12,049 INFO       done in 29.0s
+2026-07-09 22:42:12,049 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 22:42:19,853 INFO       -> 15 topics found:
+2026-07-09 22:42:19,853 INFO          - features / attention / ser (48 papers)
+2026-07-09 22:42:19,853 INFO          - multimodal / fusion / modalities (46 papers)
+2026-07-09 22:42:19,853 INFO          - data / ser / augmentation (32 papers)
+2026-07-09 22:42:19,853 INFO          - deep / neural / network (19 papers)
+2026-07-09 22:42:19,853 INFO          - features / feature / using (18 papers)
+2026-07-09 22:42:19,853 INFO          - crosscorpus / training / subspace (14 papers)
+2026-07-09 22:42:19,853 INFO          - features / feature / method (13 papers)
+2026-07-09 22:42:19,854 INFO          - emotions / algorithm / asr (11 papers)
+2026-07-09 22:42:19,854 INFO          - techniques / bangla / learning (9 papers)
+2026-07-09 22:42:19,854 INFO          - languages / multilingual / language (9 papers)
+2026-07-09 22:42:19,854 INFO          - gender / auxiliary / learning (9 papers)
+2026-07-09 22:42:19,854 INFO          - models / llms / multimodal (8 papers)
+2026-07-09 22:42:19,854 INFO          - nonverbal / reallife / nonverbal sounds (7 papers)
+2026-07-09 22:42:19,854 INFO          - features / neural network / neural (7 papers)
+2026-07-09 22:42:19,854 INFO          - cnn / convolutional / accuracy (7 papers)
+2026-07-09 22:42:19,854 INFO       done in 7.8s
+2026-07-09 22:42:19,854 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 22:42:19,856 INFO       -> 8 candidate gaps
+2026-07-09 22:42:19,856 INFO       done in 0.0s
+2026-07-09 22:42:19,856 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 22:42:25,563 INFO [agent] query='"temporal representation" "multimodal fusion"' hits=6
+2026-07-09 22:42:28,088 INFO [agent] query='"attention mechanism" "multimodal features"' hits=451
+2026-07-09 22:42:28,089 INFO [agent] features / attention / ser x multimodal / fusion / modalities: 451 recent papers -> REJECTED
+2026-07-09 22:42:31,979 INFO [agent] query='"temporal features" "pretrained models"' hits=18
+2026-07-09 22:42:34,817 INFO [agent] query='"attention mechanism" "data augmentation"' hits=2714
+2026-07-09 22:42:34,818 INFO [agent] features / attention / ser x data / ser / augmentation: 2714 recent papers -> REJECTED
+2026-07-09 22:42:38,352 INFO [agent] query='"multimodal fusion" "pretrained models"' hits=57
+2026-07-09 22:42:40,020 INFO [agent] query='"feature extraction" "data augmentation"' hits=4464
+2026-07-09 22:42:40,020 INFO [agent] multimodal / fusion / modalities x data / ser / augmentation: 4464 recent papers -> REJECTED
+2026-07-09 22:42:43,329 INFO [agent] query='"temporal representation" "deep neural networks"' hits=15
+2026-07-09 22:42:46,149 INFO [agent] query='"attention mechanism" "emotion recognition"' hits=1455
+2026-07-09 22:42:46,149 INFO [agent] features / attention / ser x deep / neural / network: 1455 recent papers -> REJECTED
+2026-07-09 22:42:48,578 INFO [agent] query='"temporal features" "feature representation"' hits=298
+2026-07-09 22:42:50,427 INFO [agent] query='"attention mechanism" "feature coefficient"' hits=2
+2026-07-09 22:42:50,427 INFO [agent] features / attention / ser x features / feature / using: 298 recent papers -> REJECTED
+2026-07-09 22:42:56,219 INFO [agent] query='"multimodal fusion" "deep neural networks"' hits=194
+2026-07-09 22:42:58,193 INFO [agent] query='"multimodal features" "emotion recognition"' hits=155
+2026-07-09 22:42:58,193 INFO [agent] multimodal / fusion / modalities x deep / neural / network: 194 recent papers -> REJECTED
+2026-07-09 22:43:01,560 INFO [agent] query='"multimodal fusion" "feature extraction"' hits=1215
+2026-07-09 22:43:04,508 INFO [agent] query='"text information" "feature coefficient"' hits=0
+2026-07-09 22:43:04,509 INFO [agent] multimodal / fusion / modalities x features / feature / using: 1215 recent papers -> REJECTED
+2026-07-09 22:43:08,694 INFO [agent] query='"temporal features" "cross-corpus learning"' hits=0
+2026-07-09 22:43:11,574 INFO [agent] query='"attention representation" "domain adaptation"' hits=5
+2026-07-09 22:43:11,575 INFO [agent] features / attention / ser x crosscorpus / training / subspace: 5 recent papers -> CONFIRMED
+2026-07-09 22:43:11,575 INFO       -> 1 confirmed, 0 weak, 7 rejected, 0 unverified
+2026-07-09 22:43:11,575 INFO       done in 51.7s
+2026-07-09 22:43:11,575 INFO [6/6] Synthesizing report...
+2026-07-09 22:43:28,099 INFO       done in 16.5s
+2026-07-09 22:43:28,138 INFO === done in 105.2s total ===
+2026-07-09 22:48:38,270 INFO === ResearchGap AI engine — topic: 'reinforcement learning robotics' (300 papers) ===
+2026-07-09 22:48:38,270 INFO [1/6] Input accepted.
+2026-07-09 22:48:38,270 INFO       done in 0.0s
+2026-07-09 22:48:38,271 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-09 22:48:54,673 WARNING S2 search 'reinforcement learning robotics' offset=371 failed (429 rate limited) — retry 1/2 in 2s
+2026-07-09 22:48:59,625 INFO       -> 300 unique papers with abstracts
+2026-07-09 22:48:59,626 INFO       done in 21.4s
+2026-07-09 22:48:59,626 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-09 22:49:05,032 INFO       -> 16 topics found:
+2026-07-09 22:49:05,032 INFO          - locomotion / robot / robots (39 papers)
+2026-07-09 22:49:05,032 INFO          - navigation / robot / environments (31 papers)
+2026-07-09 22:49:05,032 INFO          - deep / applications / rl (25 papers)
+2026-07-09 22:49:05,032 INFO          - human / tasks / robot (22 papers)
+2026-07-09 22:49:05,032 INFO          - tasks / action / demonstrations (21 papers)
+2026-07-09 22:49:05,032 INFO          - manipulation / grasping / deep (20 papers)
+2026-07-09 22:49:05,032 INFO          - safe / safety / control (14 papers)
+2026-07-09 22:49:05,032 INFO          - assembly / tasks / manipulation (13 papers)
+2026-07-09 22:49:05,032 INFO          - control / model / algorithm (11 papers)
+2026-07-09 22:49:05,032 INFO          - research / survey / challenges (11 papers)
+2026-07-09 22:49:05,032 INFO          - multirobot / multiagent / robots (10 papers)
+2026-07-09 22:49:05,032 INFO          - soft / control / soft robots (9 papers)
+2026-07-09 22:49:05,032 INFO          - deep / flight / real (9 papers)
+2026-07-09 22:49:05,032 INFO          - adaptation / domain / controllers (9 papers)
+2026-07-09 22:49:05,032 INFO          - avoidance / collision / collision avoidance (8 papers)
+2026-07-09 22:49:05,032 INFO          - surgical / surgery / demonstration (7 papers)
+2026-07-09 22:49:05,032 INFO       done in 5.4s
+2026-07-09 22:49:05,032 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-09 22:49:05,034 INFO       -> 8 candidate gaps
+2026-07-09 22:49:05,034 INFO       done in 0.0s
+2026-07-09 22:49:05,034 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-09 22:49:11,497 INFO [agent] query='"bipedal walking" "robot navigation"' hits=0
+2026-07-09 22:49:14,323 INFO [agent] query='"humanoid locomotion" "mobile robot environments"' hits=0
+2026-07-09 22:49:14,324 INFO [agent] locomotion / robot / robots x navigation / robot / environments: 0 recent papers -> CONFIRMED
+2026-07-09 22:49:18,729 INFO [agent] query='"bipedal walking" "deep reinforcement learning"' hits=22
+2026-07-09 22:49:22,543 INFO [agent] query='"humanoid robot" "reinforcement learning algorithms"' hits=34
+2026-07-09 22:49:22,543 INFO [agent] locomotion / robot / robots x deep / applications / rl: 34 recent papers -> REJECTED
+2026-07-09 22:49:26,411 INFO [agent] query='"mobile robot navigation" "deep reinforcement learning"' hits=113
+2026-07-09 22:49:31,022 INFO [agent] query='"robot environments" "deep reinforcement learning algorithms"' hits=6
+2026-07-09 22:49:31,022 INFO [agent] navigation / robot / environments x deep / applications / rl: 113 recent papers -> REJECTED
+2026-07-09 22:49:38,766 INFO [agent] query='"bipedal walking" "object manipulation"' hits=1
+2026-07-09 22:49:41,401 INFO [agent] query='"humanoid locomotion" "task reward"' hits=1
+2026-07-09 22:49:41,401 INFO [agent] locomotion / robot / robots x human / tasks / robot: 1 recent papers -> CONFIRMED
+2026-07-09 22:49:45,852 INFO [agent] query='"bipedal walking" "reinforcement learning"' hits=62
+2026-07-09 22:49:48,308 INFO [agent] query='"humanoid robot" "task demonstrations"' hits=0
+2026-07-09 22:49:48,308 INFO [agent] locomotion / robot / robots x tasks / action / demonstrations: 62 recent papers -> REJECTED
+2026-07-09 22:49:51,690 INFO [agent] query='"bipedal walking" "robotic manipulation"' hits=0
+2026-07-09 22:49:54,742 INFO [agent] query='"humanoid robot" "dexterous grasping"' hits=8
+2026-07-09 22:49:54,742 INFO [agent] locomotion / robot / robots x manipulation / grasping / deep: 8 recent papers -> WEAK
+2026-07-09 22:49:59,887 INFO [agent] query='deep human' hits=189542
+2026-07-09 22:50:02,728 INFO [agent] query='deep applications human' hits=41167
+2026-07-09 22:50:02,728 INFO [agent] deep / applications / rl x human / tasks / robot: 189542 recent papers -> REJECTED
+2026-07-09 22:50:06,843 INFO [agent] query='"deep reinforcement learning" "robotic manipulation"' hits=173
+2026-07-09 22:50:09,199 INFO [agent] query='"drl algorithms" "dexterous grasping"' hits=0
+2026-07-09 22:50:09,200 INFO [agent] deep / applications / rl x manipulation / grasping / deep: 173 recent papers -> REJECTED
+2026-07-09 22:50:09,200 INFO       -> 2 confirmed, 1 weak, 5 rejected, 0 unverified
+2026-07-09 22:50:09,200 INFO       done in 64.2s
+2026-07-09 22:50:09,200 INFO [6/6] Synthesizing report...
+2026-07-09 22:50:39,237 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-09 22:51:11,289 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
+2026-07-09 22:51:44,609 INFO       done in 95.4s
+2026-07-09 22:51:44,632 INFO === done in 186.4s total ===
