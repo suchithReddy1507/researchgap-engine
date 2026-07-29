@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
+from fastapi import FastAPI, File, HTTPException, Response, UploadFile  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
@@ -19,6 +19,7 @@ from engine import chat as chat_module  # noqa: E402
 from engine import gap_export  # noqa: E402
 from engine import idea_extract  # noqa: E402
 from engine import jobs as jobs_module  # noqa: E402
+from engine import pdf_render  # noqa: E402
 from engine import stats as stats_module  # noqa: E402
 
 app = FastAPI(title="ResearchGap AI API")
@@ -48,6 +49,12 @@ class ChatRequest(BaseModel):
 
 class GapExportRequest(BaseModel):
     format: str
+
+
+class PdfRenderRequest(BaseModel):
+    content: str
+    format: str
+    gap_number: int
 
 
 @app.get("/health")
@@ -146,3 +153,23 @@ def export_gap(job_id: str, gap_index: int, req: GapExportRequest):
         raise HTTPException(status_code=502, detail=str(e))
 
     return {"content": content, "format": req.format}
+
+
+@app.post("/jobs/{job_id}/gaps/{gap_index}/export/pdf")
+def export_gap_pdf(job_id: str, gap_index: int, req: PdfRenderRequest):
+    """Renders already-generated gap-export content (the same text the
+    caller already has, e.g. from /export) into a typeset PDF. Pure
+    rendering -- no LLM call, so what downloads always matches exactly
+    what was already shown on screen. job_id/gap_index stay in the URL
+    for logging/REST consistency even though nothing is looked up from
+    them here."""
+    try:
+        pdf_bytes = pdf_render.render_pdf(req.content, req.format, req.gap_number)
+    except pdf_render.PdfRenderError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="gap-{req.gap_number}-{req.format}.pdf"'},
+    )

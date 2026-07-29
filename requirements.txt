@@ -7,3 +7,4 @@ fastapi
 python-multipart
 uvicorn
 weasyprint
+markdown
