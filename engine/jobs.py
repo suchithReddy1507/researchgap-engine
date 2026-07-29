@@ -26,6 +26,18 @@ def _job_path(job_id: str) -> pathlib.Path:
     return JOBS_DIR / f"{job_id}.json"
 
 
+def _verification_log_path(job_id: str) -> pathlib.Path:
+    return JOBS_DIR / job_id / "verification_log.json"
+
+
+def _write_verification_log(job_id: str, evidence: dict) -> None:
+    path = _verification_log_path(job_id)
+    path.parent.mkdir(exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps({"job_id": job_id, **evidence}, indent=2, default=str))
+    tmp.replace(path)
+
+
 def _write_job(job_id: str, data: dict) -> None:
     """Write-then-rename so a concurrent GET never reads a half-written file."""
     path = _job_path(job_id)
@@ -92,6 +104,10 @@ def _run(job_id: str, topic: str, papers: int) -> None:
         logger.exception(f"job {job_id} failed unexpectedly")
         _update(job_id, status="error", error=f"Unexpected error: {e}")
         return
+
+    # Written separately from the job record below (jobs/<job_id>/verification_log.json,
+    # not jobs/<job_id>.json) so the existing job schema the UI already parses never changes.
+    _write_verification_log(job_id, result["verification_evidence"])
 
     _update(
         job_id,

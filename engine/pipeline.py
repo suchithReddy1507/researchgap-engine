@@ -8,7 +8,7 @@ from __future__ import annotations
 import time
 from typing import Callable
 
-from . import agent, fetch, gaps, nlp, stats, synth
+from . import agent, fetch, gaps, nlp, stats, synth, verification
 from .logconfig import logger
 
 OnStage = Callable[[int, str], None]
@@ -88,6 +88,7 @@ def run_pipeline(
     t0 = _stage(4, "Detecting gaps (cross-topic sparsity)...", on_stage)
     candidates = gaps.detect_gaps(papers, embeddings, topics)
     logger.info(f"      -> {len(candidates)} candidate gaps")
+    bridge_evidence = verification.capture_bridge_evidence(papers, embeddings, topics, candidates)
     _done(t0)
 
     t0 = _stage(5, "Agentic validation against OpenAlex (independent source)...", on_stage)
@@ -101,6 +102,8 @@ def run_pipeline(
         f"      -> {len(confirmed)} confirmed, {len(weak)} weak, "
         f"{len(rejected)} rejected, {len(unverified)} unverified"
     )
+    from_year = current_year - agent.RECENT_YEARS
+    validation_evidence = verification.capture_validation_evidence(validated, from_year)
     _done(t0)
 
     t0 = _stage(6, "Synthesizing report...", on_stage)
@@ -134,4 +137,10 @@ def run_pipeline(
         "rejected_count": len(rejected),
         "unverified_count": len(unverified),
         "report": report,
+        "verification_evidence": {
+            "bridge_evidence": bridge_evidence,
+            "validation_evidence": validation_evidence,
+            "current_year": current_year,
+            "from_year": from_year,
+        },
     }

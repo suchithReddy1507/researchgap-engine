@@ -186,7 +186,7 @@ def _load_validation_cache() -> dict[str, int]:
     return _validation_cache
 
 
-def count_openalex(query: str, from_year: int) -> int | None:
+def count_openalex(query: str, from_year: int, use_cache: bool = True) -> int | None:
     """Cheap count-only query — the validation agent uses this to check
     whether a candidate gap is already being actively researched.
 
@@ -195,12 +195,17 @@ def count_openalex(query: str, from_year: int) -> int | None:
     if the request could not be completed after retries — callers must
     treat that as 'unknown', not 'zero hits', or a rate-limited network
     would silently look like a confirmed gap.
+
+    use_cache=False forces a live call, bypassing the cache — used by the
+    standalone re-verification script, which needs a genuinely fresh count
+    rather than a replay of the original run's cached answer.
     """
     key = f"{query}::{from_year}"
-    with _validation_cache_lock:
-        cache = _load_validation_cache()
-        if key in cache:
-            return cache[key]
+    if use_cache:
+        with _validation_cache_lock:
+            cache = _load_validation_cache()
+            if key in cache:
+                return cache[key]
 
     filters = [
         f"from_publication_date:{from_year}-01-01",
@@ -223,6 +228,38 @@ def count_openalex(query: str, from_year: int) -> int | None:
         CACHE_DIR.mkdir(exist_ok=True)
         VALIDATION_CACHE_PATH.write_text(json.dumps(cache, indent=2))
     return count
+
+
+def fetch_openalex_matches(query: str, from_year: int, limit: int = 25) -> list[dict]:
+    """Like count_openalex(), but returns the actual matching paper records
+    (title, doi, year) instead of just a count — used by the verification
+    log to make a 'recent hits' claim traceable to real papers, not just a
+    number. Always live (no cache), since it's evidence for one specific
+    run rather than a reusable count."""
+    filters = [
+        f"from_publication_date:{from_year}-01-01",
+        f"title_and_abstract.search:{query}",
+    ]
+    with httpx.Client() as client:
+        resp = _get(
+            client,
+            OPENALEX_URL,
+            params=_openalex_params({"per-page": limit, "filter": ",".join(filters)}),
+            label=f"OpenAlex matches '{query}'",
+        )
+    if resp is None:
+        return []
+
+    matches = []
+    for w in resp.json().get("results", []):
+        matches.append(
+            {
+                "title": w.get("title") or "",
+                "doi": (w.get("doi") or "").replace("https://doi.org/", "") or None,
+                "year": w.get("publication_year"),
+            }
+        )
+    return matches
 
 
 def collect_papers(topic: str, target: int = 300, use_cache: bool = True) -> list[dict]:
