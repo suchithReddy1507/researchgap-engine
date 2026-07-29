@@ -68,6 +68,7 @@ def extract_idea_from_pdf(pdf_bytes: bytes) -> dict:
         resp = client.messages.create(
             model=os.getenv("AGENT_MODEL", "claude-haiku-4-5-20251001"),
             max_tokens=500,
+            temperature=0,
             messages=[
                 {
                     "role": "user",
