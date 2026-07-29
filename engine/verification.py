@@ -35,6 +35,7 @@ def capture_bridge_evidence(papers: list[dict], embeddings, topics: dict, candid
                 "title": papers[i].get("title", ""),
                 "doi": papers[i].get("doi"),
                 "year": papers[i].get("year"),
+                "authors": papers[i].get("authors", []),
             }
             for i in idxs
         ]

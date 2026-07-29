@@ -88,7 +88,7 @@ def search_semantic_scholar(query: str, limit: int = 100) -> list[dict]:
                     "query": query,
                     "offset": offset,
                     "limit": batch,
-                    "fields": "title,abstract,year,citationCount,externalIds,fieldsOfStudy",
+                    "fields": "title,abstract,year,citationCount,externalIds,fieldsOfStudy,authors",
                 },
                 headers=_s2_headers(),
                 label=f"S2 search '{query}' offset={offset}",
@@ -108,6 +108,7 @@ def search_semantic_scholar(query: str, limit: int = 100) -> list[dict]:
                             "year": p.get("year"),
                             "citations": p.get("citationCount", 0),
                             "doi": (p.get("externalIds") or {}).get("DOI"),
+                            "authors": [a["name"] for a in (p.get("authors") or []) if a.get("name")],
                             "source": "semantic_scholar",
                         }
                     )
@@ -125,6 +126,17 @@ def _rebuild_abstract(inverted: dict | None) -> str:
         for i in idxs:
             positions[i] = word
     return " ".join(positions[i] for i in sorted(positions))
+
+
+def _openalex_authors(work: dict) -> list[str]:
+    """OpenAlex always includes authorships in a work's default response --
+    no extra param needed, just extracting a field that was being
+    discarded."""
+    return [
+        a["author"]["display_name"]
+        for a in (work.get("authorships") or [])
+        if a.get("author", {}).get("display_name")
+    ]
 
 
 def search_openalex(query: str, limit: int = 100, from_year: int | None = None) -> list[dict]:
@@ -166,6 +178,7 @@ def search_openalex(query: str, limit: int = 100, from_year: int | None = None) 
                             "year": w.get("publication_year"),
                             "citations": w.get("cited_by_count", 0),
                             "doi": (w.get("doi") or "").replace("https://doi.org/", "") or None,
+                            "authors": _openalex_authors(w),
                             "source": "openalex",
                         }
                     )
@@ -232,9 +245,10 @@ def count_openalex(query: str, from_year: int, use_cache: bool = True) -> int | 
 
 def fetch_openalex_matches(query: str, from_year: int, limit: int = 25) -> list[dict]:
     """Like count_openalex(), but returns the actual matching paper records
-    (title, doi, year) instead of just a count — used by the verification
-    log to make a 'recent hits' claim traceable to real papers, not just a
-    number. Always live (no cache), since it's evidence for one specific
+    (title, doi, year, authors) instead of just a count — used by the
+    verification log to make a 'recent hits' claim traceable to real
+    papers, not just a number. Always live (no cache), since it's
+    evidence for one specific
     run rather than a reusable count."""
     filters = [
         f"from_publication_date:{from_year}-01-01",
@@ -257,6 +271,7 @@ def fetch_openalex_matches(query: str, from_year: int, limit: int = 25) -> list[
                 "title": w.get("title") or "",
                 "doi": (w.get("doi") or "").replace("https://doi.org/", "") or None,
                 "year": w.get("publication_year"),
+                "authors": _openalex_authors(w),
             }
         )
     return matches

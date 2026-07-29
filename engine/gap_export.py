@@ -45,9 +45,17 @@ def _find_gap(job: dict, gap_index: int) -> dict:
     return gaps[gap_index]
 
 
+MAX_CITATIONS = 20  # a gap can have hundreds of bridge papers (dense fields);
+# the annotated-bibliography style asks for one paragraph per cited work, so
+# an uncapped list blows well past any reasonable output budget. Capped here,
+# at the source, rather than by raising max_tokens further -- that wouldn't
+# scale for an even larger gap, this does regardless of pool size.
+
+
 def _find_citations(verification_log: dict, gap: dict) -> dict:
-    """Filters verification_log.json down to just title/doi/year for the
-    one matching gap -- never the full file."""
+    """Filters verification_log.json down to just title/doi/year/authors for
+    the one matching gap -- never the full file. Deduped by title and capped
+    at MAX_CITATIONS total (bridge papers first, then validated papers)."""
 
     def matches(entry: dict) -> bool:
         return entry["topic_a"] == gap["topic_a"] and entry["topic_b"] == gap["topic_b"]
@@ -55,15 +63,27 @@ def _find_citations(verification_log: dict, gap: dict) -> dict:
     bridge = next((e for e in verification_log.get("bridge_evidence", []) if matches(e)), None)
     validation = next((e for e in verification_log.get("validation_evidence", []) if matches(e)), None)
 
-    bridge_papers = [
-        {"title": p["title"], "doi": p.get("doi"), "year": p.get("year")}
-        for p in (bridge["bridge_paper_evidence"] if bridge else [])
-    ]
-    validated_papers = []
+    def as_citation(p: dict) -> dict:
+        return {"title": p["title"], "doi": p.get("doi"), "year": p.get("year"), "authors": p.get("authors", [])}
+
+    raw_bridge = [as_citation(p) for p in (bridge["bridge_paper_evidence"] if bridge else [])]
+    raw_validated = []
     if validation:
         for matched in validation.get("matches_per_query", {}).values():
             for p in matched:
-                validated_papers.append({"title": p["title"], "doi": p.get("doi"), "year": p.get("year")})
+                raw_validated.append(as_citation(p))
+
+    seen_titles: set[str] = set()
+    bridge_papers, validated_papers = [], []
+    for source_list, out_list in ((raw_bridge, bridge_papers), (raw_validated, validated_papers)):
+        for p in source_list:
+            if len(bridge_papers) + len(validated_papers) >= MAX_CITATIONS:
+                break
+            key = p["title"].lower().strip()
+            if key and key in seen_titles:
+                continue
+            seen_titles.add(key)
+            out_list.append(p)
 
     return {"bridge_papers": bridge_papers, "validated_papers": validated_papers}
 
@@ -107,14 +127,22 @@ def _build_prompt(job: dict, gap: dict, gap_number: int, fmt: str, citations: di
     else:
         style_name = _STYLE_NAMES[fmt]
         instructions = (
-            f"Write a short academic paper draft in {style_name} style and structure "
-            f"(correct section headers and in-text/reference citation conventions for "
-            f"{style_name}) covering: title, abstract, introduction/background grounded "
-            "in the real topic landscape data below, literature framing that cites ONLY "
-            "the real papers listed in cited_literature (never invent a citation), "
-            "methodology derived from the research agenda implied by the gap data, and a "
-            "references section listing only the real cited papers. Natural academic "
-            "prose, not robotic or templated-sounding."
+            f"Write a short academic paper draft in {style_name} style and structure:\n"
+            "- Title, then go straight into the Abstract -- no author/affiliation block.\n"
+            "- A \"Keywords:\" line immediately after the Abstract, drawn from the gap's "
+            "real topic keywords below.\n"
+            "- Introduction/background grounded in the real topic landscape data below.\n"
+            f"- A literature survey section in the sequential annotated-bibliography style "
+            f"common to {style_name} papers: one numbered, cited paper per paragraph (e.g. "
+            "\"[1] This paper proposes... [2] In this paper, the research focuses on...\"), "
+            "covering ONLY the real papers listed in cited_literature -- never invent a "
+            "citation or discuss a paper that isn't listed there.\n"
+            "- Methodology derived from the research agenda implied by the gap data.\n"
+            f"- A references section in correct {style_name} citation format, listing only "
+            "the real cited papers. Use each paper's real author name(s) when its "
+            "\"authors\" list is non-empty; if a paper has no author data, cite it by title "
+            "only rather than inventing an author.\n\n"
+            "Natural academic prose throughout, not robotic or templated-sounding."
         )
 
     return (
