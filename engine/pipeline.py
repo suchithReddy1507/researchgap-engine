@@ -82,8 +82,22 @@ def run_pipeline(
     for t in topics.values():
         logger.info(f"         - {t['label']} ({t['size']} papers)")
     _done(t0)
-    if len(topics) < 3:
-        raise PipelineError("Fewer than 3 topics — increase --papers or broaden the topic.")
+    if len(topics) < 4:
+        # 4, not 3: with exactly 3 topics, the knowledge-map layout step
+        # below (_layout_topics) hits UMAP's spectral-init eigensolver at
+        # its own edge case (needs N > n_components + 1 = 3 points) and
+        # crashes with a raw scipy TypeError instead of failing gracefully
+        # -- confirmed by direct reproduction, not a guess. Show the real
+        # numbers rather than a generic message: papers were fine, they
+        # just didn't separate into enough distinct topics.
+        topic_summary = "; ".join(f"{t['label']} ({t['size']} papers)" for t in topics.values()) or "no coherent topics"
+        raise PipelineError(
+            f"Not enough distinct topics found for gap analysis on '{topic}' — "
+            f"{len(papers)} papers were analyzed, but they only separated into "
+            f"{len(topics)} topic cluster(s) ({topic_summary}). At least 4 distinct "
+            f"topics are needed for reliable cross-topic gap analysis. Try a "
+            f"broader or related keyword."
+        )
 
     t0 = _stage(4, "Detecting gaps (cross-topic sparsity)...", on_stage)
     candidates = gaps.detect_gaps(papers, embeddings, topics)
