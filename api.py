@@ -15,6 +15,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
+from engine import chat as chat_module  # noqa: E402
 from engine import idea_extract  # noqa: E402
 from engine import jobs as jobs_module  # noqa: E402
 from engine import stats as stats_module  # noqa: E402
@@ -32,6 +33,16 @@ app.add_middleware(
 class AnalyzeRequest(BaseModel):
     topic: str
     papers: int = 300
+
+
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
+class ChatRequest(BaseModel):
+    message: str
+    history: list[ChatMessage] = []
 
 
 @app.get("/health")
@@ -82,3 +93,24 @@ def get_job(job_id: str):
     # round-trip through json with default=str to guarantee everything is
     # JSON-serializable, same safety net main.py uses when writing gaps.json
     return json.loads(json.dumps(job, default=str))
+
+
+@app.post("/jobs/{job_id}/chat")
+def job_chat(job_id: str, req: ChatRequest):
+    """Answers a question about one completed job, grounded only in that
+    job's own data. Stateless -- the caller sends the full conversation
+    history each request; nothing is persisted server-side."""
+    job = jobs_module.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail="job not found")
+
+    try:
+        answer = chat_module.ask(job, req.message, [m.model_dump() for m in req.history])
+    except chat_module.MissingApiKeyError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except chat_module.JobNotReadyError as e:
+        raise HTTPException(status_code=409, detail=str(e))
+    except chat_module.ChatError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    return {"answer": answer}
