@@ -57,6 +57,19 @@ def get_job(job_id: str) -> dict | None:
         return None
 
 
+def get_verification_log(job_id: str) -> dict | None:
+    """None if this job predates the verification feature (or the write
+    never happened) -- callers that need real cited papers (gap_export.py)
+    must treat that as "no citation data available", not "zero papers"."""
+    path = _verification_log_path(job_id)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except json.JSONDecodeError:
+        return None
+
+
 def create_job(topic: str, papers: int, idea: dict | None = None) -> str:
     """Writes the initial job record, starts the pipeline in a background
     thread, and returns immediately with the job_id.

@@ -16,6 +16,7 @@ from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
 from engine import chat as chat_module  # noqa: E402
+from engine import gap_export  # noqa: E402
 from engine import idea_extract  # noqa: E402
 from engine import jobs as jobs_module  # noqa: E402
 from engine import stats as stats_module  # noqa: E402
@@ -43,6 +44,10 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     history: list[ChatMessage] = []
+
+
+class GapExportRequest(BaseModel):
+    format: str
 
 
 @app.get("/health")
@@ -114,3 +119,30 @@ def job_chat(job_id: str, req: ChatRequest):
         raise HTTPException(status_code=502, detail=str(e))
 
     return {"answer": answer}
+
+
+@app.post("/jobs/{job_id}/gaps/{gap_index}/export")
+def export_gap(job_id: str, gap_index: int, req: GapExportRequest):
+    """Generates fresh content scoped to one gap -- either today's report
+    style (no citations needed) or a formatted academic-paper draft
+    (ieee/acm/apa, which requires real cited papers from this job's
+    verification_log.json and refuses rather than inventing references
+    if that file doesn't exist)."""
+    job = jobs_module.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail="job not found")
+
+    verification_log = jobs_module.get_verification_log(job_id)
+
+    try:
+        content = gap_export.generate(job, gap_index, req.format, verification_log)
+    except gap_export.MissingApiKeyError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except gap_export.NoCitationDataError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except gap_export.InvalidGapError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except gap_export.GapExportError as e:
+        raise HTTPException(status_code=502, detail=str(e))
+
+    return {"content": content, "format": req.format}
