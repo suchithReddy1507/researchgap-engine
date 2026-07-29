@@ -15,6 +15,7 @@ import threading
 import time
 import uuid
 
+from . import landing
 from .logconfig import logger
 from .pipeline import PipelineError, run_pipeline
 
@@ -56,9 +57,14 @@ def get_job(job_id: str) -> dict | None:
         return None
 
 
-def create_job(topic: str, papers: int) -> str:
+def create_job(topic: str, papers: int, idea: dict | None = None) -> str:
     """Writes the initial job record, starts the pipeline in a background
-    thread, and returns immediately with the job_id."""
+    thread, and returns immediately with the job_id.
+
+    idea is only set for Idea Check jobs (extracted title/keywords/summary
+    from an uploaded PDF) -- when present, _run() attaches an idea_landing
+    comparison to the result once the pipeline completes. Normal /analyze
+    jobs pass idea=None and are completely unaffected."""
     job_id = uuid.uuid4().hex[:12]
     now = time.time()
     _write_job(
@@ -68,6 +74,7 @@ def create_job(topic: str, papers: int) -> str:
             "status": "pending",
             "topic": topic,
             "papers": papers,
+            "idea": idea,
             "stage": 0,
             "stage_label": "Queued",
             "created_at": now,
@@ -109,6 +116,13 @@ def _run(job_id: str, topic: str, papers: int) -> None:
     # not jobs/<job_id>.json) so the existing job schema the UI already parses never changes.
     _write_verification_log(job_id, result["verification_evidence"])
 
+    # Idea Check jobs only: compare the extracted idea's keywords against
+    # this run's topics/gaps. Pure post-processing on run_pipeline()'s
+    # existing output -- pipeline.py itself needs no changes for this.
+    job = get_job(job_id)
+    idea = job.get("idea") if job else None
+    idea_landing = landing.compute_landing(idea, result["topics"], result["gaps"]) if idea else None
+
     _update(
         job_id,
         status="done",
@@ -124,5 +138,6 @@ def _run(job_id: str, topic: str, papers: int) -> None:
             "rejected_count": result["rejected_count"],
             "unverified_count": result["unverified_count"],
             "report": result["report"],
+            "idea_landing": idea_landing,
         },
     )

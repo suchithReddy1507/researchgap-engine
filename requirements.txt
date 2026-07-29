@@ -4,5 +4,6 @@ bertopic
 python-dotenv
 anthropic
 fastapi
+python-multipart
 uvicorn
 weasyprint

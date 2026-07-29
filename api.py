@@ -11,10 +11,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from fastapi import FastAPI, HTTPException  # noqa: E402
+from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 from pydantic import BaseModel  # noqa: E402
 
+from engine import idea_extract  # noqa: E402
 from engine import jobs as jobs_module  # noqa: E402
 from engine import stats as stats_module  # noqa: E402
 
@@ -49,6 +50,28 @@ def analyze(req: AnalyzeRequest):
     Poll GET /jobs/{job_id} for progress and the final result."""
     job_id = jobs_module.create_job(req.topic, req.papers)
     return {"job_id": job_id}
+
+
+@app.post("/idea-check")
+async def idea_check(file: UploadFile = File(...)):
+    """Extracts a core topic/keywords from one uploaded PDF (via Claude's
+    native PDF support), then kicks off the exact same pipeline /analyze
+    uses, seeded with the extracted keywords. Returns immediately with a
+    job_id to poll, same as /analyze -- extraction itself is a fast,
+    blocking Claude call, done before the (1-3 min) pipeline job starts."""
+    if file.content_type != "application/pdf" and not (file.filename or "").lower().endswith(".pdf"):
+        raise HTTPException(status_code=422, detail="Please upload a PDF file.")
+
+    pdf_bytes = await file.read()
+    try:
+        idea = idea_extract.extract_idea_from_pdf(pdf_bytes)
+    except idea_extract.MissingApiKeyError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except idea_extract.IdeaExtractionError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+
+    job_id = jobs_module.create_job(idea["core_topic"], 300, idea=idea)
+    return {"job_id": job_id, "idea": idea}
 
 
 @app.get("/jobs/{job_id}")
