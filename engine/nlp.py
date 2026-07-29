@@ -41,11 +41,26 @@ def cluster_topics(papers: list[dict], embeddings, query: str = "") -> dict:
     import re
     from hdbscan import HDBSCAN
     from sklearn.feature_extraction.text import CountVectorizer
+    from umap import UMAP
 
     stop = list(CountVectorizer(stop_words="english").get_stop_words())
     stop += [w.lower() for w in re.findall(r"[a-zA-Z]+", query)]
 
+    # BERTopic's own default UMAP has no random_state, so the same
+    # embeddings can produce a different topic split from run to run.
+    # This is that exact default (every value matches BERTopic's internal
+    # construction) with only random_state added for reproducibility.
+    umap_model = UMAP(
+        n_neighbors=15,
+        n_components=5,
+        min_dist=0.0,
+        metric="cosine",
+        low_memory=False,
+        random_state=42,
+    )
+
     model = BERTopic(
+        umap_model=umap_model,
         vectorizer_model=CountVectorizer(stop_words=stop, ngram_range=(1, 2)),
         hdbscan_model=HDBSCAN(min_cluster_size=max(6, len(papers) // 40), min_samples=2),
         calculate_probabilities=False,
