@@ -1,0 +1,437 @@
+{
+  "job_id": "d8223e259040",
+  "status": "done",
+  "topic": "speech emotion recognition",
+  "papers": 300,
+  "stage": 6,
+  "stage_label": "Done",
+  "created_at": 1783788217.016843,
+  "updated_at": 1783788346.414647,
+  "result": {
+    "topic": "speech emotion recognition",
+    "papers_count": 295,
+    "topics": [
+      {
+        "label": "multimodal / fusion / features",
+        "keywords": [
+          "multimodal",
+          "fusion",
+          "features",
+          "modalities",
+          "information",
+          "proposed"
+        ],
+        "size": 46,
+        "mean_year": 2020.9,
+        "x": 0.475996196269989,
+        "y": 0.419360488653183
+      },
+      {
+        "label": "feature / features / used",
+        "keywords": [
+          "feature",
+          "features",
+          "used",
+          "using",
+          "emotional",
+          "method"
+        ],
+        "size": 38,
+        "mean_year": 2020.4,
+        "x": 0.719543993473053,
+        "y": 1.0
+      },
+      {
+        "label": "data / ser / models",
+        "keywords": [
+          "data",
+          "ser",
+          "models",
+          "pretrained",
+          "augmentation",
+          "model"
+        ],
+        "size": 38,
+        "mean_year": 2021.8,
+        "x": 0.22210702300071716,
+        "y": 0.4281297028064728
+      },
+      {
+        "label": "ser / attention / temporal",
+        "keywords": [
+          "ser",
+          "attention",
+          "temporal",
+          "representation",
+          "learning",
+          "features"
+        ],
+        "size": 34,
+        "mean_year": 2019.9,
+        "x": 0.6033215522766113,
+        "y": 0.0
+      },
+      {
+        "label": "features / network / neural",
+        "keywords": [
+          "features",
+          "network",
+          "neural",
+          "deep",
+          "ser",
+          "neural network"
+        ],
+        "size": 26,
+        "mean_year": 2020.3,
+        "x": 0.8050124049186707,
+        "y": 0.637006402015686
+      },
+      {
+        "label": "emotions / feature / ser",
+        "keywords": [
+          "emotions",
+          "feature",
+          "ser",
+          "algorithm",
+          "asr",
+          "calls"
+        ],
+        "size": 13,
+        "mean_year": 2020.3,
+        "x": 0.5016215443611145,
+        "y": 0.8446417450904846
+      },
+      {
+        "label": "model / deep / accuracy",
+        "keywords": [
+          "model",
+          "deep",
+          "accuracy",
+          "data augmentation",
+          "augmentation",
+          "ravdess"
+        ],
+        "size": 11,
+        "mean_year": 2020.7,
+        "x": 0.7857630252838135,
+        "y": 0.2072516530752182
+      },
+      {
+        "label": "crosscorpus / subspace / transfer",
+        "keywords": [
+          "crosscorpus",
+          "subspace",
+          "transfer",
+          "domain",
+          "corpora",
+          "training"
+        ],
+        "size": 9,
+        "mean_year": 2020.0,
+        "x": 0.14159607887268066,
+        "y": 0.7456600666046143
+      },
+      {
+        "label": "multilingual / languages / language",
+        "keywords": [
+          "multilingual",
+          "languages",
+          "language",
+          "corpus",
+          "data",
+          "english"
+        ],
+        "size": 8,
+        "mean_year": 2020.1,
+        "x": 0.0,
+        "y": 0.3850312829017639
+      },
+      {
+        "label": "convolutional / cnn / convolutional neural",
+        "keywords": [
+          "convolutional",
+          "cnn",
+          "convolutional neural",
+          "neural",
+          "accuracy",
+          "ser"
+        ],
+        "size": 8,
+        "mean_year": 2019.8,
+        "x": 1.0,
+        "y": 0.4316064119338989
+      },
+      {
+        "label": "gender / auxiliary / learning",
+        "keywords": [
+          "gender",
+          "auxiliary",
+          "learning",
+          "multitask",
+          "multitask learning",
+          "task"
+        ],
+        "size": 7,
+        "mean_year": 2019.0,
+        "x": 0.27624669671058655,
+        "y": 0.04219422489404678
+      }
+    ],
+    "gaps": [
+      {
+        "topic_a": "multimodal / fusion / features",
+        "topic_b": "feature / features / used",
+        "keywords_a": [
+          "multimodal",
+          "fusion",
+          "features",
+          "modalities",
+          "information",
+          "proposed"
+        ],
+        "keywords_b": [
+          "feature",
+          "features",
+          "used",
+          "using",
+          "emotional",
+          "method"
+        ],
+        "bridge_papers": 293,
+        "size_a": 46,
+        "size_b": 38,
+        "prominence": 0.18,
+        "verification_queries": [
+          "\"multimodal fusion\" \"emotional recognition\"",
+          "\"feature extraction\" \"multimodal learning\""
+        ],
+        "recent_papers_found": 248,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "multimodal / fusion / features",
+        "topic_b": "data / ser / models",
+        "keywords_a": [
+          "multimodal",
+          "fusion",
+          "features",
+          "modalities",
+          "information",
+          "proposed"
+        ],
+        "keywords_b": [
+          "data",
+          "ser",
+          "models",
+          "pretrained",
+          "augmentation",
+          "model"
+        ],
+        "bridge_papers": 292,
+        "size_a": 46,
+        "size_b": 38,
+        "prominence": 0.18,
+        "verification_queries": [
+          "\"multimodal fusion\" \"pretrained models\"",
+          "\"feature fusion\" \"data augmentation\""
+        ],
+        "recent_papers_found": 1094,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "multimodal / fusion / features",
+        "topic_b": "ser / attention / temporal",
+        "keywords_a": [
+          "multimodal",
+          "fusion",
+          "features",
+          "modalities",
+          "information",
+          "proposed"
+        ],
+        "keywords_b": [
+          "ser",
+          "attention",
+          "temporal",
+          "representation",
+          "learning",
+          "features"
+        ],
+        "bridge_papers": 291,
+        "size_a": 46,
+        "size_b": 34,
+        "prominence": 0.17,
+        "verification_queries": [
+          "\"multimodal fusion\" \"temporal attention\"",
+          "\"feature fusion\" \"speech emotion recognition\""
+        ],
+        "recent_papers_found": 144,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "feature / features / used",
+        "topic_b": "data / ser / models",
+        "keywords_a": [
+          "feature",
+          "features",
+          "used",
+          "using",
+          "emotional",
+          "method"
+        ],
+        "keywords_b": [
+          "data",
+          "ser",
+          "models",
+          "pretrained",
+          "augmentation",
+          "model"
+        ],
+        "bridge_papers": 292,
+        "size_a": 38,
+        "size_b": 38,
+        "prominence": 0.16,
+        "verification_queries": [
+          "\"emotional features\" \"pretrained models\"",
+          "\"feature extraction\" \"data augmentation\""
+        ],
+        "recent_papers_found": 4464,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "multimodal / fusion / features",
+        "topic_b": "features / network / neural",
+        "keywords_a": [
+          "multimodal",
+          "fusion",
+          "features",
+          "modalities",
+          "information",
+          "proposed"
+        ],
+        "keywords_b": [
+          "features",
+          "network",
+          "neural",
+          "deep",
+          "ser",
+          "neural network"
+        ],
+        "bridge_papers": 293,
+        "size_a": 46,
+        "size_b": 26,
+        "prominence": 0.15,
+        "verification_queries": [
+          "\"multimodal fusion\" \"deep neural network\"",
+          "\"feature extraction\" \"neural network architecture\""
+        ],
+        "recent_papers_found": 1231,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "feature / features / used",
+        "topic_b": "ser / attention / temporal",
+        "keywords_a": [
+          "feature",
+          "features",
+          "used",
+          "using",
+          "emotional",
+          "method"
+        ],
+        "keywords_b": [
+          "ser",
+          "attention",
+          "temporal",
+          "representation",
+          "learning",
+          "features"
+        ],
+        "bridge_papers": 291,
+        "size_a": 38,
+        "size_b": 34,
+        "prominence": 0.15,
+        "verification_queries": [
+          "\"emotional features\" \"attention mechanism\"",
+          "\"temporal representation\" \"emotional features\""
+        ],
+        "recent_papers_found": 174,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "data / ser / models",
+        "topic_b": "ser / attention / temporal",
+        "keywords_a": [
+          "data",
+          "ser",
+          "models",
+          "pretrained",
+          "augmentation",
+          "model"
+        ],
+        "keywords_b": [
+          "ser",
+          "attention",
+          "temporal",
+          "representation",
+          "learning",
+          "features"
+        ],
+        "bridge_papers": 291,
+        "size_a": 38,
+        "size_b": 34,
+        "prominence": 0.15,
+        "verification_queries": [
+          "\"pretrained models\" \"temporal attention\"",
+          "\"data augmentation\" \"representation learning\""
+        ],
+        "recent_papers_found": 1072,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "data / ser / models",
+        "topic_b": "features / network / neural",
+        "keywords_a": [
+          "data",
+          "ser",
+          "models",
+          "pretrained",
+          "augmentation",
+          "model"
+        ],
+        "keywords_b": [
+          "features",
+          "network",
+          "neural",
+          "deep",
+          "ser",
+          "neural network"
+        ],
+        "bridge_papers": 292,
+        "size_a": 38,
+        "size_b": 26,
+        "prominence": 0.14,
+        "verification_queries": [
+          "\"pretrained models\" \"deep neural networks\"",
+          "\"data augmentation\" \"neural network features\""
+        ],
+        "recent_papers_found": 275,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      }
+    ],
+    "confirmed_count": 0,
+    "weak_count": 0,
+    "rejected_count": 8,
+    "unverified_count": 0,
+    "report": "# Research-Gap Report: Speech Emotion Recognition\n\n---\n\n## Topic Landscape\n\nThe speech emotion recognition (SER) literature, as reflected in the 11 identified clusters, is heavily concentrated around a core set of well-developed themes: multimodal fusion and feature engineering (clusters of 46 and 38 papers, mean years 2020.9 and 2020.4), data and model development (38 papers, mean year 2021.8), and attention-based temporal modeling (34 papers, mean year 2019.9). Neural network architectures\u2014particularly CNNs and deep networks\u2014form a secondary tier, while smaller but notable clusters address cross-corpus transfer learning (9 papers), multilingual SER (8 papers), and gender-auxiliary learning (7 papers, the oldest cluster at mean year 2019.0). The overall landscape skews toward 2019\u20132022, suggesting an active but maturing field with consolidation around deep learning and fusion paradigms.\n\n---\n\n## Validated Gaps\n\n**There are no validated gaps to report.** The agentic validation process returned zero confirmed gaps (`\"validated_gaps\": []`). Every candidate bridge between topic clusters was rejected during validation.\n\n---\n\n## Rejected Candidates\n\nAll eight candidate gaps were rejected due to substantial existing literature at their intersections, with recent-paper counts ranging from 144 to 4,464\u2014indicating that no tested topic bridge currently represents an underexplored area by the validation criteria applied."
+  },
+  "error": null
+}

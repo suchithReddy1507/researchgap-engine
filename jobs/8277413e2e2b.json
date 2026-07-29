@@ -1,0 +1,512 @@
+{
+  "job_id": "8277413e2e2b",
+  "status": "done",
+  "topic": "medical image segmentation",
+  "papers": 300,
+  "stage": 6,
+  "stage_label": "Done",
+  "created_at": 1783867077.4536939,
+  "updated_at": 1783867187.526879,
+  "result": {
+    "topic": "medical image segmentation",
+    "papers_count": 290,
+    "topics": [
+      {
+        "label": "transformer / attention / transformers",
+        "keywords": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "size": 51,
+        "mean_year": 2022.1,
+        "x": 0.729653537273407,
+        "y": 0.0
+      },
+      {
+        "label": "unet / architecture / network",
+        "keywords": [
+          "unet",
+          "architecture",
+          "network",
+          "semantic",
+          "features",
+          "skip"
+        ],
+        "size": 31,
+        "mean_year": 2020.6,
+        "x": 0.7143204808235168,
+        "y": 0.2710041105747223
+      },
+      {
+        "label": "deep / review / deep learning",
+        "keywords": [
+          "deep",
+          "review",
+          "deep learning",
+          "ai",
+          "learning",
+          "challenges"
+        ],
+        "size": 15,
+        "mean_year": 2020.9,
+        "x": 0.929759681224823,
+        "y": 0.7358546257019043
+      },
+      {
+        "label": "annotations / training / annotation",
+        "keywords": [
+          "annotations",
+          "training",
+          "annotation",
+          "learning",
+          "data",
+          "supervision"
+        ],
+        "size": 15,
+        "mean_year": 2021.5,
+        "x": 0.15493670105934143,
+        "y": 0.4987846910953522
+      },
+      {
+        "label": "contrastive / semisupervised / labeled",
+        "keywords": [
+          "contrastive",
+          "semisupervised",
+          "labeled",
+          "data",
+          "learning",
+          "contrastive learning"
+        ],
+        "size": 14,
+        "mean_year": 2022.2,
+        "x": 0.2214430272579193,
+        "y": 0.7620241641998291
+      },
+      {
+        "label": "sam / models / segment model",
+        "keywords": [
+          "sam",
+          "models",
+          "segment model",
+          "segment",
+          "model",
+          "zeroshot"
+        ],
+        "size": 14,
+        "mean_year": 2023.3,
+        "x": 0.5350283980369568,
+        "y": 0.485917329788208
+      },
+      {
+        "label": "3d / volumetric / search",
+        "keywords": [
+          "3d",
+          "volumetric",
+          "search",
+          "methods",
+          "neural",
+          "convolutional"
+        ],
+        "size": 14,
+        "mean_year": 2019.9,
+        "x": 1.0,
+        "y": 0.4809918701648712
+      },
+      {
+        "label": "domain / adaptation / domain adaptation",
+        "keywords": [
+          "domain",
+          "adaptation",
+          "domain adaptation",
+          "source",
+          "domains",
+          "unseen"
+        ],
+        "size": 12,
+        "mean_year": 2021.2,
+        "x": 0.3525852560997009,
+        "y": 0.39267101883888245
+      },
+      {
+        "label": "attention / network / proposed",
+        "keywords": [
+          "attention",
+          "network",
+          "proposed",
+          "module",
+          "classification",
+          "edgeattention"
+        ],
+        "size": 11,
+        "mean_year": 2021.0,
+        "x": 0.5083103179931641,
+        "y": 0.06878558546304703
+      },
+      {
+        "label": "loss / loss functions / functions",
+        "keywords": [
+          "loss",
+          "loss functions",
+          "functions",
+          "dice",
+          "jaccard",
+          "loss function"
+        ],
+        "size": 10,
+        "mean_year": 2020.2,
+        "x": 0.735985279083252,
+        "y": 0.8765022158622742
+      },
+      {
+        "label": "mamba / modeling / state space",
+        "keywords": [
+          "mamba",
+          "modeling",
+          "state space",
+          "3d",
+          "state",
+          "computational"
+        ],
+        "size": 9,
+        "mean_year": 2024.2,
+        "x": 0.9406631588935852,
+        "y": 0.14357319474220276
+      },
+      {
+        "label": "fewshot / prototype / query",
+        "keywords": [
+          "fewshot",
+          "prototype",
+          "query",
+          "fewshot learning",
+          "fss",
+          "images"
+        ],
+        "size": 9,
+        "mean_year": 2021.8,
+        "x": 0.12495031952857971,
+        "y": 0.17510788142681122
+      },
+      {
+        "label": "diffusion / model / diffusion models",
+        "keywords": [
+          "diffusion",
+          "model",
+          "diffusion models",
+          "models",
+          "diffusion model",
+          "generation"
+        ],
+        "size": 9,
+        "mean_year": 2022.7,
+        "x": 0.45981910824775696,
+        "y": 0.7509519457817078
+      },
+      {
+        "label": "consistency / semisupervised / unlabeled",
+        "keywords": [
+          "consistency",
+          "semisupervised",
+          "unlabeled",
+          "unlabeled data",
+          "uncertainty",
+          "data"
+        ],
+        "size": 9,
+        "mean_year": 2021.3,
+        "x": 0.0,
+        "y": 0.7763499021530151
+      },
+      {
+        "label": "nnunet / unet / 3d",
+        "keywords": [
+          "nnunet",
+          "unet",
+          "3d",
+          "miscnn",
+          "models",
+          "model"
+        ],
+        "size": 8,
+        "mean_year": 2020.9,
+        "x": 0.7901322245597839,
+        "y": 0.5057109594345093
+      },
+      {
+        "label": "semisupervised / labeled / unlabeled",
+        "keywords": [
+          "semisupervised",
+          "labeled",
+          "unlabeled",
+          "method",
+          "ssl",
+          "data"
+        ],
+        "size": 8,
+        "mean_year": 2021.1,
+        "x": 0.20730726420879364,
+        "y": 1.0
+      }
+    ],
+    "gaps": [
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "unet / architecture / network",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "unet",
+          "architecture",
+          "network",
+          "semantic",
+          "features",
+          "skip"
+        ],
+        "bridge_papers": 283,
+        "size_a": 51,
+        "size_b": 31,
+        "prominence": 0.17,
+        "verification_queries": [
+          "\"attention mechanism\" \"skip connections\"",
+          "\"transformer architecture\" \"semantic segmentation\""
+        ],
+        "recent_papers_found": 1296,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "deep / review / deep learning",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "deep",
+          "review",
+          "deep learning",
+          "ai",
+          "learning",
+          "challenges"
+        ],
+        "bridge_papers": 279,
+        "size_a": 51,
+        "size_b": 15,
+        "prominence": 0.12,
+        "verification_queries": [
+          "\"transformer attention\" \"deep learning\"",
+          "\"global dependencies\" \"review challenges\""
+        ],
+        "recent_papers_found": 294,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "annotations / training / annotation",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "annotations",
+          "training",
+          "annotation",
+          "learning",
+          "data",
+          "supervision"
+        ],
+        "bridge_papers": 282,
+        "size_a": 51,
+        "size_b": 15,
+        "prominence": 0.12,
+        "verification_queries": [
+          "\"attention mechanisms\" \"annotation efficiency\"",
+          "\"transformer architectures\" \"supervised learning\""
+        ],
+        "recent_papers_found": 432,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "contrastive / semisupervised / labeled",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "contrastive",
+          "semisupervised",
+          "labeled",
+          "data",
+          "learning",
+          "contrastive learning"
+        ],
+        "bridge_papers": 280,
+        "size_a": 51,
+        "size_b": 14,
+        "prominence": 0.12,
+        "verification_queries": [
+          "\"transformer attention\" \"contrastive learning\"",
+          "\"global dependencies\" \"semi-supervised learning\""
+        ],
+        "recent_papers_found": 16,
+        "verdict": "WEAK",
+        "confidence": 0.36
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "sam / models / segment model",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "sam",
+          "models",
+          "segment model",
+          "segment",
+          "model",
+          "zeroshot"
+        ],
+        "bridge_papers": 282,
+        "size_a": 51,
+        "size_b": 14,
+        "prominence": 0.12,
+        "verification_queries": [
+          "\"transformer attention\" \"segment anything model\"",
+          "\"global dependencies\" \"zero-shot segmentation\""
+        ],
+        "recent_papers_found": 2,
+        "verdict": "CONFIRMED",
+        "confidence": 0.92
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "3d / volumetric / search",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "3d",
+          "volumetric",
+          "search",
+          "methods",
+          "neural",
+          "convolutional"
+        ],
+        "bridge_papers": 282,
+        "size_a": 51,
+        "size_b": 14,
+        "prominence": 0.11,
+        "verification_queries": [
+          "\"attention mechanisms\" \"3d convolutional neural networks\"",
+          "\"transformer architecture\" \"volumetric neural networks\""
+        ],
+        "recent_papers_found": 216,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "domain / adaptation / domain adaptation",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "domain",
+          "adaptation",
+          "domain adaptation",
+          "source",
+          "domains",
+          "unseen"
+        ],
+        "bridge_papers": 281,
+        "size_a": 51,
+        "size_b": 12,
+        "prominence": 0.11,
+        "verification_queries": [
+          "\"attention mechanisms\" \"domain adaptation\"",
+          "\"transformer architecture\" \"unseen domains\""
+        ],
+        "recent_papers_found": 776,
+        "verdict": "REJECTED",
+        "confidence": 0.0
+      },
+      {
+        "topic_a": "transformer / attention / transformers",
+        "topic_b": "attention / network / proposed",
+        "keywords_a": [
+          "transformer",
+          "attention",
+          "transformers",
+          "global",
+          "features",
+          "dependencies"
+        ],
+        "keywords_b": [
+          "attention",
+          "network",
+          "proposed",
+          "module",
+          "classification",
+          "edgeattention"
+        ],
+        "bridge_papers": 282,
+        "size_a": 51,
+        "size_b": 11,
+        "prominence": 0.1,
+        "verification_queries": [
+          "\"transformer attention\" \"edge attention classification\"",
+          "\"global dependencies\" \"attention module network\""
+        ],
+        "recent_papers_found": 0,
+        "verdict": "CONFIRMED",
+        "confidence": 1.0
+      }
+    ],
+    "confirmed_count": 2,
+    "weak_count": 1,
+    "rejected_count": 5,
+    "unverified_count": 0,
+    "report": "# Research-Gap Report: Medical Image Segmentation\n\n---\n\n## Topic Landscape\n\nThe medical image segmentation literature clusters strongly around transformer and attention mechanisms (51 papers, mean year 2022.1), which now dominate over the earlier U-Net/architecture tradition (31 papers, mean year 2020.6). Surrounding these pillars are active mid-sized clusters on semi-supervised and contrastive learning (14 papers each, ~2021\u20132022), the Segment Anything Model (SAM, 14 papers, mean year 2023.3), few-shot learning (9 papers), and the emerging Mamba/state-space direction (9 papers, mean year 2024.2), indicating a field rapidly diversifying from pure architectural innovation toward data-efficiency, foundation-model adaptation, and novel sequence-modeling paradigms.\n\n---\n\n## Validated Gaps\n\n### Gap 1 \u2014 Transformer Attention Mechanisms for Zero-Shot / SAM-Based Segmentation\n**Why it is a gap:** The transformer cluster (size 51) and the SAM/zero-shot cluster (size 14) are linked by 282 bridge papers yet share a prominence score of only 0.12, and targeted verification queries (\"transformer attention\" + \"segment anything model\"; \"global dependencies\" + \"zero-shot segmentation\") returned just **2 recent papers** \u2014 the lowest retrieval count among all candidates \u2014 yielding a high confidence verdict of **CONFIRMED (0.92)**. The near-absence of recent work directly coupling transformer attention design with SAM-style zero-shot inference reveals a clear underexplored intersection.\n\n**Research Agenda:**\n1. *Characterise the gap empirically:* Systematically benchmark existing transformer-based segmentation architectures (e.g., Swin-UNet, TransUNet) on zero-shot transfer tasks using SAM evaluation protocols to quantify the performance ceiling without task-specific fine-tuning.\n2. *Develop bridging mechanisms:* Design lightweight adapter or prompt-injection layers that translate learned transformer attention maps into SAM-compatible sparse/dense prompts, enabling zero-shot generalisation across imaging modalities and anatomical targets.\n3. *Validate clinically:* Evaluate the proposed hybrid on held-out, low-resource clinical datasets (rare pathologies, novel scanners) where annotated data is scarce, measuring Dice, HD95, and annotation-cost reduction relative to fully supervised baselines.\n\n---\n\n### Gap 2 \u2014 Transformer Global Dependencies Combined with Edge-Attention / Classification Modules\n**Why it is a gap:** The transformer/attention cluster (size 51) and the edge-attention/network/proposed cluster (size 11) share 282 bridge papers and a prominence of 0.10, yet verification queries (\"transformer attention\" + \"edge attention classification\"; \"global dependencies\" + \"attention module network\") returned **0 recent papers** \u2014 an absolute absence of recent targeted work \u2014 giving this gap the highest confidence of any candidate: **CONFIRMED (1.0)**. Transformers excel at capturing long-range global dependencies but are well-documented to underperform on fine-grained boundary and edge detail; the edge-attention literature addresses precisely that weakness, yet the two have not been integrated in recent work.\n\n**Research Agenda:**\n1. *Failure-mode analysis:* Quantify boundary-region segmentation errors (e.g., boundary F1, surface Dice) for state-of-the-art transformer segmentation models versus CNN-based edge-attention networks on standard benchmarks (e.g., ACDC, Synapse multi-organ) to formally document the complementarity.\n2. *Unified architecture design:* Develop a dual-branch or hierarchical network in which transformer encoder blocks supply global context while a parallel edge-attention module (trained with explicit boundary supervision) refines local structure, with a learned fusion gate controlling their interaction.\n3. *Generalisation study:* Test the integrated model across multiple imaging modalities (MRI, CT, ultrasound) and report both region-level (Dice) and boundary-level metrics, with ablations isolating the contribution of each component to confirm the gap's practical significance.\n\n---\n\n## Rejected Candidates\n\nFive candidate gaps \u2014 transformer \u00d7 U-Net/architecture (1,296 recent papers), transformer \u00d7 deep-learning reviews (294), transformer \u00d7 annotation/training (432), transformer \u00d7 3D/volumetric (216), and transformer \u00d7 domain adaptation (776) \u2014 were rejected due to substantial existing recent literature already covering these intersections."
+  },
+  "error": null
+}

@@ -1042,3 +1042,112 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-07-09 22:51:11,289 WARNING Anthropic synthesis failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 2/2 in 4s
 2026-07-09 22:51:44,609 INFO       done in 95.4s
 2026-07-09 22:51:44,632 INFO === done in 186.4s total ===
+2026-07-12 20:07:57,458 INFO === ResearchGap AI engine — topic: 'medical image segmentation' (300 papers) ===
+2026-07-12 20:07:57,458 INFO [1/6] Input accepted.
+2026-07-12 20:07:57,460 INFO       done in 0.0s
+2026-07-12 20:07:57,461 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-12 20:07:57,467 INFO       -> 290 unique papers with abstracts
+2026-07-12 20:07:57,467 INFO       done in 0.0s
+2026-07-12 20:07:57,467 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-12 20:08:51,444 INFO       -> 16 topics found:
+2026-07-12 20:08:51,445 INFO          - transformer / attention / transformers (51 papers)
+2026-07-12 20:08:51,445 INFO          - unet / architecture / network (31 papers)
+2026-07-12 20:08:51,445 INFO          - deep / review / deep learning (15 papers)
+2026-07-12 20:08:51,445 INFO          - annotations / training / annotation (15 papers)
+2026-07-12 20:08:51,445 INFO          - contrastive / semisupervised / labeled (14 papers)
+2026-07-12 20:08:51,445 INFO          - sam / models / segment model (14 papers)
+2026-07-12 20:08:51,445 INFO          - 3d / volumetric / search (14 papers)
+2026-07-12 20:08:51,445 INFO          - domain / adaptation / domain adaptation (12 papers)
+2026-07-12 20:08:51,445 INFO          - attention / network / proposed (11 papers)
+2026-07-12 20:08:51,445 INFO          - loss / loss functions / functions (10 papers)
+2026-07-12 20:08:51,445 INFO          - mamba / modeling / state space (9 papers)
+2026-07-12 20:08:51,445 INFO          - fewshot / prototype / query (9 papers)
+2026-07-12 20:08:51,445 INFO          - diffusion / model / diffusion models (9 papers)
+2026-07-12 20:08:51,445 INFO          - consistency / semisupervised / unlabeled (9 papers)
+2026-07-12 20:08:51,445 INFO          - nnunet / unet / 3d (8 papers)
+2026-07-12 20:08:51,445 INFO          - semisupervised / labeled / unlabeled (8 papers)
+2026-07-12 20:08:51,445 INFO       done in 54.0s
+2026-07-12 20:08:51,445 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-12 20:08:51,448 INFO       -> 8 candidate gaps
+2026-07-12 20:08:51,448 INFO       done in 0.0s
+2026-07-12 20:08:51,448 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-12 20:08:57,005 INFO [agent] query='"attention mechanism" "skip connections"' hits=1296
+2026-07-12 20:08:59,302 INFO [agent] query='"transformer architecture" "semantic segmentation"' hits=331
+2026-07-12 20:08:59,303 INFO [agent] transformer / attention / transformers x unet / architecture / network: 1296 recent papers -> REJECTED
+2026-07-12 20:09:01,280 INFO [agent] query='"transformer attention" "deep learning"' hits=294
+2026-07-12 20:09:02,490 INFO [agent] query='"global dependencies" "review challenges"' hits=0
+2026-07-12 20:09:02,490 INFO [agent] transformer / attention / transformers x deep / review / deep learning: 294 recent papers -> REJECTED
+2026-07-12 20:09:05,342 INFO [agent] query='"attention mechanisms" "annotation efficiency"' hits=9
+2026-07-12 20:09:06,152 INFO [agent] query='"transformer architectures" "supervised learning"' hits=432
+2026-07-12 20:09:06,152 INFO [agent] transformer / attention / transformers x annotations / training / annotation: 432 recent papers -> REJECTED
+2026-07-12 20:09:08,263 INFO [agent] query='"transformer attention" "contrastive learning"' hits=16
+2026-07-12 20:09:09,262 INFO [agent] query='"global dependencies" "semi-supervised learning"' hits=8
+2026-07-12 20:09:09,262 INFO [agent] transformer / attention / transformers x contrastive / semisupervised / labeled: 16 recent papers -> WEAK
+2026-07-12 20:09:10,990 INFO [agent] query='"transformer attention" "segment anything model"' hits=2
+2026-07-12 20:09:11,511 INFO [agent] query='"global dependencies" "zero-shot segmentation"' hits=0
+2026-07-12 20:09:11,511 INFO [agent] transformer / attention / transformers x sam / models / segment model: 2 recent papers -> CONFIRMED
+2026-07-12 20:09:14,532 INFO [agent] query='"attention mechanisms" "3d convolutional neural networks"' hits=216
+2026-07-12 20:09:15,477 INFO [agent] query='"transformer architecture" "volumetric neural networks"' hits=0
+2026-07-12 20:09:15,478 INFO [agent] transformer / attention / transformers x 3d / volumetric / search: 216 recent papers -> REJECTED
+2026-07-12 20:09:17,636 INFO [agent] query='"attention mechanisms" "domain adaptation"' hits=776
+2026-07-12 20:09:18,461 INFO [agent] query='"transformer architecture" "unseen domains"' hits=15
+2026-07-12 20:09:18,461 INFO [agent] transformer / attention / transformers x domain / adaptation / domain adaptation: 776 recent papers -> REJECTED
+2026-07-12 20:09:23,045 INFO [agent] query='"transformer attention" "edge attention classification"' hits=0
+2026-07-12 20:09:23,596 INFO [agent] query='"global dependencies" "attention module network"' hits=0
+2026-07-12 20:09:23,597 INFO [agent] transformer / attention / transformers x attention / network / proposed: 0 recent papers -> CONFIRMED
+2026-07-12 20:09:23,597 INFO       -> 2 confirmed, 1 weak, 5 rejected, 0 unverified
+2026-07-12 20:09:23,597 INFO       done in 32.1s
+2026-07-12 20:09:23,597 INFO [6/6] Synthesizing report...
+2026-07-12 20:09:47,245 INFO       done in 23.6s
+2026-07-12 20:09:47,526 INFO === done in 110.1s total ===
+2026-07-12 20:38:03,469 INFO === ResearchGap AI engine — topic: 'medical image segmentation' (300 papers) ===
+2026-07-12 20:38:03,470 INFO [1/6] Input accepted.
+2026-07-12 20:38:03,474 INFO       done in 0.0s
+2026-07-12 20:38:03,475 INFO [2/6] Fetching up to 300 papers (Semantic Scholar + OpenAlex)...
+2026-07-12 20:38:03,484 INFO       -> 290 unique papers with abstracts
+2026-07-12 20:38:03,484 INFO       done in 0.0s
+2026-07-12 20:38:03,484 INFO [3/6] Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...
+2026-07-12 21:00:22,220 INFO       -> 15 topics found:
+2026-07-12 21:00:22,220 INFO          - transformer / attention / transformers (54 papers)
+2026-07-12 21:00:22,220 INFO          - semisupervised / data / learning (45 papers)
+2026-07-12 21:00:22,220 INFO          - unet / network / architecture (31 papers)
+2026-07-12 21:00:22,221 INFO          - deep / deep learning / review (16 papers)
+2026-07-12 21:00:22,221 INFO          - annotations / training / annotation (15 papers)
+2026-07-12 21:00:22,221 INFO          - sam / models / segment model (14 papers)
+2026-07-12 21:00:22,221 INFO          - domain / adaptation / domain adaptation (12 papers)
+2026-07-12 21:00:22,221 INFO          - attention / network / proposed (11 papers)
+2026-07-12 21:00:22,221 INFO          - 3d / volumetric / search (10 papers)
+2026-07-12 21:00:22,221 INFO          - loss / loss functions / functions (10 papers)
+2026-07-12 21:00:22,221 INFO          - mamba / modeling / state space (9 papers)
+2026-07-12 21:00:22,221 INFO          - fewshot / prototype / query (9 papers)
+2026-07-12 21:00:22,221 INFO          - diffusion / model / diffusion models (9 papers)
+2026-07-12 21:00:22,221 INFO          - nnunet / unet / 3d (8 papers)
+2026-07-12 21:00:22,221 INFO          - context / network / boundary (8 papers)
+2026-07-12 21:00:22,221 INFO       done in 54.9s
+2026-07-12 21:00:22,222 INFO [4/6] Detecting gaps (cross-topic sparsity)...
+2026-07-12 21:00:22,232 INFO       -> 8 candidate gaps
+2026-07-12 21:00:22,232 INFO       done in 0.0s
+2026-07-12 21:00:22,232 INFO [5/6] Agentic validation against OpenAlex (independent source)...
+2026-07-12 21:00:25,677 INFO [agent] query='"transformer attention" "semi-supervised learning"' hits=2
+2026-07-12 21:00:26,939 INFO [agent] query='"global dependencies" "unlabeled data"' hits=13
+2026-07-12 21:00:26,940 INFO [agent] transformer / attention / transformers x semisupervised / data / learning: 13 recent papers -> WEAK
+2026-07-12 21:00:29,690 INFO [agent] query='"attention mechanisms" "semantic segmentation"' hits=2324
+2026-07-12 21:00:30,739 INFO [agent] query='"transformer architecture" "convolutional neural networks"' hits=2100
+2026-07-12 21:00:30,739 INFO [agent] transformer / attention / transformers x unet / network / architecture: 2324 recent papers -> REJECTED
+2026-07-12 21:00:33,840 INFO [agent] query='"semi-supervised learning" "semantic segmentation"' hits=307
+2026-07-12 21:00:35,327 INFO [agent] query='"unlabeled data" "U-Net architecture"' hits=30
+2026-07-12 21:00:35,327 INFO [agent] semisupervised / data / learning x unet / network / architecture: 307 recent papers -> REJECTED
+2026-07-12 21:00:36,979 INFO [agent] query='"transformer attention" "deep learning"' hits=294
+2026-07-12 21:00:38,534 INFO [agent] query='"global dependencies" "review"' hits=66
+2026-07-12 21:00:38,534 INFO [agent] transformer / attention / transformers x deep / deep learning / review: 294 recent papers -> REJECTED
+2026-07-12 21:00:40,619 INFO [agent] query='"transformer attention" "annotation learning"' hits=0
+2026-07-12 21:00:42,727 INFO [agent] query='"global dependencies" "training data"' hits=61
+2026-07-12 21:00:42,727 INFO [agent] transformer / attention / transformers x annotations / training / annotation: 61 recent papers -> REJECTED
+2026-07-12 21:00:45,311 INFO [agent] query='"attention mechanisms" "segment anything model"' hits=166
+2026-07-12 21:00:46,223 INFO [agent] query='"transformer architecture" "zero-shot segmentation"' hits=2
+2026-07-12 21:00:46,223 INFO [agent] transformer / attention / transformers x sam / models / segment model: 166 recent papers -> REJECTED
+2026-07-12 21:26:59,956 WARNING Anthropic query-gen for semisupervised / data / learning x deep / deep learning / review failed (Request timed out or interrupted. This could be due to a network timeout, dropped connection, or request cancellation. See https://docs.anthropic.com/en/api/errors#long-requests for more details.) — retry 1/2 in 2s
+2026-07-12 21:27:07,199 INFO [agent] query='"semi-supervised learning" "deep learning"' hits=1850
+2026-07-12 21:27:10,523 INFO [agent] query='"uncertainty sampling" "deep neural networks"' hits=9
+2026-07-12 21:27:10,523 INFO [agent] semisupervised / data / learning x deep / deep learning / review: 1850 recent papers -> REJECTED
+2026-07-12 21:27:14,924 INFO [agent] query='"transformer" "domain adaptation"' hits=1629
