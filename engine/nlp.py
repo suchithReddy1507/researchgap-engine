@@ -5,7 +5,12 @@ Output: embeddings matrix, topic assignment per paper, topic metadata.
 """
 from __future__ import annotations
 
+import threading
+
 import numpy as np
+
+_model = None
+_model_lock = threading.Lock()
 
 
 def clean_papers(papers: list[dict], min_len: int = 200) -> list[dict]:
@@ -20,12 +25,25 @@ def clean_papers(papers: list[dict], min_len: int = 200) -> list[dict]:
 
 
 def embed_papers(papers: list[dict]):
-    """384-dim Sentence-BERT vectors. Runs locally on CPU, no API."""
+    """384-dim Sentence-BERT vectors. Runs locally on CPU, no API.
+
+    Model is loaded once and reused -- concurrent pipeline runs (each in
+    their own background thread, see jobs.py) were previously each
+    constructing their own SentenceTransformer instance, and racing through
+    PyTorch's meta-device model materialization could corrupt global torch
+    state badly enough to require a process restart. Loading once, and
+    serializing every embed call behind the same lock, removes the race
+    entirely -- this stage is a small fraction of a run's wall-clock time
+    (dominated by network I/O), so serializing it costs nothing meaningful.
+    """
+    global _model
     from sentence_transformers import SentenceTransformer
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    texts = [f"{p['title']}. {p['abstract']}" for p in papers]
-    return model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
+    with _model_lock:
+        if _model is None:
+            _model = SentenceTransformer("all-MiniLM-L6-v2")
+        texts = [f"{p['title']}. {p['abstract']}" for p in papers]
+        return _model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
 
 
 def cluster_topics(papers: list[dict], embeddings, query: str = "") -> dict:
