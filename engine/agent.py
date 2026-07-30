@@ -54,6 +54,7 @@ def _llm_queries(gap: dict) -> list[str] | None:
         return client.messages.create(
             model=os.getenv("AGENT_MODEL", "claude-haiku-4-5-20251001"),
             max_tokens=200,
+            temperature=0,
             messages=[{"role": "user", "content": prompt}],
         )
 
