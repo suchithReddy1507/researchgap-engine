@@ -209,9 +209,12 @@ def count_openalex(query: str, from_year: int, use_cache: bool = True) -> int | 
     treat that as 'unknown', not 'zero hits', or a rate-limited network
     would silently look like a confirmed gap.
 
-    use_cache=False forces a live call, bypassing the cache — used by the
-    standalone re-verification script, which needs a genuinely fresh count
-    rather than a replay of the original run's cached answer.
+    use_cache=False bypasses the cache entirely -- no read, no write. Used
+    by the standalone re-verification script (needs a genuinely fresh count,
+    not a replay of the original run's cached answer) and by the agent for
+    fallback-generated queries (low-precision word-pair queries must never
+    be read from or written into the shared cache as if they were a real
+    validated result).
     """
     key = f"{query}::{from_year}"
     if use_cache:
@@ -235,11 +238,12 @@ def count_openalex(query: str, from_year: int, use_cache: bool = True) -> int | 
         return None
 
     count = resp.json().get("meta", {}).get("count", 0)
-    with _validation_cache_lock:
-        cache = _load_validation_cache()
-        cache[key] = count
-        CACHE_DIR.mkdir(exist_ok=True)
-        VALIDATION_CACHE_PATH.write_text(json.dumps(cache, indent=2))
+    if use_cache:
+        with _validation_cache_lock:
+            cache = _load_validation_cache()
+            cache[key] = count
+            CACHE_DIR.mkdir(exist_ok=True)
+            VALIDATION_CACHE_PATH.write_text(json.dumps(cache, indent=2))
     return count
 
 

@@ -78,11 +78,16 @@ def validate_gaps(gaps: list[dict], current_year: int) -> list[dict]:
     from_year = current_year - RECENT_YEARS
     validated = []
     for gap in gaps:
-        queries = _llm_queries(gap) or _fallback_queries(gap)
+        llm_queries = _llm_queries(gap)
+        queries = llm_queries or _fallback_queries(gap)
+        is_fallback = llm_queries is None
         hits = 0
         any_verified = False
         for q in queries:
-            count = fetch.count_openalex(q, from_year=from_year)
+            # Fallback queries are low-precision word pairs -- never trust
+            # a cached count for one, and never let one poison the shared
+            # cache for a future run.
+            count = fetch.count_openalex(q, from_year=from_year, use_cache=not is_fallback)
             if count is None:
                 logger.warning(f"[agent] query unverifiable ({q}) for {gap['topic_a']} x {gap['topic_b']}")
                 continue
