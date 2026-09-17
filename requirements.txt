@@ -1,10 +1,23 @@
-httpx
-sentence-transformers
-bertopic
-python-dotenv
-anthropic
-fastapi
-python-multipart
-uvicorn
-weasyprint
-markdown
+# Pinned to the exact versions verified working on 2026-09-17.
+# Unpinned ranges are why a rebuilt venv after a few weeks away came up
+# with a different stack than the one that was tested. Regenerate with:
+#   .venv/bin/python3 -m pip freeze
+
+httpx==0.28.1
+sentence-transformers==5.1.2
+bertopic==0.17.3
+python-dotenv==1.2.1
+anthropic==0.116.0
+fastapi==0.128.8
+python-multipart==0.0.20
+uvicorn==0.39.0
+weasyprint==66.0
+markdown==3.9
+
+# Transitive, pinned deliberately: BERTopic pulls these, and numba's
+# threading layer is what aborted the process on concurrent runs.
+numba==0.60.0
+umap-learn==0.5.12
+numpy==2.0.2
+scikit-learn==1.6.1
+torch==2.8.0
