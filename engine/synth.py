@@ -13,16 +13,33 @@ from .logconfig import logger
 from .retry import call_with_retry
 
 
-def synthesize(topic: str, topics: dict, validated: list[dict]) -> str:
+def synthesize(topic: str, topics: dict, validated: list[dict]) -> tuple[str, str]:
+    """Returns (report_markdown, report_source).
+
+    report_source is "llm" when Claude wrote the report, or a "fallback_*"
+    value when it did not. The fallback report is correct but visibly poorer
+    (plain text, no prose synthesis), and it used to be indistinguishable
+    from a real one at a glance -- so the reason is both logged loudly and
+    returned to the caller for the job record.
+    """
     survivors = [g for g in validated if g["verdict"] != "REJECTED"]
     if not os.getenv("ANTHROPIC_API_KEY"):
-        return _plain_report(topic, topics, validated)
+        logger.warning(
+            "=== REPORT IS FALLBACK (plain text, not LLM-written): "
+            "ANTHROPIC_API_KEY is not set ==="
+        )
+        return _plain_report(topic, topics, validated), "fallback_no_api_key"
 
     import anthropic
 
     # max_retries=0: the SDK's own built-in retry (default 2) would silently
     # stack under call_with_retry below, multiplying the effective timeout.
-    client = anthropic.Anthropic(timeout=30.0, max_retries=0)
+    # 90s, not 30s: this call asks for up to 2000 tokens of report prose, and
+    # a 30s ceiling was timing out on larger topic sets -- all three attempts
+    # would fail and the run would silently degrade to _plain_report(), which
+    # is correct but visibly worse output. Retries are still capped at 2 by
+    # call_with_retry below, so worst case is bounded.
+    client = anthropic.Anthropic(timeout=90.0, max_retries=0)
     payload = {
         "domain": topic,
         "topics_found": [
@@ -56,9 +73,13 @@ def synthesize(topic: str, topics: dict, validated: list[dict]) -> str:
 
     resp = call_with_retry(attempt, retries=2, backoff=2.0, label="Anthropic synthesis")
     if resp is None:
-        logger.warning("LLM synthesis unavailable after retries — falling back to plain report")
-        return _plain_report(topic, topics, validated)
-    return resp.content[0].text
+        logger.warning(
+            "=== REPORT IS FALLBACK (plain text, not LLM-written): Anthropic "
+            "synthesis failed every attempt (timeout, rate limit, or credit). "
+            "The numbers are real; the prose is not LLM-generated. ==="
+        )
+        return _plain_report(topic, topics, validated), "fallback_llm_unavailable"
+    return resp.content[0].text, "llm"
 
 
 def _plain_report(topic: str, topics: dict, validated: list[dict]) -> str:

@@ -33,7 +33,7 @@ MAX_RETRIES = 2
 RETRY_BACKOFF = 2.0
 # S2's introductory rate limit is 1 request/sec even with an API key (per
 # their key-request form) — throttle every call, keyed or not.
-S2_MIN_INTERVAL = 1.05
+S2_MIN_INTERVAL = 3.0
 
 _validation_cache: dict[str, int] | None = None
 _validation_cache_lock = threading.Lock()

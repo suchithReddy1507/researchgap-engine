@@ -121,7 +121,7 @@ def run_pipeline(
     _done(t0)
 
     t0 = _stage(6, "Synthesizing report...", on_stage)
-    report = synth.synthesize(topic, topics, validated)
+    report, report_source = synth.synthesize(topic, topics, validated)
     _done(t0)
 
     coords = _layout_topics(topics)
@@ -151,6 +151,7 @@ def run_pipeline(
         "rejected_count": len(rejected),
         "unverified_count": len(unverified),
         "report": report,
+        "report_source": report_source,
         "verification_evidence": {
             "bridge_evidence": bridge_evidence,
             "validation_evidence": validation_evidence,
