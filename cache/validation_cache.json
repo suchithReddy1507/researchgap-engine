@@ -610,5 +610,18 @@
   "\"grain boundary passivation\" \"flexible perovskite devices\"::2021": 0,
   "\"nonradiative recombination defects\" \"flexible substrate efficiency\"::2021": 0,
   "\"image segmentation\" \"patient management\"::2021": 21,
-  "\"image segmentation\" \"bone fractures\"::2021": 36
+  "\"image segmentation\" \"bone fractures\"::2021": 36,
+  "\"power conversion efficiency\" \"current-voltage hysteresis\"::2021": 29,
+  "\"genome editing\" \"plant transformation\"::2023": 104,
+  "\"CRISPR-Cas9\" \"crop improvement\"::2023": 523,
+  "\"genome editing\" \"retinal disease\"::2023": 45,
+  "\"CRISPR cancer therapy\" \"ocular treatment\"::2023": 0,
+  "\"CRISPR-Cas9\" \"Cas12f miniature\"::2023": 0,
+  "\"genome editing cancer\" \"compact engineering\"::2023": 0,
+  "\"plant transformation\" \"retinal disease\"::2023": 0,
+  "\"genome editing\" \"ocular therapy\"::2023": 0,
+  "\"plant genome\" \"compact cas12f\"::2023": 0,
+  "\"CRISPR plant transformation\" \"miniature engineering\"::2023": 0,
+  "\"CRISPR cas\" \"compact engineering\"::2023": 0,
+  "\"retinal ocular\" \"Cas12f miniature\"::2023": 0
 }
