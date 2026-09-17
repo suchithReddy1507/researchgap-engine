@@ -1,2 +1,11 @@
 .env
 .venv
+
+# Runtime artifacts: regenerated on every run, and a churning 2800-line
+# diff on review day is how real changes get lost. Kept on disk, just not
+# tracked. stats.json and cache/validation_cache.json are deliberately
+# NOT ignored -- stats.json is demo-visible on the landing page, and the
+# validation cache is expensive to rebuild (real API calls).
+logs/
+jobs/
+cache/*_[0-9]*.json
