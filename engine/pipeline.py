@@ -50,8 +50,11 @@ def _stage(n: int, name: str, on_stage: OnStage | None = None) -> float:
     return time.monotonic()
 
 
-def _done(start: float) -> None:
-    logger.info(f"      done in {time.monotonic() - start:.1f}s")
+def _done(start: float, timings: dict | None = None, key: str | None = None) -> None:
+    elapsed = time.monotonic() - start
+    if timings is not None and key:
+        timings[key] = round(elapsed, 2)
+    logger.info(f"      done in {elapsed:.1f}s")
 
 
 def run_pipeline(
@@ -62,22 +65,46 @@ def run_pipeline(
 ) -> dict:
     run_start = time.monotonic()
     logger.info(f"=== ResearchGap AI engine — topic: '{topic}' ({n_papers} papers) ===")
+    # Provenance for the paper's Table II: the only seed in the pipeline is
+    # UMAP's random_state (nlp.py / _layout_topics); HDBSCAN is deterministic
+    # given its input. Retrieval date is when the APIs were actually hit.
+    retrieval_date = time.strftime("%Y-%m-%d %H:%M:%S %Z")
+    logger.info(f"      provenance: umap_random_state=42 retrieval_date={retrieval_date}")
+    timings: dict = {}
+    collection_stats: dict = {}
 
     t0 = _stage(1, "Input accepted.", on_stage)
     _done(t0)
 
     t0 = _stage(2, f"Fetching up to {n_papers} papers (Semantic Scholar + OpenAlex)...", on_stage)
-    papers = fetch.collect_papers(topic, target=n_papers, use_cache=use_cache)
+    papers = fetch.collect_papers(topic, target=n_papers, use_cache=use_cache, stats=collection_stats)
     logger.info(f"      -> {len(papers)} unique papers with abstracts")
-    _done(t0)
+    _done(t0, timings, "collection")
     if len(papers) < 30:
         raise PipelineError("Too few papers for meaningful clustering. Try a broader topic.")
 
     t0 = _stage(3, "Cleaning, embedding (Sentence-BERT), clustering (BERTopic)...", on_stage)
+    # Split the previously-merged stage-3 timings so Table XI can report
+    # preprocessing, embedding and clustering separately. Same calls, same order.
+    _t = time.monotonic()
+    n_before_clean = len(papers)
     papers = nlp.clean_papers(papers)
+    short_removed = n_before_clean - len(papers)
+    _done(_t, timings, "preprocessing")
+
+    _t = time.monotonic()
     embeddings = nlp.embed_papers(papers)
+    _done(_t, timings, "embedding")
+
+    _t = time.monotonic()
     result = nlp.cluster_topics(papers, embeddings, query=topic)
+    _done(_t, timings, "clustering")
     topics = result["topics"]
+    outliers = int(sum(1 for a in result["assignments"] if a == -1))
+    logger.info(
+        f"      corpus: merged={n_before_clean} short_or_missing_abstract_removed={short_removed} "
+        f"final={len(papers)} topics={len(topics)} outliers={outliers}"
+    )
     logger.info(f"      -> {len(topics)} topics found:")
     for t in topics.values():
         logger.info(f"         - {t['label']} ({t['size']} papers)")
@@ -103,7 +130,7 @@ def run_pipeline(
     candidates = gaps.detect_gaps(papers, embeddings, topics)
     logger.info(f"      -> {len(candidates)} candidate gaps")
     bridge_evidence = verification.capture_bridge_evidence(papers, embeddings, topics, candidates)
-    _done(t0)
+    _done(t0, timings, "gap_detection")
 
     t0 = _stage(5, "Agentic validation against OpenAlex (independent source)...", on_stage)
     current_year = max((p["year"] or 0) for p in papers)
@@ -118,11 +145,11 @@ def run_pipeline(
     )
     from_year = current_year - agent.RECENT_YEARS
     validation_evidence = verification.capture_validation_evidence(validated, from_year)
-    _done(t0)
+    _done(t0, timings, "agent_validation")
 
     t0 = _stage(6, "Synthesizing report...", on_stage)
     report, report_source = synth.synthesize(topic, topics, validated)
-    _done(t0)
+    _done(t0, timings, "synthesis")
 
     coords = _layout_topics(topics)
     topics_summary = [
@@ -152,6 +179,21 @@ def run_pipeline(
         "unverified_count": len(unverified),
         "report": report,
         "report_source": report_source,
+        # Measurement only -- nothing here feeds back into the algorithm.
+        "run_stats": {
+            "query_string": topic,
+            "papers_requested": n_papers,
+            "retrieval_date": retrieval_date,
+            "umap_random_state": 42,
+            "collection": collection_stats,
+            "merged_papers": n_before_clean,
+            "short_or_missing_abstract_removed": short_removed,
+            "final_corpus": len(papers),
+            "topics": len(topics),
+            "outliers": outliers,
+            "candidates": len(candidates),
+            "timings_sec": {**timings, "total": round(time.monotonic() - run_start, 2)},
+        },
         "verification_evidence": {
             "bridge_evidence": bridge_evidence,
             "validation_evidence": validation_evidence,

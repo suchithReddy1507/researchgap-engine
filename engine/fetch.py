@@ -281,7 +281,8 @@ def fetch_openalex_matches(query: str, from_year: int, limit: int = 25) -> list[
     return matches
 
 
-def collect_papers(topic: str, target: int = 300, use_cache: bool = True) -> list[dict]:
+def collect_papers(topic: str, target: int = 300, use_cache: bool = True,
+                   stats: dict | None = None) -> list[dict]:
     """Primary collection: Semantic Scholar first, topped up with OpenAlex,
     deduplicated by DOI then by normalized title.
 
@@ -290,11 +291,19 @@ def collect_papers(topic: str, target: int = 300, use_cache: bool = True) -> lis
     (the cache file is refreshed with the new results either way)."""
     cache_path = CACHE_DIR / f"{_slugify(topic)}_{target}.json"
     if use_cache and cache_path.exists():
-        return json.loads(cache_path.read_text())
+        cached = json.loads(cache_path.read_text())
+        if stats is not None:
+            # A cache hit cannot report per-source or dedup counts: only the
+            # merged survivors were persisted. Say so rather than inventing.
+            stats.update(from_cache=True, s2_papers=None, openalex_papers=None,
+                         raw_total=None, duplicates_removed=None, merged=len(cached))
+        return cached
 
-    papers = search_semantic_scholar(topic, limit=target)
-    if len(papers) < target:
-        papers += search_openalex(topic, limit=target - len(papers))
+    s2 = search_semantic_scholar(topic, limit=target)
+    oa = []
+    if len(s2) < target:
+        oa = search_openalex(topic, limit=target - len(s2))
+    papers = s2 + oa
 
     seen_doi: set[str] = set()
     seen_title: set[str] = set()
@@ -310,6 +319,14 @@ def collect_papers(topic: str, target: int = 300, use_cache: bool = True) -> lis
         seen_title.add(key_t)
         unique.append(p)
 
+    if stats is not None:
+        stats.update(from_cache=False, s2_papers=len(s2), openalex_papers=len(oa),
+                     raw_total=len(papers), duplicates_removed=len(papers) - len(unique),
+                     merged=len(unique))
+    logger.info(
+        f"      collection: semantic_scholar={len(s2)} openalex={len(oa)} "
+        f"raw={len(papers)} duplicates_removed={len(papers) - len(unique)} merged={len(unique)}"
+    )
     CACHE_DIR.mkdir(exist_ok=True)
     cache_path.write_text(json.dumps(unique, indent=2))
     return unique

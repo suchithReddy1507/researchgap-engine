@@ -201,6 +201,8 @@ def _run(job_id: str, topic: str, papers: int) -> None:
                 # "llm" or "fallback_*" -- lets you tell at a glance whether this
                 # report was actually written by Claude. See synth.synthesize.
                 "report_source": result["report_source"],
+                # Per-run measurements for the paper's Tables II, III and XI.
+                "run_stats": result["run_stats"],
                 "idea_landing": idea_landing,
             },
         )
