@@ -13,3 +13,5 @@ logs/
 jobs/
 cache/*
 !cache/validation_cache.json
+
+.DS_Store
